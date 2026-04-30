@@ -1,0 +1,5 @@
+BowTie applied to valve-train risk in a 10,000 rpm AP 1.8 cylinder head
+Top event: loss of valve-cam follower contact (float, bounce, coil bind)
+Quantitative coupling: natural frequency, coil-bind margin, fatigue safety
+Critical preventive barrier identified for the AP 1.8 operating envelope
+BowTie shown to complement FMEA/RPN for high-rpm reliability assessment

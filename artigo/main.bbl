@@ -1,0 +1,132 @@
+\begin{thebibliography}{14}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Aust and Pons(2019)}]{aust2019bowtieaircraft}
+\bibinfo{author}{Aust, J.}, \bibinfo{author}{Pons, D.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Bowtie methodology for risk analysis of visual
+  borescope inspection during aircraft engine maintenance}.
+\newblock \bibinfo{journal}{Aerospace} \bibinfo{volume}{6},
+  \bibinfo{pages}{110}.
+\newblock \DOIprefix\doi{10.3390/aerospace6100110}.
+%Type = Book
+\bibitem[{Budynas and Nisbett(2020)}]{shigley2020}
+\bibinfo{author}{Budynas, R.G.}, \bibinfo{author}{Nisbett, J.K.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Shigley's Mechanical Engineering Design}.
+\newblock \bibinfo{edition}{11} ed., \bibinfo{publisher}{McGraw-Hill
+  Education}, \bibinfo{address}{New York}.
+%Type = Book
+\bibitem[{Heisler(2002)}]{heisler2002}
+\bibinfo{author}{Heisler, H.}, \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Advanced Engine Technology}.
+\newblock \bibinfo{publisher}{Butterworth-Heinemann},
+  \bibinfo{address}{Oxford}.
+%Type = Book
+\bibitem[{Heywood(1988)}]{heywood1988}
+\bibinfo{author}{Heywood, J.B.}, \bibinfo{year}{1988}.
+\newblock \bibinfo{title}{Internal Combustion Engine Fundamentals}.
+\newblock \bibinfo{publisher}{McGraw-Hill}, \bibinfo{address}{New York}.
+%Type = Article
+\bibitem[{Khakzad et~al.(2013)Khakzad, Khan and
+  Amyotte}]{khakzad2013bowtiebayesian}
+\bibinfo{author}{Khakzad, N.}, \bibinfo{author}{Khan, F.},
+  \bibinfo{author}{Amyotte, P.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Dynamic safety analysis of process systems by mapping
+  bow-tie into {Bayesian} network}.
+\newblock \bibinfo{journal}{Process Safety and Environmental Protection}
+  \bibinfo{volume}{91}, \bibinfo{pages}{46--53}.
+\newblock \DOIprefix\doi{10.1016/j.psep.2012.01.005}.
+%Type = Article
+\bibitem[{Ko et~al.(2022)Ko, Ahn and Lee}]{ko2022springfatigueflaws}
+\bibinfo{author}{Ko, D.C.}, \bibinfo{author}{Ahn, N.S.}, \bibinfo{author}{Lee,
+  K.H.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Influence of the surface flaws in oil-tempered wires
+  on the fatigue life of automotive engine valve springs}.
+\newblock \bibinfo{journal}{Scientific Reports} \bibinfo{volume}{12},
+  \bibinfo{pages}{21131}.
+\newblock \DOIprefix\doi{10.1038/s41598-022-25597-1}.
+%Type = Phdthesis
+\bibitem[{Porto(2026)}]{porto2026dissertation}
+\bibinfo{author}{Porto, D.C.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Otimiza\c{c}\~ao do cabe\c{c}ote do motor {AP} 1.8:
+  uma an\'alise termodin\^amica da combust\~ao e de fluxo de escoamento de ar}.
+\newblock \bibinfo{type}{Master's dissertation}. Universidade Cat\'olica de
+  Petr\'opolis, Programa de Mestrado em Sistemas de Engenharia.
+  \bibinfo{address}{Petr\'opolis, RJ, Brazil}.
+\newblock \bibinfo{note}{Forthcoming}.
+%Type = Article
+\bibitem[{de~Ruijter and Guldenmund(2016)}]{deruijter2016bowtiereview}
+\bibinfo{author}{de~Ruijter, A.}, \bibinfo{author}{Guldenmund, F.},
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{The bowtie method: A review}.
+\newblock \bibinfo{journal}{Safety Science} \bibinfo{volume}{88},
+  \bibinfo{pages}{211--218}.
+\newblock \DOIprefix\doi{10.1016/j.ssci.2016.03.001}.
+%Type = Article
+\bibitem[{Soffritti et~al.(2018)Soffritti, Merlin, Vazquez, Fortini and
+  Garagnani}]{soffritti2018wornvalvetrain}
+\bibinfo{author}{Soffritti, C.}, \bibinfo{author}{Merlin, M.},
+  \bibinfo{author}{Vazquez, R.}, \bibinfo{author}{Fortini, A.},
+  \bibinfo{author}{Garagnani, G.L.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Failure analysis of worn valve train components of a
+  four-cylinder diesel engine}.
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{92},
+  \bibinfo{pages}{528--538}.
+\newblock \DOIprefix\doi{10.1016/j.engfailanal.2018.06.022}.
+%Type = Book
+\bibitem[{Stone(2012)}]{stone2012}
+\bibinfo{author}{Stone, R.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Introduction to Internal Combustion Engines}.
+\newblock \bibinfo{edition}{4} ed., \bibinfo{publisher}{Palgrave Macmillan},
+  \bibinfo{address}{Basingstoke}.
+%Type = Book
+\bibitem[{Taylor(1985)}]{taylor1985}
+\bibinfo{author}{Taylor, C.F.}, \bibinfo{year}{1985}.
+\newblock \bibinfo{title}{The Internal-Combustion Engine in Theory and
+  Practice, Vol. 2: Combustion, Fuels, Materials, Design}.
+\newblock \bibinfo{edition}{Revised} ed., \bibinfo{publisher}{MIT Press},
+  \bibinfo{address}{Cambridge, MA}.
+%Type = Article
+\bibitem[{V\'elez Godi\~no et~al.(2019)V\'elez Godi\~no, Torres~Garc\'ia,
+  Jim\'enez-Espadafor~Aguilar and
+  Palomo~Guerrero}]{velezgodino2019overheadvalvetrain}
+\bibinfo{author}{V\'elez Godi\~no, J.A.}, \bibinfo{author}{Torres~Garc\'ia,
+  M.}, \bibinfo{author}{Jim\'enez-Espadafor~Aguilar, F.J.},
+  \bibinfo{author}{Palomo~Guerrero, D.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Failure analysis of an overhead valve train system in
+  urban buses}.
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{96},
+  \bibinfo{pages}{455--467}.
+\newblock \DOIprefix\doi{10.1016/j.engfailanal.2018.11.003}.
+%Type = Article
+\bibitem[{Xing et~al.(2021)Xing, Lu, Jian, Li and Luo}]{xing2021valvespringEAC}
+\bibinfo{author}{Xing, X.Q.}, \bibinfo{author}{Lu, J.N.},
+  \bibinfo{author}{Jian, J.W.}, \bibinfo{author}{Li, L.J.},
+  \bibinfo{author}{Luo, Z.C.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Effect of environment-assisted cracking on the
+  premature fatigue failure of high-strength valve springs}.
+\newblock \bibinfo{journal}{Engineering Failure Analysis}
+  \bibinfo{volume}{126}, \bibinfo{pages}{105466}.
+\newblock \DOIprefix\doi{10.1016/j.engfailanal.2021.105466}.
+%Type = Article
+\bibitem[{Zhao et~al.(2023)Zhao, Li, Xie and Liu}]{zhao2023camshaftV6}
+\bibinfo{author}{Zhao, J.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Xie,
+  L.}, \bibinfo{author}{Liu, J.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Lubrication failure analysis of camshaft bearings in
+  {V6} diesel engine}.
+\newblock \bibinfo{journal}{Engineering Failure Analysis}
+  \bibinfo{volume}{150}, \bibinfo{pages}{107329}.
+\newblock \DOIprefix\doi{10.1016/j.engfailanal.2023.107329}.
+
+\end{thebibliography}

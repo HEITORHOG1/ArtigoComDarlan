@@ -1,0 +1,167 @@
+%% =====================================================================
+%% BowTie Risk Analysis of the Valve Train in a High-Performance VW AP 1.8
+%% Cylinder Head Operating at 10,000 rpm
+%%
+%% Authors:    Darlan Costa Porto (corresponding)
+%%             Heitor Oliveira Goncalves
+%%             Prof. Dr. Jose Cristiano Pereira
+%% Affiliation: Universidade Catolica de Petropolis (UCP)
+%% Target journal: Proceedings of the IMechE, Part D --
+%%                 Journal of Automobile Engineering (SAGE, Q2)
+%% Template (current draft): cas-dc.cls (double column). A SAGE
+%%                 sagej.cls port is planned before submission.
+%%
+%% Compilation:
+%%   pdflatex main
+%%   bibtex   main
+%%   pdflatex main
+%%   pdflatex main
+%% =====================================================================
+
+\documentclass[a4paper,fleqn]{cas-dc}
+
+% Author-year at submission. The SAGE Vancouver style will be applied
+% on template port; for the current cas-dc draft the natbib author-year
+% formatting is retained.
+% Note: no `longnamesfirst' option — citations with 3+ authors always use
+% "et al." to avoid line-overflow in the narrow cas-dc columns.
+\usepackage[authoryear]{natbib}
+
+% Useful for British English hyphenation
+\usepackage[UKenglish]{babel}
+
+% Math typesetting
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Better tables
+\usepackage{booktabs}
+
+% Native vector figures (BowTie diagram, tornado plot, frequency map)
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,arrows.meta,patterns}
+
+% Hyperref last for safety
+\usepackage{hyperref}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% =====================================================================
+% Frontmatter
+% =====================================================================
+
+\shorttitle{BowTie risk analysis of the AP 1.8 valve train at 10\,000~rpm}
+\shortauthors{D.~C.~Porto, H.~O.~Gon\c{c}alves and J.~C.~Pereira}
+
+\title[mode=title]{BowTie Risk Analysis of the Valve Train in a High-Performance VW AP 1.8 Cylinder Head Operating at 10,000~rpm}
+
+% --- First author (corresponding) ---
+% NOTE: ORCID below is a placeholder. Confirm or create at https://orcid.org
+% before final submission. Email and address fields likewise to be confirmed.
+\author[1]{Darlan Costa Porto}%[orcid=XXXX-XXXX-XXXX-XXXX]
+\cormark[1]
+\ead{darlan.porto@ucp.br}
+\credit{Conceptualization, Methodology, Formal analysis, Investigation, Visualization, Writing -- original draft}
+
+\affiliation[1]{organization={Centre for Engineering and Computing, Graduate Programme in Engineering Systems, Universidade Cat\'olica de Petr\'opolis},
+            addressline={Rua Bar\~ao do Amazonas, 124},
+            city={Petr\'opolis},
+            postcode={25685-100},
+            state={RJ},
+            country={Brazil}}
+
+% --- Second author (co-author, professor) ---
+\author[1]{Heitor Oliveira Gon\c{c}alves}[orcid=0000-0002-5866-2213]
+\ead{heitorhog@gmail.com}
+\credit{Methodology, Validation, Formal analysis, Writing -- review \& editing, Supervision}
+
+% --- Third author (advisor) ---
+\author[1]{Jos\'e Cristiano Pereira}[orcid=0000-0002-2329-0560]
+\ead{josecristiano.pereira@ucp.br}
+\credit{Conceptualization, Methodology, Supervision, Writing -- review \& editing, Project administration}
+
+\cortext[1]{Corresponding author.}
+
+% --- Abstract (<= 250 words) ---
+\begin{abstract}
+The valve train is a load-critical subsystem when a spark-ignition engine is pushed to high rotational speeds. At 10\,000~rpm the inertial demand on the valve--cam contact, the spring dynamics, and the thermal management of the head become tightly coupled, and small departures from the design envelope can cascade into catastrophic events such as valve--piston collision. This work proposes a quantitative-coupled BowTie procedure for design-stage reliability assessment of high-rpm valve trains, applied to a high-performance cylinder head conceived for the VW AP 1.8 at 10\,000~rpm. Threats, preventive barriers, consequences, and mitigative barriers are mapped around the top event ``loss of follower contact between valve and cam''; each preventive barrier is then linked to a deterministic indicator with a literature-anchored pass criterion, derived from the analytical sizing of the intake valve and the dual Cr--Si valve springs. For the AP 1.8 head, all four dynamic-ratio indicators meet the project criterion ($R\geq 1.20$, worst case $R_{\mathrm{eq},-,\mathrm{esc}}=1.343$), but the analysis identifies two concurrent at-risk barriers in the baseline configuration: the outer-spring coil-bind margin, $M_{\mathrm{out}}=0.78$~mm against $M\geq 1.5$~mm, and the inner-spring fatigue Goodman factor of safety, $n_{f,\mathrm{in}}\approx 0.68$ against $n_{f}\geq 1$. The outer-spring natural-frequency margin emerges as a residual concern ($f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}\approx 3.81$). The two findings affect different components and demand independent design interventions, demonstrating the value of the BowTie framework over single-score FMEA/RPN. The procedure is qualitatively validated against four documented valve-train failure cases from the recent literature, and a concrete experimental validation roadmap is specified as the priority direction for empirical confirmation.
+\end{abstract}
+
+% --- Highlights (3-5 bullets, <= 85 chars each) ---
+\begin{highlights}
+\item Quantitative-coupled BowTie for high-rpm valve-train design assessment
+\item Top event: loss of valve--cam follower contact (float, bounce, coil bind)
+\item Indicators: dynamic ratio, natural frequency, coil-bind margin, Goodman FoS
+\item Two concurrent at-risk barriers identified in the baseline AP 1.8 head
+\item Qualitative validation against four published valve-train failure cases
+\end{highlights}
+
+% --- Keywords (1-5, separated by \sep) ---
+\begin{keywords}
+BowTie analysis \sep Valve train \sep Risk assessment \sep Internal combustion engine \sep Mechanical reliability
+\end{keywords}
+
+\maketitle
+
+% =====================================================================
+% Body
+% =====================================================================
+
+\input{secoes/01_introduction}
+\input{secoes/02_background}
+\input{secoes/03_methodology}
+\input{secoes/04_results}
+\input{secoes/05_discussion}
+\input{secoes/06_conclusion}
+
+% =====================================================================
+% Declarations (declarations first, then Acknowledgments, then
+% \printcredits just before bibliography — order matches the official
+% els-cas-templates/cas-dc-sample.tex)
+% =====================================================================
+
+\section*{Declaration of competing interests}
+The authors declare that they have no known competing financial interests
+or personal relationships that could have appeared to influence the work
+reported in this paper.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in
+the public, commercial, or not-for-profit sectors.
+
+\section*{Data availability}
+No new experimental data were generated in this study. The analytical
+inputs of Tables~\ref{tbl:premises} and~\ref{tbl:quant-results} are
+fully traceable to the sizing calculations referenced in the text and
+to the underlying dissertation~\citep{porto2026dissertation}; no proprietary
+data are used. The experimental validation roadmap of
+Section~\ref{sec:conclusion} specifies the empirical campaign required to
+confirm the deterministic indicators reported here.
+
+\section*{Acknowledgments}
+The authors thank the Centre for Engineering and Computing of the
+Universidade Cat\'olica de Petr\'opolis and the Graduate Programme in
+Engineering Systems for supporting the underlying Master's research
+project from which the analytical sizing of the AP 1.8 cylinder
+head was derived.
+
+% =====================================================================
+% CRediT statement (rendered by cas-dc.cls from the \credit{} blocks
+% in the frontmatter; placed just before bibliography per CAS sample)
+% =====================================================================
+
+\printcredits
+
+% =====================================================================
+% Bibliography
+% =====================================================================
+
+\bibliographystyle{cas-model2-names}
+\bibliography{refs}
+
+\end{document}

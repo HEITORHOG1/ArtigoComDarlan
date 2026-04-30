@@ -1,0 +1,219 @@
+% =====================================================================
+% Section 2 — Background
+% =====================================================================
+
+\section{Background}\label{sec:background}
+
+\subsection{Valve-train failure modes at high rotational speed}
+\label{sec:bg-failure-modes}
+
+At elevated rotational speeds, the valve train of an SI engine moves
+from a quasi-static loading regime, in which the valve simply tracks the
+cam profile, into an inertia-dominated regime in which the spring force
+is the only mechanism that keeps the follower in contact with the cam
+\citep{heywood1988,taylor1985}. The classical failure modes that emerge
+in this regime are the following.
+
+\paragraph{Valve float}
+When the spring force is no longer sufficient to overcome the inertial
+force of the moving mass on the deceleration ramp of the cam, the
+follower separates from the cam. The valve then moves freely under the
+combined effect of the spring force and the residual inertia, and
+re-contact with the cam occurs in an uncontrolled manner. Float reduces
+the effective valve-opening profile and introduces large impacts at
+re-contact.
+
+\paragraph{Valve bounce}
+Bounce is the impact-driven oscillation of the valve at seating. At high
+rpm the closing velocity grows with the cam acceleration, and the
+combination of spring stiffness and seat compliance can result in
+multiple short re-openings before the valve finally seats. Bounce
+degrades sealing, accelerates seat wear, and disturbs the gas-exchange
+process.
+
+\paragraph{Coil bind}
+Coil bind is the condition in which adjacent coils of the valve spring
+are in metal-to-metal contact. When this happens, the spring stops
+behaving as a linear element: stiffness rises sharply and the dynamic
+load is transferred directly through the coil stack rather than through
+the spring deformation. Even an instantaneous approach to coil bind can
+produce a load spike sufficient to damage the spring, the retainer, or
+the cam lobe.
+
+\paragraph{Spring fatigue}
+The valve spring operates under fluctuating shear loading at the cam
+frequency, oscillating between a non-zero seat-preload stress and the
+full-lift stress; the alternating component is therefore superimposed
+on a positive mean stress and is more demanding than a fully-reversed
+loading of the same amplitude. At 10\,000~rpm a single spring
+undergoes of the order of $10^{8}$ cycles in 200~hours of operation.
+Fatigue resistance therefore governs the long-term life, and any
+local stress concentration (surface defect, shot-peening discontinuity,
+corrosion) can dominate the failure process \citep{shigley2020}.
+
+\paragraph{Resonance with cam harmonics}
+The cam profile contains harmonics at integer multiples of the camshaft
+rotational frequency. If a harmonic coincides with the natural frequency
+of the spring, the spring enters resonance, the dynamic deflection grows
+beyond the design displacement, and coil bind and surge become likely
+\citep{heywood1988}.
+
+These five modes are not independent: float can trigger an impact that
+exceeds the residual coil-bind clearance, and resonance can amplify both.
+The BowTie methodology, introduced next, provides a unified language to
+describe how each mode contributes to a single top event.
+
+% ----------------------------------------------------------------------
+\subsection{The BowTie methodology}\label{sec:bg-bowtie}
+
+The BowTie methodology organises a risk analysis around a single top
+event. Threats (causes) are arranged on the left side of the bow,
+connected to the top event through preventive barriers; consequences are
+arranged on the right side, connected to the top event through
+mitigative barriers. The diagram resembles a bowtie, hence the name. The
+methodology has its origins in process-safety analysis and was
+consolidated as a general risk-management framework by the review of
+\citet{deruijter2016bowtiereview}; it has since been applied to
+mechanical-reliability problems where the chain of causation deserves
+explicit visualisation \citep{aust2019bowtieaircraft}.
+
+Compared with FMEA, BowTie offers three advantages relevant to the
+present problem:
+
+\begin{enumerate}
+\item \emph{Causal chain}: BowTie distinguishes threats, preventive
+barriers, consequences, and mitigative barriers as separate elements;
+FMEA collapses this into a single severity--occurrence--detectability
+triplet.
+\item \emph{Barrier-centric view}: each preventive barrier can be
+associated with a measurable indicator and a pass criterion, supporting
+the quantitative coupling proposed in this work.
+\item \emph{Communication}: the diagrammatic representation is
+accessible to designers, operators, and reliability engineers
+simultaneously, which is valuable in the context of a master's research
+that aims to bridge mechanical design and reliability analysis.
+\end{enumerate}
+
+The classical BowTie is qualitative. To compensate for that limitation,
+several quantitative extensions have been proposed; in particular,
+\citet{khakzad2013bowtiebayesian} map the BowTie into a Bayesian
+network so that the diagram becomes dynamic and probabilistic, and the
+review of \citet{deruijter2016bowtiereview} catalogues the alternative
+extensions ranging from layer-of-protection analysis (LOPA) to
+fault-tree-based barrier reliability. The approach
+adopted here is more pragmatic: each preventive barrier of the diagram
+is mapped to a deterministic indicator computed from the analytical
+sizing of the component, with a literature-anchored pass
+criterion. This avoids the need for probabilistic data that is not
+available for the bespoke high-performance cylinder head under study.
+
+% ----------------------------------------------------------------------
+\subsection{Related work}\label{sec:bg-related}
+
+Several authors have addressed valve-train and engine-component
+reliability from complementary perspectives. The work of
+\citet{velezgodino2019overheadvalvetrain} on overhead valve trains in
+urban buses is a representative case study published in
+\textit{Engineering Failure Analysis}: the authors use field data and
+metallurgical inspection to attribute the recurrent failure of an
+in-service valve train to a combination of operational misuse and
+inadequate inspection intervals, but they stop short of organising the
+findings around a barrier-based diagram. \citet{soffritti2018wornvalvetrain}
+report a four-cylinder diesel engine in which excessive wear at the
+rocker-arm/pushrod and rocker-arm/valve interfaces appeared after only
+1\,000~hours of operation; their root-cause analysis points to valve
+misalignment with respect to the seat insert as the dominant trigger.
+Both studies confirm that valve-train failures, once initiated,
+propagate quickly into other components and motivate the need for a
+preventive analysis framework.
+
+Two further studies in \textit{Engineering Failure Analysis} address
+elements of the valve-train system that are central to the present
+work. \citet{xing2021valvespringEAC} investigate environment-assisted
+cracking in high-strength valve springs and show that the fatigue limit
+adopted at the design stage must be discounted to account for surface
+condition and lubricant chemistry; this finding directly supports the
+fatigue factor of safety adopted in
+Section~\ref{sec:method-bowtie-quant}.
+\citet{zhao2023camshaftV6} report lubrication failure in the camshaft
+bearings of a V6 diesel engine, identifying an asperity-contact regime
+that violates the design assumption of full hydrodynamic lubrication
+and reduces the effective service life of the bearing pair; their
+result reinforces the importance of the lubrication-related preventive
+barriers shown on the left side of the BowTie diagram of
+Section~\ref{sec:method-bowtie-qual}.
+\citet{ko2022springfatigueflaws} extend the spring-fatigue discussion
+beyond \textit{Engineering Failure Analysis}, showing in
+\textit{Scientific Reports} that surface flaws as small as a few
+micrometres on the oil-tempered wire of an automotive valve spring can
+reduce the fatigue life by an order of magnitude; this result motivates
+the conservative factor of safety adopted in
+Table~\ref{tbl:quant-criteria}.
+
+Table~\ref{tbl:related-cases} consolidates the four
+\textit{Engineering Failure Analysis} case studies above and maps
+their reported root causes to the preventive (P) and mitigative (M)
+barriers and the deterministic indicators of the BowTie procedure
+constructed in Section~\ref{sec:methodology}. The mapping is direct
+for two of the four cases (Xing on environment-assisted cracking,
+caught by the Goodman fatigue indicator; and the operational/
+maintenance signature of V\'elez~Godi\~no, caught by the mitigative
+side of the BowTie); is partial for the assembly-driven misalignment
+of Soffritti, which the qualitative bow flags but which lies outside
+the deterministic-indicator set adopted here; and is explicitly
+\emph{outside} the present scope for the camshaft-bearing
+lubrication failure of Zhao, which would require an additional
+preventive barrier on the lubrication regime. The mixed mapping is
+itself an outcome of the comparison: it identifies which classes of
+failure the procedure already covers and which classes call for an
+extension of the barrier set, and it is examined in detail in
+Section~\ref{sec:res-litvalidation}.
+
+\begin{table*}[width=\textwidth,pos=t]
+\caption{Mapping of four documented valve-train and engine-component failure case studies from \textit{Engineering Failure Analysis} to the preventive (P) and mitigative (M) barriers and the deterministic indicators of the BowTie procedure proposed in this work. The notation P1--P5, M1--M5 refers to the barriers introduced in Section~\ref{sec:method-bowtie-qual}, and the indicators are those of Table~\ref{tbl:quant-criteria}. Reported root causes are paraphrased from the cited papers; no values are reproduced.}\label{tbl:related-cases}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{0.20\textwidth}p{0.27\textwidth}p{0.27\textwidth}p{0.21\textwidth}@{}}
+\toprule
+Case study (component / engine) & Reported root cause & BowTie barrier triggered & Indicator that would flag it \\
+\midrule
+\citet{velezgodino2019overheadvalvetrain}; overhead valve train, urban bus & Operational misuse and inadequate inspection intervals & M3 (operating envelope at design) and M5 (predictive maintenance via vibration) & Mitigative side; outside the deterministic indicator set \\
+\addlinespace
+\citet{soffritti2018wornvalvetrain}; rocker-arm / pushrod interfaces, four-cylinder diesel ($\sim$1\,000~h) & Valve misalignment relative to the seat insert & Threat: out-of-tolerance assembly $\rightarrow$ candidate geometric/quality barrier P6 (extension) & Outside the present indicator set; flagged qualitatively by the bow chain \\
+\addlinespace
+\citet{xing2021valvespringEAC}; high-strength valve springs (premature fatigue) & Environment-assisted cracking due to surface condition and lubricant chemistry & P4 (high-fatigue-resistance spring material) & Goodman factor of safety $n_{f}$ with discounted shear endurance limit $S_{se}$ \\
+\addlinespace
+\citet{zhao2023camshaftV6}; camshaft bearings, V6 diesel & Asperity-contact regime violating the full-hydrodynamic-lubrication assumption & Threat: lubrication degradation; \emph{outside the present preventive set} & Outside scope; motivates a lubrication-regime barrier in procedure extensions \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The methodological literature on the BowTie diagram itself has
+matured in parallel. The review by \citet{deruijter2016bowtiereview}
+remains the canonical reference for the qualitative formulation and
+catalogues the variations adopted in the chemical, aerospace, and
+nuclear industries. \citet{khakzad2013bowtiebayesian} propose a mapping
+of the BowTie into a Bayesian network so that the static qualitative
+diagram becomes dynamic and probabilistic; their construction is
+adopted in part by the BowTie tool used in the offshore industry.
+\citet{aust2019bowtieaircraft} apply the methodology to aircraft engine
+borescope inspection and show that, even in the absence of
+probabilistic data, the BowTie diagram is an effective communication
+artefact between maintenance planners, inspectors, and reliability
+engineers.
+
+It is also relevant to acknowledge a parallel branch of the literature
+that extends the conventional FMEA in different directions: fuzzy-FMEA
+formulations and analytic-hierarchy-process-based weighting (AHP-FMEA)
+have been used in mechanical reliability to mitigate the loss of
+resolution of the multiplicative Risk Priority Number (RPN). The
+present work is complementary to those extensions: it does not aim
+to refine the FMEA score but to replace the single-score logic with
+a barrier-by-barrier deterministic check, and is therefore
+positioned closer to the BowTie tradition than to fuzzy/AHP-FMEA.
+
+To the best of the authors' knowledge, no published study applies the
+BowTie methodology to the valve train of a high-rpm spark-ignition
+cylinder head, and no study couples the BowTie diagram to the
+analytical sizing of the intake valve and the valve spring as a
+reproducible barrier-evaluation procedure. The present work fills both
+gaps.
