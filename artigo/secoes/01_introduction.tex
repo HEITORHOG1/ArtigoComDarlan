@@ -83,40 +83,46 @@ high-performance cylinder heads operating at high rotational speed.
 \end{enumerate}
 
 % --- 1.5 Positioning of the contribution -------------------------------
-\noindent\textbf{Positioning of the contribution.} This work is a
-\emph{prospective, design-stage} reliability assessment of a
-high-rpm valve train; it is not a forensic post-failure analysis.
-The manuscript identifies the relevant failure mechanisms of the
-high-rpm valve train (valve float, bounce, approach to coil bind,
-surge resonance, fatigue) and proposes barrier-centric preventive
-actions, organising the analytical sizing of the valve and the
-springs around the BowTie methodology. The novelty in relation to
-the international literature is domain-specific and incremental, not
-methodological in the broad sense: quantitative extensions of the
-BowTie diagram have been previously proposed
-(\citealp{khakzad2013bowtiebayesian}, via Bayesian-network mapping;
-LOPA, fault-tree-coupled BowTie, and DyPASI in process safety),
-and the present work does not claim to introduce a new general
-method. The original contribution is the explicit mapping of each
-preventive barrier to a deterministic indicator derived from the
-engineering sizing of the intake valve and the dual valve springs of
-the AP 1.8 head, with a literature-anchored pass criterion for each,
-and the identification of the resulting critical barriers under the
-operating envelope adopted. The procedure is qualitatively validated
-against four documented valve-train failure cases from the recent
-literature
-\citep{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6},
-showing that each reported root cause maps to a specific preventive
-barrier of the BowTie diagram and would have been flagged at the
-design stage by the corresponding indicator. An empirical
-verification on a dedicated test rig is identified as the priority
-direction for future work, and a concrete validation roadmap (see
-Section~\ref{sec:conclusion}) specifies the test-rig instrumentation
-and acceptance criteria. The claim that no published study applies
-the BowTie methodology to the valve train of a high-rpm
-spark-ignition cylinder head is supported by a search of the Scopus
-and Web of Science databases conducted in April 2026 with the query
-strings
+\noindent\textbf{Positioning of the contribution.} This work
+operates at the interface between forensic failure analysis and
+design-stage prevention: it takes the root causes reported in the
+recent valve-train failure literature
+\citep{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6}
+as the empirical basis and distils them into a structured,
+deterministic preventive procedure usable before a prototype is
+built. The relevant failure mechanisms of the high-rpm valve train
+(valve float, bounce, approach to coil bind, surge resonance,
+fatigue) are reorganised around the BowTie methodology, and the
+analytical sizing of the valve and the springs is mapped, barrier
+by barrier, onto deterministic indicators with literature-anchored
+pass criteria. The contribution is therefore best characterised as
+\emph{forensic-informed prevention}: the forensic content is borrowed
+faithfully from peer-reviewed case studies; the original step is the
+translation of those root causes into a reproducible,
+indicator-driven barrier check applicable at the design stage.
+Quantitative extensions of the BowTie diagram have been previously
+proposed (\citealp{khakzad2013bowtiebayesian}, via Bayesian-network
+mapping; LOPA, fault-tree-coupled BowTie, and DyPASI in process
+safety), and the present work does not claim a new general method;
+the explicit mapping of each preventive barrier to a deterministic
+indicator derived from the engineering sizing of the intake valve
+and the dual valve springs of the AP 1.8 head --- with the
+identification of the resulting critical barriers under the operating
+envelope adopted --- is the original contribution. The procedure is
+benchmarked against the same four documented failure cases:
+three of the four root causes are captured by the deterministic
+indicator layer (\textit{coil bind / fatigue / dynamic loss of
+contact}), and the fourth case \citep{zhao2023camshaftV6} defines
+the boundary of the current barrier set and motivates a documented
+extension to the lubrication-regime barrier (see
+Section~\ref{sec:disc-limitations}). An empirical verification on a
+dedicated test rig with statistical acceptance criteria is
+identified as the priority direction for future work, and a concrete
+validation roadmap is specified in Section~\ref{sec:conclusion}. The
+claim that no published study applies the BowTie methodology to the
+valve train of a high-rpm spark-ignition cylinder head is supported
+by a search of the Scopus and Web of Science databases conducted in
+April 2026 with the query strings
 \texttt{("BowTie" OR "bow-tie") AND ("valve train" OR "valve-train" OR "valve spring") AND ("spark ignition" OR "SI engine" OR "high rpm")},
 which returned no relevant hits.
 

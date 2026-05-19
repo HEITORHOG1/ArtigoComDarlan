@@ -13,108 +13,150 @@ cam}, together with five consequences and five mitigative barriers. To
 overcome the qualitative limitation of the classical BowTie, each
 preventive barrier was associated with a deterministic indicator
 (dynamic follower-contact ratio, spring natural frequency,
-coil-bind margin, and Goodman fatigue factor of safety), with
-the hot clearance treated as a qualitatively verified barrier
-outside the deterministic layer, all anchored in
-literature-based pass criteria.
+coil-bind margin, Goodman fatigue factor of safety, and a
+closed-form differential hot-clearance estimate), all anchored in
+literature-based pass criteria. A probabilistic refinement
+propagated the catalogued ASTM~A877/A877M wire tolerances and
+strength dispersion through the indicators using a Monte Carlo
+simulation with $N=2\times 10^{5}$ trials, converting nominal-point
+status labels into manufacturing-realistic probabilities of barrier
+compliance.
 
 For the AP 1.8 head under the operating envelope adopted, the analysis
 identified two concurrent at-risk preventive barriers in the baseline
-configuration: (i) the \emph{outer-spring coil-bind margin}
-($M_{\mathrm{out}}=0.78$~mm against the project criterion
-$M\geq 1.5$~mm); and (ii) the \emph{inner-spring fatigue Goodman
-factor of safety}
-($n_{f,\mathrm{in}}\approx 0.68$ against $n_{f}\geq 1$ for the
-fluctuating shear loading between seat preload and full-lift force). The two findings affect different physical components and
-require independent design interventions. The
-\emph{outer-spring natural frequency}
-($f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}\approx 3.81$) emerges as a
-residual concern just below the conventional 4$\times$ rule of
-thumb. The remaining barriers --- dynamic follower contact
-($R\geq 1.343$ in the worst case), inner-spring coil-bind margin,
-and outer-spring fatigue ($n_{f,\mathrm{out}}\approx 1.27$) ---
+configuration and one additional marginal barrier exposed by the
+probabilistic refinement:
+(i) the \emph{outer-spring coil-bind margin}
+($M_{\mathrm{out}}=0.78$~mm at nominal, against the project criterion
+$M\geq 1.5$~mm, with $P[\mathrm{fail}]=77.9\,\%$ under ASTM~A877
+tolerance);
+(ii) the \emph{inner-spring fatigue Goodman factor of safety}
+($n_{f,\mathrm{in}}\approx 0.68$ at nominal, against $n_{f}\geq 1$,
+with $P[n_{f}<1]=100\,\%$ across the manufactured population); and
+(iii) the \emph{inner-spring coil-bind margin}, classified as
+active at the nominal point ($M_{\mathrm{in}}=2.38$~mm) but
+re-classified as marginal under tolerance propagation
+($P[\mathrm{fail}]=16.2\,\%$), a finding that the deterministic
+nominal-point analysis does not surface. The two at-risk barriers
+affect different physical components and require independent design
+interventions. The \emph{outer-spring natural frequency}
+($f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}\approx 3.81$,
+$P[\mathrm{fail}]=94.4\,\%$ against the conventional 4$\times$
+rule) emerges as an additional residual concern. The remaining
+barriers --- dynamic follower contact
+($R\geq 1.343$ in the worst case at 10\,000~rpm; the
+6\,000--12\,000~rpm sweep of Section~\ref{sec:res-envelope}
+identifies the loss-of-contact boundary at approximately
+11\,500~rpm), outer-spring fatigue ($n_{f,\mathrm{out}}\approx 1.27$,
+$P[\mathrm{fail}]<0.01\,\%$), inner-spring surge ratio, and the
+differential hot-clearance indicator
+($c_{\mathrm{cold,req}}=1.25$~mm, bracket [1.13, 1.60]~mm) ---
 satisfy the pass criteria with non-uniform margins. The comparison
-with a conventional FMEA/RPN of the same threats showed that the
-quantitative-coupled BowTie offers (i) explicit visualisation of the
-causal chain, (ii) reproducibility from the sizing calculations, and
-(iii) identification of multiple concurrent critical barriers via a
-sensitivity analysis that a single-score RPN would have missed.
+with a conventional FMEA scored under the AIAG--VDA 2019 rubric
+showed that the quantitative-coupled BowTie offers (i) explicit
+visualisation of the causal chain, (ii) reproducibility from the
+sizing calculations, and (iii) identification of multiple concurrent
+critical barriers via a sensitivity analysis that the harmonised
+ordinal score would have missed.
 
-The proposed methodology is reproducible and can be transposed to other
-high-performance cylinder heads operating at high rotational speed,
-provided the analytical sizing of the valve train is available. The
-procedure was qualitatively validated against four documented
+The proposed methodology is reproducible and can be transposed to
+other high-performance cylinder heads operating at high rotational
+speed, provided the analytical sizing of the valve train is
+available. A construct-validity benchmark against four documented
 valve-train and engine-component failure case studies from the recent
-literature \citep{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6}:
-one case is caught quantitatively by the deterministic indicator set
-(Xing, via the Goodman factor of safety), one is caught on the
-mitigative side as designed (V\'elez Godi\~no), one is flagged
-qualitatively only and motivates a candidate assembly-tolerance
-preventive barrier (Soffritti), and one falls outside the present
-scope and motivates a candidate lubrication-regime barrier (Zhao).
-This pattern confirms the diagnostic behaviour of the procedure but
-does not establish the absolute magnitude of the indicator margins
-for the AP 1.8 head; an empirical campaign on a dedicated test rig
-remains necessary, and its scope is specified next.
+literature \citep{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6}
+shows that three of the four cases are accounted for within the
+present framework as formulated --- one is caught quantitatively by
+the deterministic indicator set (Xing, via the Goodman factor of
+safety), one is caught on the mitigative side as designed
+(V\'elez Godi\~no), and one is flagged qualitatively and motivates a
+candidate assembly-tolerance preventive barrier (Soffritti) --- while
+the fourth case (Zhao) defines the boundary of the current barrier
+set and motivates a documented lubrication-regime extension. The
+benchmark confirms construct validity but does not establish
+predictive validity nor the absolute magnitude of the indicator
+margins for the AP 1.8 head; a test-rig campaign with statistically
+specified acceptance criteria therefore remains necessary, and its
+scope is specified next.
 
-\paragraph{Validation roadmap.}
-The minimum experimental verification programme that would confirm
-the analytical findings of this paper for the AP 1.8 head comprises
-three coordinated stages:
+\paragraph{Validation roadmap with statistical acceptance criteria.}
+The minimum experimental verification programme that would close the
+empirical gap on the analytical findings for the AP 1.8 head
+comprises three coordinated stages. Each stage is specified with an
+explicit sample size, instrumentation envelope, and statistical
+acceptance rule keyed to the analytical predictions of
+Section~\ref{sec:res-quant} and the probabilistic envelope of
+Section~\ref{sec:res-mc}.
 
 \begin{enumerate}
-\item \textbf{Spring rig --- modal verification.} A single-spring
-test fixture instrumented with a non-contacting laser-displacement
-sensor on the active coils is used to identify the surge response
-of both springs across the 50--600~Hz band. Acceptance criterion:
-the measured first surge frequency shall lie within $\pm$5\,\% of
-the analytical prediction
-($f_{n,\mathrm{out}}\approx 318$~Hz,
-$f_{n,\mathrm{in}}\approx 571$~Hz,
-Eqs.~\eqref{eq:fn-out}--\eqref{eq:fn-in}) under the seat-preload
-boundary condition.
+\item \textbf{Spring rig --- modal verification ($n\geq 3$
+specimens per spring).} A single-spring test fixture
+instrumented with a non-contacting laser-displacement sensor
+($\geq$ 1~kHz sampling) on the active coils identifies the surge
+response across the 50--600~Hz band, under the catalogued
+seat-preload boundary condition.
+\emph{Acceptance criterion}: the sample-mean first surge frequency
+$\bar{f}_{n}$ from $n\geq 3$ specimens shall fall within the 90\,\%
+confidence interval of the analytical prediction (calibrated to the
+MC distribution of Section~\ref{sec:res-mc}, i.e.\
+$f_{n,\mathrm{out}}\in [304,\,334]$~Hz and
+$f_{n,\mathrm{in}}\in [545,\,600]$~Hz at 90\,\% confidence). A
+failure of containment is reported as a falsification of the
+analytical model and triggers re-evaluation of the active-mass
+hypothesis (total versus Rayleigh-effective).
+
 \item \textbf{Motored-engine speed sweep --- coil-bind and
 follower-contact verification.} A motored-engine campaign from
-6\,000 to 10\,000~rpm engine speed is conducted with a
-non-contacting valve-position transducer sampled at 50~kHz to
-resolve the deceleration peak of the cam profile. Two acceptance
-criteria are applied: (a) absence of valve float at the
-deceleration peak ($a_{\max,-}=20\,362$~m\,s$^{-2}$,
-Section~\ref{sec:res-quant}), confirmed by continuity of the
-valve-position signal with the cam profile; and (b) measurement
-of the residual coil-bind margin within $\pm$0.1~mm, against the
-analytical prediction $M_{\mathrm{out}}=0.78$~mm
-(Eq.~\eqref{eq:Mout}) for the baseline outer spring, increasing
-to the design target $M\approx 2.0$~mm after the corrective
-geometric change of $H_{\mathrm{inst,ideal}}=47.72$~mm and
-$L_{0,\mathrm{ideal}}=55.56$~mm prescribed by the sizing note.
-\item \textbf{Inner-spring fatigue campaign --- Goodman-criterion
-verification.} A representative sample of inner springs ($n\geq 5$)
-is cycled under shear stress alternating
-between the seat preload and the full-lift load, reproducing the
-analytical mean and alternating components
-$\tau_{m,\mathrm{in}}\approx 858$~MPa and
-$\tau_{a,\mathrm{in}}\approx 374$~MPa. Each specimen is run to
-either run-out at $10^{8}$ cycles or first-failure indication.
-Acceptance criterion: the empirical Goodman factor of safety,
-estimated from the fraction of specimens reaching run-out, shall
-agree with the analytical prediction
-$n_{f,\mathrm{in}}\approx 0.68$ within the resolution of the
-sample size, thereby confirming that the baseline inner-spring
-configuration is at risk and that the metallurgical or geometric
-design intervention identified in Section~\ref{sec:disc-design}
-is necessary.
+6\,000 to 12\,000~rpm engine speed (the dynamic-loss-of-contact
+boundary identified in Section~\ref{sec:res-envelope}) is
+conducted with a non-contacting valve-position transducer sampled
+at $\geq$~50~kHz to resolve the deceleration peak of the cam
+profile. Two acceptance criteria are applied:
+\emph{(2a)} absence of valve float at the deceleration peak
+($a_{\max,-}=20\,362$~m\,s$^{-2}$, Section~\ref{sec:res-quant})
+verified by zero-crossing analysis of the
+(measured$-$predicted) lift residual at each rpm point, with a
+detection threshold of $\geq$~0.05~mm departure for $\geq$~3
+consecutive cam events;
+\emph{(2b)} the residual coil-bind margin measured at full lift
+($n\geq 5$ measurements at 10\,000~rpm) shall lie within
+$\pm$0.1~mm of the MC 50\,\% credible interval
+$M_{\mathrm{out}}\in [0.51,\,1.10]$~mm for the baseline outer
+spring (or $M_{\mathrm{out}}\approx 2.0$~mm post-correction). A
+single instance of $M_{\mathrm{out}}<0$~mm (hard contact) at any
+rpm within the safe envelope falsifies the corrected design.
+
+\item \textbf{Inner-spring fatigue campaign --- Goodman criterion
+verification ($n\geq 5$ specimens).} A representative sample of
+inner springs is cycled under shear-stress amplitudes reproducing
+the analytical
+$\tau_{m,\mathrm{in}}=858$~MPa and
+$\tau_{a,\mathrm{in}}=374$~MPa, with each specimen run to either
+run-out at $10^{8}$ cycles or first-failure indication.
+\emph{Acceptance criterion}: with $n=5$ specimens and assuming a
+Weibull failure model, the upper one-sided 90\,\% confidence
+bound on the empirical Goodman factor of safety
+$\hat{n}_{f,\mathrm{in}}$ shall remain below unity ($\leq 0.78$
+upper bound for 0 of 5 specimens reaching run-out), thereby
+confirming the analytical prediction
+$n_{f,\mathrm{in}}\approx 0.68$ and the MC 5\,\% quantile
+$n_{f,\mathrm{in,5\%}}=0.637$. A pass condition
+($\hat{n}_{f}\geq 1$ upper bound) on 5 of 5 specimens reaching
+run-out would falsify the predicted Goodman deficit and require
+re-evaluation of the shear endurance limit calibration.
 \end{enumerate}
 
 The total test-rig hours for this minimum programme are estimated at
 the order of 600--800~h. Subsequent extensions of the work will
-address (i) probabilistic Monte~Carlo propagation of the
-ASTM~A877/A877M tolerances and operational variability into a
-barrier-by-barrier probability of failure, (ii) extension of the
-preventive set with candidate barriers on assembly tolerance and on
-the lubrication regime motivated by the qualitative validation of
-Section~\ref{sec:res-litvalidation}, (iii) coupled thermal-structural
-analysis of the cylinder head to replace the first-order estimate of
-the hot-clearance barrier, and (iv) integration of the resulting
-indicator set as a constraint in the multi-objective optimisation of
-the cylinder-head geometry.
+address (i) a second-generation Monte Carlo propagation that adds
+correlated operational sources (thermal-soak transients, oil
+condition, valve-seat wear) and joint barrier-failure probabilities;
+(ii) extension of the preventive set with candidate barriers on
+assembly tolerance and on the lubrication regime motivated by the
+construct-validity benchmark of Section~\ref{sec:res-litvalidation};
+(iii) coupled thermal--structural finite-element analysis of the
+cylinder head to refine the differential hot-clearance estimate of
+Section~\ref{sec:res-quant} and tighten the
+$c_{\mathrm{cold,req}}\in [1.13,\,1.60]$~mm bracket; and
+(iv) integration of the resulting indicator set as a constraint in
+the multi-objective optimisation of the cylinder-head geometry.

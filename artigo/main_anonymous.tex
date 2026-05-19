@@ -1,49 +1,33 @@
 %% =====================================================================
-%% BowTie Risk Analysis of the Valve Train in a High-Performance VW AP 1.8
-%% Cylinder Head Operating at 10,000 rpm
+%% ANONYMOUS BUILD for double-blind review.
 %%
-%% Authors:    Darlan Costa Porto (corresponding)
-%%             Heitor Oliveira Goncalves
-%%             Prof. Dr. Jose Cristiano Pereira
-%% Affiliation: Universidade Catolica de Petropolis (UCP)
-%% Target journal: Proceedings of the IMechE, Part D --
-%%                 Journal of Automobile Engineering (SAGE, Q2)
-%% Template (current draft): cas-dc.cls (double column). A SAGE
-%%                 sagej.cls port is planned before submission.
+%% This file is identical to main.tex except that:
+%%   - author block (\author, \cormark, \ead, \credit, \affiliation,
+%%     \cortext, \shortauthors) has been removed
+%%   - \section*{Acknowledgments} (mentions UCP) has been removed
+%%   - \printcredits (rebuilds the CRediT statement with author names)
+%%     has been removed
+%%   - bibliography uses refs_anonymous.bib, in which the underlying
+%%     Master's dissertation is anonymised
 %%
 %% Compilation:
-%%   pdflatex main
-%%   bibtex   main
-%%   pdflatex main
-%%   pdflatex main
+%%   pdflatex main_anonymous
+%%   bibtex   main_anonymous
+%%   pdflatex main_anonymous
+%%   pdflatex main_anonymous
 %% =====================================================================
 
 \documentclass[a4paper,fleqn]{cas-dc}
 
-% Author-year at submission. The SAGE Vancouver style will be applied
-% on template port; for the current cas-dc draft the natbib author-year
-% formatting is retained.
-% Note: no `longnamesfirst' option — citations with 3+ authors always use
-% "et al." to avoid line-overflow in the narrow cas-dc columns.
 \usepackage[authoryear]{natbib}
-
-% Useful for British English hyphenation
 \usepackage[UKenglish]{babel}
-
-% Math typesetting
 \usepackage{amsmath}
 \usepackage{amssymb}
-
-% Better tables
 \usepackage{booktabs}
-
-% Native vector figures (BowTie diagram, tornado plot, frequency map)
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning,arrows.meta,patterns}
-
-% Hyperref last for safety
 \usepackage{hyperref}
 
 \begin{document}
@@ -52,57 +36,25 @@
 \def\textpagefraction{.001}
 
 % =====================================================================
-% Frontmatter
+% Frontmatter --- author block removed for double-blind review
 % =====================================================================
 
 \shorttitle{BowTie risk analysis of the AP 1.8 valve train at 10\,000~rpm}
-\shortauthors{D.~C.~Porto, H.~O.~Gon\c{c}alves, F.~Pradelle and J.~C.~Pereira}
+\shortauthors{Anonymous}
 
 \title[mode=title]{BowTie Risk Analysis of the Valve Train in a High-Performance VW AP 1.8 Cylinder Head Operating at 10,000~rpm}
 
-% --- First author (corresponding) ---
-\author[1]{Darlan Costa Porto}[orcid=0009-0004-7836-7256]
-\cormark[1]
-\ead{darlan.42540004@ucp.br}
-\credit{Conceptualization, Methodology, Formal analysis, Investigation, Visualization, Writing -- original draft}
+% --- Anonymous author / affiliation block (required by cas-dc.cls) ---
+\author[1]{Anonymous}
 
-\affiliation[1]{organization={Centre for Engineering and Computing, Graduate Programme in Engineering Systems, Universidade Cat\'olica de Petr\'opolis},
-            addressline={Rua Bar\~ao do Amazonas, 124},
-            city={Petr\'opolis},
-            postcode={25685-100},
-            state={RJ},
-            country={Brazil}}
-
-% --- Second author (co-author, professor) ---
-\author[1]{Heitor Oliveira Gon\c{c}alves}[orcid=0000-0002-5866-2213]
-\ead{heitorhog@gmail.com}
-\credit{Methodology, Validation, Formal analysis, Writing -- review \& editing, Supervision}
-
-% --- Third author (external collaborator, PUC-Rio) ---
-\author[2]{Florian Pradelle}[orcid=0000-0003-4306-8083]
-\ead{pradelle@puc-rio.br}
-\credit{Methodology, Validation, Writing -- review \& editing}
-
-\affiliation[2]{organization={Department of Mechanical Engineering, Pontif\'icia Universidade Cat\'olica do Rio de Janeiro (PUC-Rio)},
-            addressline={Rua Marqu\^es de S\~ao Vicente, 225, G\'avea},
-            city={Rio de Janeiro},
-            postcode={22451-900},
-            state={RJ},
-            country={Brazil}}
-
-% --- Fourth author (advisor) ---
-\author[1]{Jos\'e Cristiano Pereira}[orcid=0000-0002-2329-0560]
-\ead{josecristiano.pereira@ucp.br}
-\credit{Conceptualization, Methodology, Supervision, Writing -- review \& editing, Project administration}
-
-\cortext[1]{Corresponding author.}
+\affiliation[1]{organization={[Author affiliations removed for double-blind review]}}
 
 % --- Abstract (<= 250 words) ---
 \begin{abstract}
 The valve train is load-critical when a spark-ignition engine is pushed to high rotational speeds: at 10\,000~rpm inertial demand, spring dynamics, and head thermal management become tightly coupled and small departures from the design envelope can cascade into valve--piston collision. This work distils the forensic root causes reported in recent valve-train failure case studies into a structured, deterministic preventive procedure: a quantitative-coupled BowTie for design-stage reliability assessment of high-rpm valve trains, applied to a high-performance VW AP 1.8 head at 10\,000~rpm. Threats, preventive barriers, consequences, and mitigative barriers are mapped around the top event ``loss of follower contact between valve and cam''; each preventive barrier is linked to a deterministic indicator with a literature-anchored pass criterion, derived from the analytical sizing of the intake valve and the dual Cr--Si springs. All four dynamic-ratio indicators meet the project criterion ($R\geq 1.20$, worst case 1.343), but two concurrent at-risk barriers are identified: the outer-spring coil-bind margin ($M_{\mathrm{out}}=0.78$~mm vs 1.5~mm) and the inner-spring Goodman factor of safety ($n_{f,\mathrm{in}}\approx 0.68$ vs 1). The two findings affect different components and demand independent design interventions. A Monte Carlo refinement under ASTM~A877/A877M tolerances ($N=2\times 10^{5}$ trials) confirms the inner-spring Goodman deficit in 100\,\% of the manufactured population and re-classifies the inner-spring coil-bind margin from active to marginal ($P[\mathrm{fail}]=16.2\,\%$). A construct-validity benchmark against four published valve-train failure investigations captures three cases within the framework and identifies the fourth as a documented barrier-set extension. A test-rig validation programme with statistical acceptance criteria closes the empirical gap.
 \end{abstract}
 
-% --- Highlights (3-5 bullets, <= 85 chars each) ---
+% --- Highlights ---
 \begin{highlights}
 \item Quantitative-coupled BowTie for high-rpm valve-train design assessment
 \item Top event: loss of valve--cam follower contact (float, bounce, coil bind)
@@ -111,7 +63,7 @@ The valve train is load-critical when a spark-ignition engine is pushed to high 
 \item Qualitative validation against four published valve-train failure cases
 \end{highlights}
 
-% --- Keywords (1-5, separated by \sep) ---
+% --- Keywords ---
 \begin{keywords}
 BowTie analysis \sep Valve train \sep Risk assessment \sep Internal combustion engine \sep Mechanical reliability
 \end{keywords}
@@ -130,9 +82,7 @@ BowTie analysis \sep Valve train \sep Risk assessment \sep Internal combustion e
 \input{secoes/06_conclusion}
 
 % =====================================================================
-% Declarations (declarations first, then Acknowledgments, then
-% \printcredits just before bibliography — order matches the official
-% els-cas-templates/cas-dc-sample.tex)
+% Declarations (Acknowledgments and \printcredits removed for blind review)
 % =====================================================================
 
 \section*{Declaration of competing interests}
@@ -148,33 +98,19 @@ the public, commercial, or not-for-profit sectors.
 No new experimental data were generated in this study. The analytical
 inputs of Tables~\ref{tbl:premises} and~\ref{tbl:quant-results} are
 fully traceable to the sizing calculations referenced in the text and
-to the underlying dissertation~\citep{porto2026dissertation}; no proprietary
-data are used. The Monte Carlo script that reproduces
+to the underlying Master's dissertation~\citep{porto2026dissertation};
+no proprietary data are used. The Monte Carlo script that reproduces
 Table~\ref{tbl:mc-results} (random seed 20260519, 200\,000 trials,
 Python 3.12, NumPy 2.2.6) is provided as supplementary material. The
 experimental validation roadmap of Section~\ref{sec:conclusion}
 specifies the empirical campaign required to confirm the deterministic
 indicators reported here.
 
-\section*{Acknowledgments}
-The authors thank the Centre for Engineering and Computing of the
-Universidade Cat\'olica de Petr\'opolis and the Graduate Programme in
-Engineering Systems for supporting the underlying Master's research
-project from which the analytical sizing of the AP 1.8 cylinder
-head was derived.
-
 % =====================================================================
-% CRediT statement (rendered by cas-dc.cls from the \credit{} blocks
-% in the frontmatter; placed just before bibliography per CAS sample)
-% =====================================================================
-
-\printcredits
-
-% =====================================================================
-% Bibliography
+% Bibliography (anonymised entry for the underlying dissertation)
 % =====================================================================
 
 \bibliographystyle{cas-model2-names}
-\bibliography{refs}
+\bibliography{refs_anonymous}
 
 \end{document}

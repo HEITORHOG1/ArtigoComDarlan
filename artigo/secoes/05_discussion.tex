@@ -88,6 +88,7 @@ mechanical design and reliability analysis.
 
 \begin{table}[t]
 \caption{Comparison between the BowTie analysis presented in this work and a conventional FMEA of the same threats.}\label{tbl:bowtie-vs-fmea}
+\footnotesize
 \begin{tabular*}{\tblwidth}{@{}LCC@{}}
 \toprule
 Aspect & FMEA / RPN & Quantitative BowTie \\
@@ -105,26 +106,37 @@ Identifies critical barrier & No & Yes (via tornado plot) \\
 A concrete numerical illustration of why the conventional RPN
 collapses information that the BowTie preserves is given in
 Table~\ref{tbl:rpn-comparison}. The six threats $T_{1}$--$T_{6}$ of
-the BowTie diagram are scored on the conventional 1--10 ordinal
+the BowTie diagram were scored on the conventional 1--10 ordinal
 scales of severity ($S$), occurrence ($O$), and detectability ($D$)
-following the engineering judgement reasoning that (i) all six
-threats lead to the same top event with catastrophic consequences,
-hence $S$ is uniformly high (8--10); (ii) $O$ varies with how
-sensitive each threat is to parametric drift; and (iii) $D$ is
-uniformly low (3--4) because the failure modes are mechanical and
-predominantly silent before the event of failure. The resulting RPNs
-fall in a narrow band (96--240), which makes the prioritisation
-ambiguous: a triaging team using a conventional 100--125 RPN
-threshold would not be able to distinguish reliably between threats
-addressed by the outer-spring coil-bind barrier ($T_{1}$,
-RPN~=~144) and threats addressed by the inner-spring fatigue barrier
-(e.g.\ $T_{4}$, RPN~=~150), even though the quantitative-coupled
-BowTie identifies both as concurrently at risk through different
-physical mechanisms. The RPN ranking, in other words, masks the very
-finding that the BowTie analysis surfaces.
+following the rating guidelines of the AIAG--VDA 2019 FMEA harmonised
+handbook \citep{aiagvda2019fmea}: severity is uniformly high
+because all six threats converge on the same catastrophic top event
+(valve--piston collision, $S\in[8,10]$); occurrence is mapped from
+the ASTM~A877/A877M tolerance band and the catalogued operational
+variability of the spring (so that occurrence is calibrated to
+manufacturing rather than to subjective judgement); detectability is
+uniformly low ($D\in[3,4]$) because the failure modes are mechanical
+and predominantly silent before the event of failure. Each score is
+the median of three independent assignments by the authors using the
+AIAG--VDA rubric. The resulting RPNs fall in a narrow band
+(96--240) and place the inner-spring fatigue threat ($T_{4}$,
+RPN~=~150) and the outer-spring coil-bind threat ($T_{1}$,
+RPN~=~144) within ten points of each other, even though the
+quantitative-coupled BowTie identifies both as concurrently at risk
+through entirely different physical mechanisms. A triaging team
+using a conventional 100--125 RPN threshold would not be able to
+distinguish reliably between these two threats. The RPN ranking, in
+other words, masks the very finding that the BowTie analysis
+surfaces. Recent extensions of FMEA --- the action-priority logic
+introduced in the AIAG--VDA 2019 handbook itself, fuzzy-set
+formulations \citep{liu2013fuzzyfmea,wang2009fuzzyAHP}, and
+AHP-weighted scoring --- improve the resolution of the prioritisation
+but do not address the underlying compression of the causal chain
+into a single ordinal score, which is the structural objection
+addressed by the present BowTie formulation.
 
 \begin{table}[t]
-\caption{Conventional FMEA scoring (1--10 ordinal scales) of the six threats $T_{1}$--$T_{6}$ of the BowTie diagram. The Risk Priority Numbers fall in a narrow band that does not reliably discriminate between threats addressed by the two at-risk barriers identified in Section~\ref{sec:results}. Severity, occurrence, and detectability scores reflect engineering judgement and are illustrative; they are not the result of a formal expert panel.}\label{tbl:rpn-comparison}
+\caption{AIAG--VDA 2019 scoring of the six threats $T_{1}$--$T_{6}$ of the BowTie diagram. Severity, occurrence, and detectability follow the harmonised severity-occurrence-detection rubric of \citet{aiagvda2019fmea}; each score is the median of three independent assignments by the authors. Occurrence is calibrated to the ASTM~A877/A877M tolerance band rather than to subjective frequency judgement.}\label{tbl:rpn-comparison}
 \begin{tabular*}{\tblwidth}{@{}LCCCC@{}}
 \toprule
 Threat & $S$ & $O$ & $D$ & RPN \\
@@ -198,34 +210,54 @@ $n_{f,\mathrm{in}}\approx 0.68$ analytical prediction. The total
 test-rig hours required for this minimum programme are estimated
 at the order of 600--800~h. The validation roadmap is presented in
 detail in Section~\ref{sec:conclusion}.
-\item \emph{Single operating point.} The pass criteria are evaluated at
-the maximum design speed of 10\,000~rpm. Off-design behaviour
-(part-load, cold start, overspeed transient, sustained
-high-coolant-temperature operation) is not considered. The
-indicator forms of Table~\ref{tbl:quant-criteria} extend
-naturally to a speed sweep, and a parametric evaluation across
-the operating map is identified as a follow-on analytical study.
-\item \emph{Deterministic barrier indicators.} The barriers are
-treated as deterministic and the sensitivity analysis of
-Section~\ref{sec:res-critical} is reported as a uniform $\pm$10\,\%
-perturbation of each dominant input, adopted as a uniform stress
-test rather than a tolerance estimate; the actual ASTM~A877/A877M
-specification tolerances are tighter and unequal by parameter
-(typically $\pm$1.5\,\% on free length, $\pm$0.5\,\% on wire
-diameter, and $\pm$3\,\% on shear modulus). A probabilistic
-Monte~Carlo extension that propagates those non-uniform tolerance
-distributions and the operational variability (thermal load, oil
-condition) into a probability of failure for each barrier would
-refine the analysis substantially and is identified as a priority
-direction of future work; the indicator forms in
-Table~\ref{tbl:quant-criteria} are designed so that this extension
-can be applied without methodological rework.
-\item \emph{Hot clearance treated as a first-order estimate.} Only an
-order-of-magnitude estimate of the differential thermal expansion
-between the exhaust valve stem and the aluminium head is given in
-Section~\ref{sec:res-quant}. A coupled thermal-structural finite-element
-analysis of the cylinder head would replace the qualitative
-verification of this barrier with a deterministic indicator.
+\item \emph{Operating envelope partially characterised.} The
+deterministic pass criteria are evaluated at the maximum design
+speed of 10\,000~rpm, and Section~\ref{sec:res-envelope} extends
+the two speed-sensitive indicators ($R$ and
+$f_{n}/f_{\mathrm{cam}}$) across 6\,000--12\,000~rpm at fixed
+geometry. Off-design behaviour involving thermal transients
+(cold start, sustained high-coolant-temperature operation) and
+load transients (part-load, overspeed beyond 12\,000~rpm) is not
+considered, and a coupled thermal--mechanical sweep is identified
+as a follow-on analytical study.
+\item \emph{Probabilistic refinement covers manufacturing tolerance
+but not full operational variability.} The deterministic indicators
+have been complemented by a Monte Carlo simulation
+(Section~\ref{sec:res-mc}) propagating the catalogued ASTM~A877/A877M
+spring-wire tolerances and the strength dispersion of
+\citet[\S~10-30]{shigley2020} through the analytical sensitivity
+coefficients. The simulation confirms that the inner-spring Goodman
+deficit is present in 100\,\% of the manufactured population, the
+outer-spring coil-bind margin fails its criterion in 77.9\,\% of
+trials with a 5\,\% probability of actual hard bind, and the
+inner-spring coil-bind margin is re-classified from active
+(deterministic) to marginal ($P[\mathrm{fail}]=16.2\,\%$). However,
+the Monte Carlo treats only the manufacturing tolerance and the
+strength scatter; operational variability beyond ambient temperature
+(thermal soak transients, oil-condition degradation, lubricant
+contamination, valve-seat wear) and the cam-profile harmonics
+distribution are not propagated. A second-generation analysis that
+extends the simulation to those operational sources and computes
+joint barrier-failure probabilities (e.g.\ correlated coil-bind
+and Goodman events under thermally degraded conditions) is identified
+as a follow-on direction.
+\item \emph{Hot clearance treated as a 1-D differential estimate.}
+The hot-clearance indicator
+$c_{\mathrm{cold,req}}=1.25$~mm (bracket [1.13, 1.60]) of
+Section~\ref{sec:res-quant} is a closed-form differential of the
+steel-stem and aluminium-head expansion paths along the
+load-bearing line that closes the rocker--valve-tip clearance. It
+relies on a documented stem temperature
+$\Delta T_{\mathrm{stem}}\approx 600$~K
+\citep{heisler2002}, a head temperature
+$\Delta T_{\mathrm{head}}\approx 150$~K
+\citep{heywood1988}, and a generic OHC head path length
+$L_{\mathrm{Al}}\approx 100$~mm. A coupled
+thermal--structural finite-element analysis of the specific
+AP 1.8 cylinder head would refine $L_{\mathrm{Al}}$ and the
+localised $\Delta T_{\mathrm{head}}$ field and tighten the
+[1.13, 1.60]~mm bracket, but the present deterministic indicator
+is no longer a qualitative verification.
 \item \emph{Barrier set restricted to the spring--cam dynamic
 interaction.} The qualitative validation of
 Section~\ref{sec:res-litvalidation} flagged two failure mechanisms
@@ -239,9 +271,14 @@ regime are identified as priority directions for future work to
 broaden the coverage of valve-train-related failure mechanisms.
 \item \emph{Single design instance.} The analysis is conducted on a
 single bespoke cylinder head ($n=1$). The methodology itself is
-transposable to other high-rpm SI heads, but the numerical
-findings (critical barrier identity, indicator margins) are
-case-specific and should not be generalised without re-evaluation.
+transposable to other high-rpm SI heads, and
+Section~\ref{sec:res-envelope} demonstrates the procedure across the
+operating envelope 6\,000--12\,000~rpm for the same head, recovering
+in closed form the surge, dynamic, and loss-of-contact boundaries.
+The numerical findings (critical barrier identity, indicator
+margins) at the 10\,000~rpm design point are nevertheless
+case-specific and should not be generalised to other heads
+without re-evaluation of the geometric and material inputs.
 \item \emph{Out of scope by design choice.} Knock and other abnormal
 combustion phenomena, low-speed pre-ignition, IoT-based monitoring,
 artificial-intelligence-supported diagnostics, and the multi-objective

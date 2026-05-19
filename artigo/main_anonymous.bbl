@@ -11,6 +11,16 @@
 \providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Phdthesis
+\bibitem[{{Anonymous}(2026)}]{porto2026dissertation}
+\bibinfo{author}{{Anonymous}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Master's dissertation: thermodynamic analysis of
+  combustion and air-flow optimisation in a high-performance cylinder head for
+  the {AP}~1.8 engine}.
+\newblock \bibinfo{type}{Master's dissertation}. [Institution removed for
+  double-blind review].
+\newblock \bibinfo{note}{Author and institutional details available on request
+  from the corresponding author after review}.
 %Type = Article
 \bibitem[{Aust and Pons(2019)}]{aust2019bowtieaircraft}
 \bibinfo{author}{Aust, J.}, \bibinfo{author}{Pons, D.}, \bibinfo{year}{2019}.
@@ -77,15 +87,6 @@
 \newblock \bibinfo{journal}{Expert Systems with Applications}
   \bibinfo{volume}{40}, \bibinfo{pages}{828--838}.
 \newblock \DOIprefix\doi{10.1016/j.eswa.2012.08.010}.
-%Type = Phdthesis
-\bibitem[{Porto(2026)}]{porto2026dissertation}
-\bibinfo{author}{Porto, D.C.}, \bibinfo{year}{2026}.
-\newblock \bibinfo{title}{Otimiza\c{c}\~ao do cabe\c{c}ote do motor {AP} 1.8:
-  uma an\'alise termodin\^amica da combust\~ao e de fluxo de escoamento de ar}.
-\newblock \bibinfo{type}{Master's dissertation}. Universidade Cat\'olica de
-  Petr\'opolis, Programa de Mestrado em Sistemas de Engenharia.
-  \bibinfo{address}{Petr\'opolis, RJ, Brazil}.
-\newblock \bibinfo{note}{Forthcoming}.
 %Type = Article
 \bibitem[{de~Ruijter and Guldenmund(2016)}]{deruijter2016bowtiereview}
 \bibinfo{author}{de~Ruijter, A.}, \bibinfo{author}{Guldenmund, F.},

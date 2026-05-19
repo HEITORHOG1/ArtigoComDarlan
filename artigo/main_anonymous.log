@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.6)  19 MAY 2026 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.6)  19 MAY 2026 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**./main_anonymous.tex
+(main_anonymous.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (cas-dc.cls
@@ -1200,49 +1200,49 @@ File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 librarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-LaTeX Font Info:    Trying to load font information for T1+stix on input line 4
-9.
+LaTeX Font Info:    Trying to load font information for T1+stix on input line 3
+3.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 )
-(main.aux)
-\openout1 = `main.aux'.
+(main_anonymous.aux)
+\openout1 = `main_anonymous.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 33.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-49.
+33.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 33.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-49.
+33.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    ... okay on input line 33.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pd
 f.mkii
@@ -1269,12 +1269,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 ys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 49.
-LaTeX Info: Command `\ddddot' is already robust on input line 49.
-Package hyperref Info: Link coloring ON on input line 49.
- (main.out) (main.out)
+LaTeX Info: Command `\dddot' is already robust on input line 33.
+LaTeX Info: Command `\ddddot' is already robust on input line 33.
+Package hyperref Info: Link coloring ON on input line 33.
+ (main_anonymous.out) (main_anonymous.out)
 \@outlinefile=\write4
-\openout4 = `main.out'.
+\openout4 = `main_anonymous.out'.
 
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
@@ -1319,10 +1319,10 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \verbatim@out=\write5
-\openout5 = `main.abs'.
+\openout5 = `main_anonymous.abs'.
 
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-107.
+59.
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
@@ -1332,101 +1332,87 @@ File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 heitorhog/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix/stix-t1.enc}{C:/Us
 ers/heitorhog/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix/stix-ts1.enc}]
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 119.
+ne 71.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 119.
+e 71.
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 119
-.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 119
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 119.
+ine 71.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 119.
+e 71.
  (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 119.
+ne 71.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 119.
+e 71.
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 119.
+e 71.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Overfull \hbox (123.62721pt too wide) detected at line 119
+Overfull \hbox (123.62721pt too wide) detected at line 71
 []
  []
 
-(main.abs)
+(main_anonymous.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 119.
+Package hyperref Warning: Ignoring empty anchor on input line 71.
 
+(secoes/01_introduction.tex [1
 
-Package hyperref Warning: Ignoring empty anchor on input line 119.
+]
+Underfull \hbox (badness 1033) in paragraph at lines 78--81
+[]\T1/stix/m/n/10 Identification of the crit-ical pre-vent-ive bar-rier for
+ []
 
-<thumbnails/cas-email.jpeg, id=14, 225.84375pt x 225.84375pt>
-File: thumbnails/cas-email.jpeg Graphic file (type jpg)
-<use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 119.
-(pdftex.def)             Requested size: 7.99838pt x 8.0pt.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 11
-9.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 12
+6.
 
 (C:\Users\heitorhog\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.f
 d
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 119.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 119.
-
-(secoes/01_introduction.tex [1
-
-{C:/Users/heitorhog/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i
-4-t1-0.enc} <./thumbnails/cas-email.jpeg>]
-Underfull \hbox (badness 1033) in paragraph at lines 78--81
-[]\T1/stix/m/n/10 Identification of the crit-ical pre-vent-ive bar-rier for
- []
-
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 126.
-) (secoes/02_background.tex [2]
+) (secoes/02_background.tex [2{C:/Users/heitorhog/AppData/Local/Programs/MiKTeX
+/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
 Underfull \hbox (badness 1622) in paragraph at lines 69--79
 []\T1/stix/m/n/10 The BowTie meth-od-o-logy or-gan-ises a risk ana-lysis
  []
@@ -1524,7 +1510,7 @@ Underfull \hbox (badness 2564) in paragraph at lines 183--183
 \T1/cmss/m/n/9 due to sur-face con-di-tion and
  []
 
-) (secoes/03_methodology.tex [4] [5]
+) (secoes/03_methodology.tex [4]
 Overfull \hbox (0.4455pt too wide) in paragraph at lines 126--141
 []\T1/stix/m/n/10 The natural-frequency cri-terion fol-lows the rule of thumb
  []
@@ -1536,7 +1522,7 @@ D[]\LS1/stix/m/n/10 //[]$ \T1/stix/m/n/10 ([][]Hey-wood[][], [][]1988[][], Ÿ 6.
 6), which
  []
 
-
+[5]
 Underfull \hbox (badness 1147) in paragraph at lines 155--166
 \T1/stix/m/n/10 Table [][]3[][] are com-puted un-der the op-er-at-ing en-vel-op
 e of
@@ -1642,12 +1628,12 @@ Underfull \hbox (badness 1102) in paragraph at lines 161--171
 \T1/stix/m/n/10 con-ven-tional FMEA through fuzzy-set for-mu-la-tions and
  []
 
-[13]
+
 Underfull \hbox (badness 2277) in paragraph at lines 213--223
 \T1/stix/m/n/10 Off-design be-ha-viour in-volving thermal tran-si-ents
  []
 
-
+[13]
 Underfull \hbox (badness 1275) in paragraph at lines 224--244
 \T1/stix/m/n/10 ([][]2020[][], Ÿ 10-30) through the ana-lyt-ical sens-it-iv-ity
 
@@ -1685,34 +1671,41 @@ Underfull \hbox (badness 1127) in paragraph at lines 109--128
 \T1/stix/m/n/10 is con-duc-ted with a non-contacting valve-position
  []
 
-) [15] (main.bbl
-Underfull \hbox (badness 2418) in paragraph at lines 26--35
+) [15] (main_anonymous.bbl
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 6.80005pt on input line 31.
+
+Underfull \hbox (badness 2418) in paragraph at lines 36--45
 []\T1/stix/m/n/8 Automotive In-dustry Ac-tion Group (AIAG) and Verb-and der Aut
 o-
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 49--54
+Underfull \hbox (badness 2913) in paragraph at lines 59--64
 []\T1/stix/m/n/8 Heywood, J.B., 1988.  In-ternal Com-bus-tion En-gine Fun-da-me
 nt-als.
  []
 
-) [16] [17] (main.aux)
+) [16] [17] (main_anonymous.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main_anonymous.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39361 strings out of 467871
- 875377 string characters out of 5416441
- 1497293 words of memory out of 5000000
- 67425 multiletter control sequences out of 15000+600000
+ 39345 strings out of 467871
+ 875269 string characters out of 5416441
+ 1493192 words of memory out of 5000000
+ 67411 multiletter control sequences out of 15000+600000
  739334 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,21n,98p,1942b,2363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,21n,98p,1952b,2363s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\heitorhog\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\
 ecss0800.pk> <C:\Users\heitorhog\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
 ec/dpi600\ecsx0800.pk> <C:\Users\heitorhog\AppData\Local\MiKTeX\fonts/pk/ljfour
@@ -1733,9 +1726,9 @@ ic/stix/stix-mathit.pfb><C:/Users/heitorhog/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/stix/stix-mathrm.pfb><C:/Users/heitorhog/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/heitorhog/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on main.pdf (18 pages, 506277 bytes).
+Output written on main_anonymous.pdf (18 pages, 490251 bytes).
 PDF statistics:
- 864 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 117 named destinations out of 1000 (max. 500000)
+ 17 words of extra memory for PDF output out of 10000 (max. 10000000)
 

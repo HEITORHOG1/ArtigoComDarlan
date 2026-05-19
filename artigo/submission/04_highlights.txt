@@ -1,0 +1,7 @@
+Highlights
+
+- Quantitative-coupled BowTie for high-rpm valve-train design assessment
+- Top event: loss of valve-cam follower contact (float, bounce, coil bind)
+- Indicators: dynamic ratio, natural frequency, coil-bind margin, Goodman FoS
+- Two concurrent at-risk barriers identified in the baseline AP 1.8 head
+- Qualitative validation against four published valve-train failure cases
