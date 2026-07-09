@@ -1,0 +1,38 @@
+% =====================================================================
+% Section 7 — Conclusion (short, RESS-style)
+% =====================================================================
+% Per professor's recommendation, the conclusion is condensed to a
+% restatement of the main findings; the experimental roadmap and the
+% candidate barrier extensions have been moved to Section 6
+% (Validation roadmap and future work).
+% =====================================================================
+
+\section{Conclusion}\label{sec:conclusion}
+
+This work introduced the Quantitative-Coupled BowTie (QC-BowTie), a
+probabilistic barrier-screening method for design-stage reliability in
+which each preventive barrier of a BowTie diagram is bound to a
+deterministic indicator with an explicit pass criterion and then
+propagated, through a Monte Carlo simulation under manufacturing
+tolerances, to a per-barrier compliance-failure probability. The method
+was demonstrated on the valve train of a high-performance VW AP 1.8
+cylinder head operating at 10\,000~rpm; five deterministic indicators
+anchored to established design criteria were evaluated and propagated
+under ASTM~A877/A877M wire tolerances and the strength dispersion of
+\citet[\S~10-30]{shigley2020} ($N=2\times 10^{5}$ trials). Three
+findings result: (i)~two concurrent at-risk preventive barriers, the outer-spring coil-bind margin ($M_{\mathrm{out}}=0.78$~mm,
+$P[\mathrm{fail}]=77.9\,\%$) and the inner-spring Goodman factor of
+safety ($n_{f,\mathrm{in}}\approx 0.68$, $P[\mathrm{fail}]=100\,\%$);
+(ii)~a \emph{marginal} inner-spring coil-bind barrier
+($P[\mathrm{fail}]=16.2\,\%$) that the deterministic layer classifies as
+safe and that only the probabilistic refinement surfaces, the
+clearest evidence that the compliance-probability layer sees what a
+nominal-point analysis does not; and (iii)~the identification of
+multiple concurrent critical barriers that a conventional AIAG--VDA
+scored FMEA collapses into a narrow RPN band. The QC-BowTie is
+transferable to other high-load mechanical systems whose barriers admit
+deterministic indicators. The study is analytical and single-case; the
+empirical confirmation of these findings on the AP 1.8 head, together
+with the barrier-set extensions to assembly tolerance and lubrication
+regime motivated by the construct-validity benchmark, is the subject of
+the validation roadmap of Section~\ref{sec:roadmap}.

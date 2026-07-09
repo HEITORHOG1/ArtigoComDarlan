@@ -1,0 +1,165 @@
+% =====================================================================
+% Section 1 — Introduction
+% =====================================================================
+
+\section{Introduction}\label{sec:intro}
+
+Spark-ignition (SI) engines remain technologically relevant in light
+automotive applications, particularly in markets where cost pressure,
+mechanical robustness, an established refuelling network, and a gradual
+transition to lower-impact energy solutions coexist
+\citep{heywood1988,stone2012}. Within this landscape, the search for
+higher specific output and thermal efficiency does not depend solely on
+electronic calibration or fuel selection: the geometric quality of the
+intake system, of the combustion chamber, and of the valve train, together
+with thermal management of the head, governs the practical envelope of
+operation.
+
+In high-performance configurations, where elevated rotational speed,
+increased thermal loading, and stricter operational stability are required
+simultaneously, two risks acquire a critical role: abnormal combustion
+(knock) and valve-train failure. Both phenomena compromise reliability,
+shrink the operational safety margin, and may evolve from a local
+component issue into catastrophic damage to the engine. The present work
+focuses exclusively on the second of these two risks. The companion
+problem of knock at high compression ratio is addressed elsewhere and is
+out of scope here.
+
+%, 1.1 The case for studying the valve train of the AP 1.8,, --
+The Volkswagen AP 1.8 platform was adopted as the reference engine for
+two reasons. First, it occupies an established position in the Brazilian
+automotive market, with a wide installed base and broad availability of
+geometric data \citep[][\S~1.6]{porto2026dissertation}. Second, in the
+context of a master's research project investigating a high-performance
+cylinder head for the same platform, a specific operating regime of
+10\,000~rpm was adopted as the design target. At that rotational speed
+the inertial demand placed on the valve--cam contact pair is no longer a
+local component concern: the dynamic stability of the moving valve mass,
+the residual coil-bind clearance, the natural frequency of the spring
+relative to cam harmonics, and the fatigue resistance of the spring all
+become coupled, and a single insufficient margin can propagate into a
+valve--piston collision.
+
+%, 1.2 Why FMEA/RPN alone is insufficient,,,,, -
+The conventional Failure Mode and Effects Analysis (FMEA) approach
+addresses such situations by ranking failure modes through the
+multiplicative Risk Priority Number (RPN). This approach has known
+limitations: subjectivity in the assignment of severity, occurrence, and
+detectability scales; loss of resolution when multiple modes share a
+similar RPN; and limited visibility of the causal chain that links
+threats to consequences via barriers. The BowTie methodology addresses
+these limitations by organising the analysis around a top event, with
+threats and preventive barriers on the left side, and consequences and
+mitigative barriers on the right side. This structure makes the role of
+each barrier explicit and supports communication between design,
+operation, and reliability domains.
+
+%, 1.3 Proposal of this paper,,,,,,, -
+This paper introduces the \emph{Quantitative-Coupled BowTie}
+(QC-BowTie), a probabilistic barrier-screening method for design-stage
+reliability, and demonstrates it on the valve
+train of a high-performance cylinder head operating at 10\,000~rpm in the
+VW AP 1.8 engine. \textbf{The deliverable of this paper is the method;
+the AP 1.8 valve train is the demonstrator on which it is exercised, not
+the object of a design verdict.} The qualitative bow diagram is enriched with a
+quantitative layer derived from the analytical sizing of the intake
+valve and of the valve springs. Each preventive barrier is associated
+with a quantitative pass criterion (natural-frequency margin, coil-bind
+margin, fatigue factor of safety) so that the BowTie diagram becomes both
+a communication artefact and a design check.
+
+%, 1.4 Contributions,,,,,,,, -
+The contributions of this paper are summarised as follows:
+\begin{enumerate}
+\item A BowTie diagram of the valve train of the AP 1.8 cylinder head at
+10\,000~rpm, with the top event ``loss of follower contact between valve
+and cam'' and the associated set of threats, preventive barriers,
+consequences, and mitigative barriers.
+\item A quantitative coupling layer that translates each preventive
+barrier into a measurable indicator with a literature-anchored pass
+criterion, derived from the analytical sizing of the valve and the
+spring.
+\item Identification of the critical preventive barrier for the operating
+envelope adopted, with a comparison against a conventional FMEA/RPN
+ranking of the same failure modes.
+\item A reproducible methodology that can be transposed to other
+high-performance cylinder heads operating at high rotational speed.
+\end{enumerate}
+
+%, 1.5 Positioning of the contribution,,,,, -
+\noindent\textbf{Positioning of the contribution.} This work
+sits between the reliability lessons of published valve-train
+failure studies and design-stage prevention: it takes the root causes reported in the
+recent valve-train failure literature
+\citep{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6}
+as the empirical basis and distils them into a structured,
+deterministic preventive procedure usable before a prototype is
+built. The relevant failure mechanisms of the high-rpm valve train
+(valve float, bounce, approach to coil bind, surge resonance,
+fatigue) are reorganised around the BowTie methodology, and the
+analytical sizing of the valve and the springs is mapped, barrier
+by barrier, onto deterministic indicators with literature-anchored
+pass criteria. The contribution is therefore best characterised as
+\emph{reliability-informed, design-stage prevention}: the
+failure-mechanism evidence is borrowed faithfully from
+peer-reviewed case studies; the original step is the
+translation of those root causes into a reproducible,
+indicator-driven barrier check applicable at the design stage.
+Quantitative extensions of the BowTie diagram exist
+(\citealp{khakzad2013bowtiebayesian}, via Bayesian-network mapping;
+LOPA, fault-tree-coupled BowTie, and DyPASI in process safety), but they
+quantify barrier \emph{failure frequencies} from event or failure-rate
+data. The QC-BowTie differs in kind: it binds each preventive barrier to
+a \emph{deterministic engineering indicator} computed from
+first-principles sizing, and then propagates that indicator through its
+manufacturing tolerance to a probability of compliance failure. Unlike
+LOPA, which assumes independent protection layers with catalogued
+probabilities of failure on demand, the QC-BowTie derives each
+barrier's status from the physics of the component itself, and therefore
+applies at the design stage \emph{before} any failure-rate data exist.
+Two original contributions follow: (i) the barrier-to-indicator
+coupling that turns each bow-tie barrier into an auditable pass/fail
+check; and (ii) the mapping of the Monte Carlo compliance-failure
+probability onto the BowTie barrier-status language
+(\emph{active}/\emph{marginal}/\emph{at-risk}), which surfaces a
+\emph{marginal} inner-spring barrier
+(Section~\ref{sec:res-mc}) that the deterministic layer classifies as
+safe, the clearest demonstration that the probabilistic layer sees
+what a nominal-point analysis does not. The procedure is
+benchmarked against the same four documented failure cases:
+three of the four root causes are captured by the deterministic
+indicator layer (\textit{coil bind / fatigue / dynamic loss of
+contact}), and the fourth case \citep{zhao2023camshaftV6} defines
+the boundary of the current barrier set and motivates a documented
+extension to the lubrication-regime barrier (see
+Section~\ref{sec:disc-limitations}). An empirical verification on a
+dedicated test rig with statistical acceptance criteria is
+identified as the priority direction for future work, and a concrete
+validation roadmap is specified in Section~\ref{sec:roadmap}. The
+claim that no published study applies the BowTie methodology to the
+valve train of a high-rpm spark-ignition cylinder head is supported
+by a search of the Scopus and Web of Science databases conducted in
+April 2026 with the query strings
+\texttt{("BowTie" OR "bow-tie") AND ("valve train" OR "valve-train" OR "valve spring") AND ("spark ignition" OR "SI engine" OR "high rpm")},
+which returned no relevant hits.
+
+%, 1.6 Paper outline,,,,,,,, -
+Section~\ref{sec:background} reviews the relevant failure modes of the
+valve train at high rpm and the BowTie methodology.
+Section~\ref{sec:methodology} describes the system under study, the
+operational premises, the qualitative BowTie construction, and the
+quantitative-coupling procedure. Section~\ref{sec:results} reports the
+populated BowTie diagram, the values of the quantitative indicators
+for the AP 1.8 case, and the construct-validity check of the procedure
+against four published valve-train failure cases.
+Section~\ref{sec:discussion} discusses the implications for
+cylinder-head design, compares the proposed approach with FMEA/RPN,
+and states the limitations of the present analytical study.
+Section~\ref{sec:roadmap} specifies the experimental validation
+roadmap and the candidate barrier extensions, and
+Section~\ref{sec:conclusion} closes the paper. The work complements the
+post-failure case-study tradition of
+\citet{velezgodino2019overheadvalvetrain,soffritti2018wornvalvetrain,xing2021valvespringEAC,zhao2023camshaftV6},
+which informed the present formulation, by translating their lessons
+into a structured prospective barrier-evaluation procedure applicable
+at the design stage.

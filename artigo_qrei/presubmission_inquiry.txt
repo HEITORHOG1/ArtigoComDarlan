@@ -1,0 +1,43 @@
+Subject: Pre-submission enquiry — suitability of a quantitative-coupled BowTie reliability case study
+
+Dear Editors,
+[QREI lists three co-Editors-in-Chief, A. C. Brombacher, D. C. Montgomery,
+and L. C. Tang; re-confirm the current handling editor on the journal's
+editorial-board page before sending.]
+
+I am writing to enquire whether the manuscript outlined below would fall within
+the scope of Quality and Reliability Engineering International before we prepare
+a full submission.
+
+Working title:
+"A quantitative-coupled BowTie for design-stage reliability assessment of a
+high-rpm valve train: the VW AP 1.8 cylinder head at 10,000 rpm"
+
+The paper develops a quantitative-coupled BowTie procedure for design-stage
+reliability assessment of high-rpm mechanical systems, in which each preventive
+barrier of the BowTie is bound to a deterministic engineering indicator with a
+literature-anchored pass/fail criterion. The method is demonstrated on a single
+case — the valve train of a high-performance VW AP 1.8 cylinder head at
+10,000 rpm — and is refined with a Monte Carlo tolerance analysis
+(N = 2 x 10^5) under ASTM A877/A877M. It also contrasts the approach with the
+conventional FMEA/RPN prioritisation and checks it for face validity against
+four published valve-train failure investigations. The study is analytical;
+experimental validation is identified as declared future work.
+
+We believe the contribution is aligned with recent methodological work
+published in the journal, such as the BOBTA bow-tie extension (Hellas &
+Khabtane, 2026; doi:10.1002/qre.70069), the probabilistic uncertain-linguistic
+FMEA approach (Tang, 2025; doi:10.1002/qre.3657), and the Monte-Carlo
+structural-reliability analysis of Qian et al. (2023; doi:10.1002/qre.3293).
+
+Could you kindly advise whether a manuscript of this nature would be considered
+for the journal? I would be glad to send the full abstract or the draft on
+request.
+
+With thanks and kind regards,
+
+Darlan Costa Porto (corresponding author)
+on behalf of the co-authors (H. O. Goncalves, F. Pradelle, J. C. Pereira)
+Universidade Catolica de Petropolis (UCP) / Pontificia Universidade Catolica
+do Rio de Janeiro (PUC-Rio), Brazil
+darlan.42540004@ucp.br

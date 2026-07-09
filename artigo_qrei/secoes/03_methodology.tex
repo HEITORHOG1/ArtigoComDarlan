@@ -1,0 +1,200 @@
+% =====================================================================
+% Section 3 — Methodology
+% =====================================================================
+
+\section{Methodology}\label{sec:methodology}
+
+\subsection{System under study}\label{sec:method-system}
+
+The system under study is the valve train of a high-performance cylinder
+head conceived for the Volkswagen AP 1.8 platform. The base engine has a
+bore of 81.0\,mm, a stroke of 86.4\,mm, a total displacement of
+1\,781\,cm$^{3}$, and a four-cylinder in-line architecture
+\citep[][\S~1.1]{porto2026dissertation}. The cylinder head is of the
+pent-roof type, with inclined valves, asymmetric quench, gasoline direct
+injection (GDI), and an iridium spark plug; these features establish the
+mechanical and thermal context of the valve train but are not the
+subject of the risk analysis presented here. The reader is referred to
+\citet{porto2026dissertation} for the full description of the cylinder
+head and the air-flow optimisation.
+
+\subsection{Mechanical and operational premises}
+\label{sec:method-premises}
+
+The premises adopted for the present risk analysis are summarised in
+Table~\ref{tbl:premises} and follow the design choices of the
+dissertation~\citep{porto2026dissertation} and the associated sizing
+notes for the intake valve and the valve springs.
+
+\begin{table*}[!htbp]
+\caption{Mechanical and operational premises adopted for the risk analysis of the AP 1.8 valve train. Values taken from the dissertation~\citep{porto2026dissertation} and the associated sizing notes for the intake valve and the valve springs.}\label{tbl:premises}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\multicolumn{2}{l}{\emph{Engine and operating regime}} & & \multicolumn{2}{l}{\emph{Dual valve-spring assembly (Cr--Si steel, ASTM A877/A877M)}} \\
+\midrule
+Bore & 81.0~mm & & Outer spring stiffness $k_{\mathrm{out}}$ & 38.06~N\,mm$^{-1}$ \\
+Stroke & 86.4~mm & & Inner spring stiffness $k_{\mathrm{in}}$ & 61.43~N\,mm$^{-1}$ \\
+Total displacement & 1\,781~cm$^{3}$ & & Combined stiffness $k_{\mathrm{total}}$ & 99.49~N\,mm$^{-1}$ \\
+Cylinders & 4 in line & & Seat preload $F_{\mathrm{seat}}$ & 780~N \\
+Maximum engine speed & 10\,000~rpm & & Force at full lift $F_{\mathrm{open}}$ & 1\,985.8~N \\
+Camshaft fund.\ freq.\ $f_{\mathrm{cam,max}}$ & 83.3~Hz & & Outer spring solid height & 33.6~mm \\
+Compression ratio & 14.5\,:\,1 & & Inner spring solid height & 32.0~mm \\
+\addlinespace
+\multicolumn{2}{l}{\emph{Valves, rocker and cam}} & & Outer spring height at full lift & 34.38~mm \\
+\cmidrule(r){1-2}
+Intake valve material & Ti--6Al--4V & & Total spring assembly mass & 152.72~g \\
+Exhaust valve material & INCONEL 751 & & Effective spring mass ($m_{\mathrm{molas}}/3$) & 50.91~g \\
+Roller rocker / retainer / keeper & 7075--T6 aluminium & & & \\
+Camshaft material & SAE 8620 case-hardened & & & \\
+\cmidrule(r){4-5}
+Maximum valve lift & 12.12~mm & & \multicolumn{2}{l}{\emph{Direct translational mass (intake side)}} \\
+Cam accel.\ peak (positive) & 14\,544~m\,s$^{-2}$ & & Valve + retainer + keeper & 43.48~g \\
+Cam decel.\ peak (critical) & 20\,362~m\,s$^{-2}$ & & With reflected rocker & 49.59~g \\
+\cmidrule(r){4-5}
+& & & \multicolumn{2}{l}{\emph{Direct translational mass (exhaust side)}} \\
+& & & Valve + retainer + keeper & 54.25~g \\
+& & & With reflected rocker & 60.36~g \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+\subsection{Construction of the qualitative BowTie}
+\label{sec:method-bowtie-qual}
+
+The BowTie diagram is constructed around the top event \emph{loss of
+follower contact between valve and cam}. This formulation
+intentionally aggregates the three failure modes of
+Section~\ref{sec:bg-failure-modes} that share a single mechanical
+signature: valve float, valve bounce, and approach to coil bind. The
+remaining modes (resonance and fatigue) act as enabling threats rather
+than as the top event itself.
+
+The threats placed on the left side of the bow are derived from the
+classical literature \citep{heywood1988,taylor1985,heisler2002} and
+from the sizing constraints of the AP 1.8 head. They are: (i)
+insufficient spring stiffness for the inertial regime; (ii) excessive
+moving mass; (iii) aggressive cam profile; (iv) spring heating in
+operation; (v) out-of-tolerance thermal clearance; and (vi) resonance
+between cam harmonics and spring natural frequency. The preventive
+barriers placed between threats and the top event are: (i) dynamic
+sizing of the spring relative to the cam harmonics; (ii) dual or
+nested springs; (iii) low-mass tappets; (iv) high-fatigue-resistance
+spring material; and (v) modal analysis and dynamometer validation.
+
+The consequences placed on the right side of the bow are: (i)
+valve--piston collision; (ii) catastrophic cylinder-head failure; (iii)
+immediate loss of compression; (iv) oil contamination by debris; and (v)
+unscheduled engine shutdown. The mitigative barriers between the top
+event and these consequences are: (i) electronic rev limiter; (ii)
+cam-position sensor; (iii) operating envelope defined at design stage;
+(iv) torque or fuel cut-off; and (v) predictive maintenance via
+vibration signals.
+
+\subsection{Quantitative coupling layer}
+\label{sec:method-bowtie-quant}
+
+To overcome the qualitative limitation of the classical BowTie, each of
+the five preventive barriers is associated with a deterministic
+indicator and a pass criterion, summarised in
+Table~\ref{tbl:quant-criteria}. The indicators are computed from the
+analytical sizing of the intake valve and of the valve springs,
+which is reported in the underlying dissertation
+\citep{porto2026dissertation} and in two associated sizing notes
+on the intake valve and the spring.
+
+\begin{table*}[!htbp]
+\caption{Quantitative indicators associated with the preventive barriers of the BowTie diagram. The pass criteria follow conventional design rules in the internal-combustion-engine literature and the project specification of the AP 1.8 sizing.}\label{tbl:quant-criteria}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+Barrier & Indicator & Pass criterion \\
+\midrule
+Dynamic follower contact & $R = F_{\mathrm{spring,crit}}/F_{\mathrm{inertia,crit}}$ & $R \geq 1.20$ (project) \\
+Spring natural frequency & $f_{n}=\tfrac{1}{2}\sqrt{k/m_{s}}$ & $f_{n}/f_{\mathrm{cam,max}}\geq 4$~\citep{heywood1988} \\
+Coil-bind margin (outer) & $M = H_{\mathrm{open}}-H_{\mathrm{cb}}$ & $M \geq 1.5$~mm at 10\,000~rpm \\
+Fatigue (Goodman) & $1/n_{f}=\tau_{a}/S_{se}+\tau_{m}/S_{su}$ & $n_{f}\geq 1$~\citep{shigley2020} \\
+Hot clearance$^{\dagger}$ & $c(T_{\max})$ & $c(T_{\max})\geq 0$ over the full map \\
+\bottomrule
+\end{tabular}}\\
+{\footnotesize $^{\dagger}$Hot clearance is treated in this paper as a \emph{qualitatively verified} barrier outside the deterministic layer; only a first-order order-of-magnitude estimate is provided in Section~\ref{sec:res-quant}. A complete differential thermal model is identified as a priority direction for future work in Section~\ref{sec:disc-limitations}.}
+\end{table*}
+
+The dynamic-ratio criterion $R\geq 1.20$ corresponds to the project
+specification adopted in the AP 1.8 sizing and is consistent with
+the design practice for high-speed valve trains
+\citep{heywood1988,taylor1985,heisler2002}.
+
+The natural-frequency criterion follows the rule of thumb that the
+first surge mode of the spring should sit above the dominant cam
+harmonics \citep{heywood1988}. Two equivalent formulations are
+available in the literature: the one-degree-of-freedom approximation
+$f_{n} = \tfrac{1}{2}\sqrt{k/m_{s}}$ for a coil spring with both ends
+fixed \citep[\S~10-26]{shigley2020}, and the continuous-medium
+expression
+$f_{n} = (d/(2\pi N D_{m}^{2}))\sqrt{G/(2\rho)}$
+\citep[\S~6.6]{heywood1988}, which reduce algebraically to the same
+result when $m_{s}$ in the first form is taken as the active-coil
+mass. In the present analysis the conservative form
+$f_{n} = \tfrac{1}{2}\sqrt{k/m_{s,\mathrm{total}}}$ is adopted with the
+\emph{total} spring mass (including end coils), which yields the
+lower bound of the surge frequency and is the more demanding test for
+the rule-of-thumb threshold.
+
+The coil-bind margin of 1.5--2.0~mm is the
+practical specification adopted in the AP 1.8 sizing to absorb
+manufacturing tolerances, mounting variations, and dynamic excitations
+typical of operation at 10\,000~rpm. The fatigue criterion uses the Goodman alternating-mean factor of
+safety (Eq.~\ref{eq:goodman}) with the shear endurance limit and the
+ultimate shear strength of ASTM A877/A877M chrome--silicon
+valve-spring steel after shot peening and preset
+\citep{shigley2020,xing2021valvespringEAC,ko2022springfatigueflaws}.
+The criteria themselves are drawn from established design practice; the
+contribution of the QC-BowTie is not a new criterion but the disciplined
+coupling of each barrier to a measurable indicator and the propagation of
+that indicator to a compliance-failure probability
+(Section~\ref{sec:res-mc}).
+
+\paragraph{Status of the pass criteria.} Two of the five criteria are
+external standards, the surge-frequency margin
+$f_{n}/f_{\mathrm{cam,max}}\geq 4$ \citep{heywood1988} and the Goodman
+fatigue criterion $n_{f}\geq 1$ \citep{shigley2020}. The dynamic-ratio
+target $R\geq 1.20$ and the coil-bind target $M\geq 1.5$~mm are
+\emph{project specifications} adopted in the AP 1.8 sizing rather than
+universal thresholds. A barrier reported below one of these targets is
+therefore a margin deficit \emph{relative to the adopted target}, not an
+absolute prediction of failure; to keep this distinction auditable, every
+barrier in Table~\ref{tbl:quant-results} is reported together with its
+underlying quantitative margin, so that a reader adopting a different
+target can re-read the classification directly. The influence of the two
+speed-sensitive targets is examined explicitly by the operating-envelope
+sweep of Section~\ref{sec:res-envelope}.
+
+\subsection{Cross-check procedure}\label{sec:method-cross-check}
+
+For the AP 1.8 head, the values of all indicators in
+Table~\ref{tbl:quant-criteria} are computed under the operating envelope
+of Table~\ref{tbl:premises}. A barrier is declared \emph{active} if the
+indicator satisfies the pass criterion; otherwise it is declared
+\emph{at risk}. The single barrier with the smallest absolute margin is
+declared the \emph{critical barrier}: it is the first that would fail
+under a parametric drift of the inputs (mass increase, stiffness loss
+through heating, harder cam profile, etc.). A tornado plot of the
+sensitivity of each indicator to its dominant input is reported in
+Section~\ref{sec:results} (Fig.~\ref{fig:tornado}) to make the
+identification of the critical barrier transparent.
+
+The qualitative BowTie of
+Section~\ref{sec:method-bowtie-qual} and the quantitative layer of
+Section~\ref{sec:method-bowtie-quant} are then cross-checked against a
+conventional FMEA/RPN ranking of the same threats. The comparison is
+discussed in Section~\ref{sec:disc-fmea-comparison}. The complete
+QC-BowTie pipeline is summarised in Fig.~\ref{fig:flow}.
+
+\begin{figure}[!htbp]
+ \centering
+ \resizebox{\linewidth}{!}{\input{figs/fig6_flow.tex}}
+ \caption{The QC-BowTie pipeline: the qualitative BowTie is enriched by coupling each preventive barrier to a deterministic indicator with a pass criterion; the indicators are evaluated deterministically and then propagated by Monte Carlo under manufacturing tolerances to a per-barrier compliance-failure probability $P[\mathrm{fail}]$ (active/marginal/at-risk), and the outcome is contrasted with a conventional FMEA/RPN ranking. The preventive-barrier set is informed by a construct-validity check against four published failure cases.}\label{fig:flow}
+\end{figure}

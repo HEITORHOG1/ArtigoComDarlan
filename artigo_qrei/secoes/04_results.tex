@@ -1,0 +1,706 @@
+% =====================================================================
+% Section 4 — Results
+% =====================================================================
+% All numerical values in this section are taken from the dissertation
+% \citep{porto2026dissertation} and the associated sizing notes
+% for the intake valve and the valve springs of the AP 1.8 head. No
+% value is invented; every figure traces to a source.
+% =====================================================================
+
+\section{Results}\label{sec:results}
+
+\subsection{Populated BowTie diagram}\label{sec:res-bowtie}
+
+Figure~\ref{fig:bowtie} shows the populated BowTie diagram for the AP
+1.8 valve train at 10\,000~rpm, around the top event \emph{loss of
+follower contact between valve and cam}. The threats, preventive
+barriers, consequences, and mitigative barriers are those of
+Section~\ref{sec:method-bowtie-qual}.
+
+% =====================================================================
+% Figure 1 — BowTie diagram (TikZ-generated)
+% =====================================================================
+
+\begin{figure*}[!htbp]
+ \centering
+ \resizebox{\textwidth}{!}{\input{figs/fig1_bowtie.tex}}
+ \caption{BowTie diagram of the valve train of the AP 1.8 cylinder head operating at 10\,000~rpm. Threats (T1--T6) and preventive barriers (P1--P5) are arranged on the left side; consequences (C1--C5) and mitigative barriers (M1--M5) are arranged on the right side. The top event is the loss of follower contact between the valve and the cam, which encompasses valve float, valve bounce, and approach to coil bind.}\label{fig:bowtie}
+\end{figure*}
+
+% =================================================================
+\subsection{Quantitative evaluation of the preventive barriers}
+\label{sec:res-quant}
+
+The five quantitative indicators of Table~\ref{tbl:quant-criteria} were
+evaluated for the AP 1.8 head under the operating envelope of
+Table~\ref{tbl:premises}. The numerical results are reported in
+Table~\ref{tbl:quant-results} and discussed below.
+
+% =================================================================
+\paragraph{Dynamic follower contact.}
+At the critical deceleration point of the cam ($a_{\max,-}=20\,362$~m\,s$^{-2}$,
+$L_{-}=8.747$~mm), the spring force is
+\begin{equation}
+F_{\mathrm{spring},-}=F_{\mathrm{seat}}+k_{\mathrm{total}}\,L_{-}=780+99.49\times 8.747=1\,650.2~\mathrm{N},
+\label{eq:Fspring}
+\end{equation}
+and the inertial force on the intake side, computed with the direct
+translational mass of $43.48$~g, is
+$F_{i,d,-,\mathrm{adm}}=885.3$~N, giving a dynamic ratio of
+$R_{d,-,\mathrm{adm}}=1.864$. With the equivalent mass that includes
+the reflected rocker (\,$49.59$~g\,), the dynamic ratio decreases to
+$R_{\mathrm{eq},-,\mathrm{adm}}=1.634$. On the exhaust side, the larger
+mass ($54.25$~g translational direct) yields
+$R_{d,-,\mathrm{esc}}=1.494$ and $R_{\mathrm{eq},-,\mathrm{esc}}=1.343$.
+All four values are above the $R\geq 1.20$ project criterion, so the
+follower-contact barrier is satisfied with a margin of at least
+12\,\% (in the worst case, the exhaust side with reflected rocker).
+
+% =================================================================
+\paragraph{Spring natural frequency.}
+The fundamental surge mode of a helical compression spring with both
+ends fixed is the first axial standing wave on the helical wire; its
+onset and amplitude at high engine speed have been characterised
+analytically and by non-linear finite-element models of the valve
+train \citep{liu2011estimation,gu2020nonlinear,ozlen2025integrated}. For
+a spring of stiffness $k$ and active mass $m_{s}$, the wave equation
+yields a fundamental frequency
+$\omega_{1}=\pi\sqrt{k/m_{s}}$~rad\,s$^{-1}$, hence
+$f_{n}=\omega_{1}/(2\pi)=\tfrac{1}{2}\sqrt{k/m_{s}}$~Hz, which is the
+form given in \citet[Eq.~10-26]{shigley2020}. This expression is
+algebraically equivalent to the continuous-medium derivation
+$f_{n}=(d/(2\pi N D_{m}^{2}))\sqrt{G/(2\rho)}$ of
+\citet[\S~6.6]{heywood1988}: substituting
+$k=Gd^{4}/(8 D_{m}^{3} N)$ and the active-coil wire mass
+$m_{s}=(\pi^{2}/4)\,N D_{m} d^{2} \rho$ in
+$f_{n}=\tfrac{1}{2}\sqrt{k/m_{s}}$ recovers Heywood's expression
+exactly. In the present analysis the conservative lower bound is
+adopted by using the \emph{total} spring mass (94.34~g for the outer
+and 47.11~g for the inner spring), which includes the inactive end
+turns and yields the lower bound of the surge frequency:
+\begin{align}
+f_{n,\mathrm{out}}&=\tfrac{1}{2}\sqrt{38\,060~\mathrm{N\,m^{-1}}/0.09434~\mathrm{kg}}\approx 318~\mathrm{Hz},\label{eq:fn-out}\\
+f_{n,\mathrm{in}} &=\tfrac{1}{2}\sqrt{61\,430~\mathrm{N\,m^{-1}}/0.04711~\mathrm{kg}}\approx 571~\mathrm{Hz}.\label{eq:fn-in}
+\end{align}
+For comparison, replacing $m_{s,\mathrm{total}}$ with the conventional
+effective mass $m_{s}/3$ (Rayleigh's quotient for a uniform coil
+spring with one end fixed) would yield $f_{n,\mathrm{out}}\approx
+551$~Hz and $f_{n,\mathrm{in}}\approx 988$~Hz. Adopting the total
+spring mass therefore penalises the rule-of-thumb test against the
+cam harmonics by a factor of $\sqrt{3}\approx 1.73$ and is treated
+here as an explicit robustness check rather than a tolerance estimate.
+The camshaft fundamental frequency at 10\,000~rpm engine speed
+($f_{\mathrm{cam,max}}=10\,000/(2\times 60)=83.3$~Hz, the factor
+two accounting for the 4-stroke cam-to-engine speed ratio) gives
+the natural-frequency margins
+$f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}\approx 3.81$ and
+$f_{n,\mathrm{in}}/f_{\mathrm{cam,max}}\approx 6.85$. The outer
+spring sits just below the conventional
+$f_{n}/f_{\mathrm{cam}}\geq 4$ threshold \citep{heywood1988} and is
+therefore at the limit of the preventive barrier; the inner spring
+is comfortably above the threshold against the cam fundamental.
+However, real cam profiles contain harmonic content up to the sixth
+to eighth harmonic, and the proximity of $f_{n,\mathrm{in}}\approx
+571$~Hz to the sixth harmonic
+($6\,f_{\mathrm{cam,max}}=500$~Hz; about 14\,\% separation) is
+discussed in Section~\ref{sec:res-curves} and noted as a residual
+concern.
+
+% =================================================================
+\paragraph{Coil-bind margin.}
+At the maximum valve lift of 12.12~mm, the outer spring is compressed
+to a height of $H_{\mathrm{open}}=34.38$~mm. With a solid height of
+$H_{\mathrm{cb,out}}\approx 33.6$~mm (from $N_{t,\mathrm{out}}\,d_{\mathrm{out}}$),
+the residual margin to coil bind is
+\begin{equation}
+M_{\mathrm{out}}=H_{\mathrm{open}}-H_{\mathrm{cb,out}}=34.38-33.6=0.78~\mathrm{mm},
+\label{eq:Mout}
+\end{equation}
+which is below the project specification of $M\geq 1.5$~mm at
+10\,000~rpm. In the concentric dual-spring assembly the inner and
+outer springs share the same retainer and therefore undergo the same
+axial compression at full lift, so $H_{\mathrm{open}}$ is identical
+for both. The inner spring, with $H_{\mathrm{cb,in}}\approx 32.0$~mm,
+therefore yields $M_{\mathrm{in}}=H_{\mathrm{open}}-H_{\mathrm{cb,in}}=34.38-32.0=2.38$~mm,
+comfortably above the criterion. The
+outer-spring coil-bind margin is therefore the only barrier that does
+not satisfy its pass criterion under the current configuration of the
+AP 1.8 head.
+
+% =================================================================
+\paragraph{Fatigue stress.}
+The peak shear stress at full lift, computed with the Wahl-corrected
+formula $\tau_{\max}=K_{w}\,8FD_{m}/(\pi d^{3})$, is
+$\tau_{\mathrm{out}}\approx 655$~MPa for the outer spring
+($K_{w,\mathrm{out}}=1.239$, $D_{m,\mathrm{out}}=30.2$~mm,
+$d_{\mathrm{out}}=4.8$~mm) and $\tau_{\mathrm{in}}\approx 1\,232$~MPa
+for the inner spring ($K_{w,\mathrm{in}}=1.329$,
+$D_{m,\mathrm{in}}=19.0$~mm, $d_{\mathrm{in}}=4.0$~mm). Because the
+spring operates between a non-zero seat preload and the full-lift
+load, the proper criterion is the alternating-mean Goodman criterion
+\citep[\S~10-7]{shigley2020} rather than a single-point comparison
+with an allowable. With the corresponding seat-load shear stresses
+$\tau_{\mathrm{out},\mathrm{seat}}\approx 257$~MPa and
+$\tau_{\mathrm{in},\mathrm{seat}}\approx 484$~MPa, the alternating
+and mean components are
+$\tau_{a,\mathrm{out}}=199$~MPa, $\tau_{m,\mathrm{out}}=456$~MPa
+and $\tau_{a,\mathrm{in}}=374$~MPa, $\tau_{m,\mathrm{in}}=858$~MPa.
+
+For shot-peened ASTM~A877/A877M chrome--silicon valve-spring steel,
+typical strengths are an ultimate tensile strength
+$S_{ut}\approx 1\,900$~MPa, an ultimate shear strength
+$S_{su}\approx 0.67\,S_{ut}\approx 1\,270$~MPa, and a shear endurance
+limit after shot peening and surface control of
+$S_{se}\approx 465$~MPa
+\citep[\S~10-30]{shigley2020}. The Goodman factor of safety is then
+\begin{equation}
+\frac{1}{n_{f}}=\frac{\tau_{a}}{S_{se}}+\frac{\tau_{m}}{S_{su}}.
+\label{eq:goodman}
+\end{equation}
+For the outer spring this gives
+$1/n_{f,\mathrm{out}}=199/465+456/1\,270\approx 0.428+0.359=0.787$,
+hence $n_{f,\mathrm{out}}\approx 1.27$ (active, with positive but
+not generous margin). For the inner spring,
+$1/n_{f,\mathrm{in}}=374/465+858/1\,270\approx 0.804+0.676=1.480$,
+hence $n_{f,\mathrm{in}}\approx 0.68$, which is below unity and
+indicates that the baseline configuration of the inner spring does
+not satisfy the Goodman criterion. The inner-spring fatigue barrier
+is therefore reclassified as \textbf{at risk} in
+Table~\ref{tbl:quant-results}, alongside the outer-spring coil-bind
+margin. This finding is consistent with
+\citet{xing2021valvespringEAC,ko2022springfatigueflaws}, who report
+that small surface flaws and environment-assisted cracking
+substantially reduce the fatigue life of high-strength valve springs
+loaded close to their nominal allowable, and with the very-high-cycle
+fatigue tests on shot-peened chrome--silicon compression-spring wire
+of \citet{berger2006vhcf,pyttel2014fatigue}.
+
+% Temperature derating of S_se
+The shear endurance limit $S_{se}\approx 465$~MPa quoted above is the
+ambient-temperature value catalogued for shot-peened ASTM~A877
+chrome--silicon wire. Under sustained operation at 10\,000~rpm the
+valve spring sees a temperature elevation associated with hysteretic
+self-heating and conductive exposure to the oil-splash environment;
+the steady-state spring-coil temperature for high-rpm SI valve
+springs is documented in the range 100--130~$^{\circ}$C
+\citep{heisler2002}. The Marin-type temperature factor of
+\citet[Eq.~7-19]{shigley2020} for ground steel surfaces, evaluated at
+$T=130~^{\circ}$C ($\approx 266~^{\circ}$F), yields a temperature
+correction factor $k_{d}\approx 1.02$, i.e.\ no derating relative to
+ambient over the expected operating range. A conservative
+counter-bound, applying a uniform 5\,\% temperature penalty
+($S_{se,T}=442$~MPa), gives $n_{f,\mathrm{out}}\approx 1.24$ and
+$n_{f,\mathrm{in}}\approx 0.66$: both indicator
+classifications (outer active, inner at risk) are preserved, and the
+identification of the inner-spring Goodman deficit is robust to the
+temperature treatment within $\pm$5\,\% on $S_{se}$. The barrier
+status of Table~\ref{tbl:quant-results} is therefore not contingent
+on the ambient-versus-operating temperature distinction within the
+documented operating envelope; an out-of-envelope spring temperature
+in the 180--220~$^{\circ}$C range (e.g.\ degraded oil-splash cooling)
+would invalidate this conclusion and is identified in
+Section~\ref{sec:disc-limitations} as an off-design follow-on.
+
+% =================================================================
+\paragraph{Hot clearance.}
+A complete coupled thermal--structural finite-element analysis of
+the cylinder head is outside the scope of the present study, but a
+\emph{differential} first-order estimate of the magnitude can be
+obtained in closed form by combining the linear thermal expansion
+of the steel valve stem and the aluminium head along the
+load-bearing path that closes the rocker--valve-tip clearance. Under
+hot operation the exhaust valve stem (length $L_{h}=180$~mm,
+INCONEL~751 with $\alpha_{\mathrm{Fe}}\approx 13\times 10^{-6}~\mathrm{K}^{-1}$
+\citep{specialmetals2008inconel751}) elongates by
+\begin{equation}
+\Delta L_{\mathrm{stem}}=\alpha_{\mathrm{Fe}}\,L_{h}\,\Delta T_{\mathrm{stem}}
+\approx 13\times 10^{-6}\times 180\times 600 \approx 1.40~\mathrm{mm},
+\label{eq:dLstem}
+\end{equation}
+for a stem temperature rise of $\Delta T_{\mathrm{stem}}\approx 600$~K
+above cold-assembly (consistent with the
+$\sim$650~$^{\circ}$C peak exhaust-valve-stem temperature reported
+for high-output SI engines \citep{heisler2002}). The aluminium head
+between the valve seat and the rocker pivot, of effective length
+$L_{\mathrm{Al}}\approx 100$~mm (typical OHC architecture
+\citep{heisler2002}) and
+$\alpha_{\mathrm{Al}}\approx 23\times 10^{-6}~\mathrm{K}^{-1}$, expands
+in the \emph{opposite} sense (the pivot retreats from the valve tip,
+opening the clearance). For a head temperature rise of
+$\Delta T_{\mathrm{head}}\approx 150$~K (steady-state operating
+range for the aluminium structure, in line with documented head
+temperatures of 130--180~$^{\circ}$C above ambient
+\citep{heywood1988}), the head contribution is
+\begin{equation}
+\Delta L_{\mathrm{head}}=\alpha_{\mathrm{Al}}\,L_{\mathrm{Al}}\,\Delta T_{\mathrm{head}}
+\approx 23\times 10^{-6}\times 100\times 150 \approx 0.35~\mathrm{mm}.
+\label{eq:dLhead}
+\end{equation}
+The differential closure of the clearance is therefore
+\begin{equation}
+\Delta c_{\mathrm{diff}}=\Delta L_{\mathrm{stem}}-\Delta L_{\mathrm{head}}
+\approx 1.40-0.35 = 1.05~\mathrm{mm},
+\label{eq:dcdiff}
+\end{equation}
+which is materially less restrictive than the stem-only upper bound
+of 1.40~mm. The cold mechanical clearance must satisfy
+$c_{\mathrm{cold}}\geq \Delta c_{\mathrm{diff}}+c_{\mathrm{hot,min}}$
+with $c_{\mathrm{hot,min}}\approx 0.20$~mm representing the minimum
+positive operating clearance required for reliable valve seating
+\citep{heisler2002}, yielding a pass criterion of
+$c_{\mathrm{cold}}\geq 1.25$~mm. This deterministic indicator is
+added to Table~\ref{tbl:quant-results} as
+$c_{\mathrm{cold,req}}=1.25$~mm, replacing the qualitative
+``verified'' status of the earlier formulation. The estimate is
+bracketed by two limiting cases: the no-compensation bound
+($\Delta L_{\mathrm{head}}=0$, $c_{\mathrm{cold,req}}=1.60$~mm) and
+a maximally compensating bound ($\Delta T_{\mathrm{head}}=200$~K,
+$c_{\mathrm{cold,req}}=1.13$~mm). The bracket
+$c_{\mathrm{cold,req}}\in [1.13,\,1.60]$~mm is compatible with the
+typical cold-clearance specification of 1.5~mm for high-rpm
+performance heads quoted in \citet{heisler2002}, so the barrier is
+classified as \emph{active} in the baseline configuration. A
+coupled thermal--structural finite-element analysis would refine
+the head-side path length $L_{\mathrm{Al}}$ and the localised
+$\Delta T_{\mathrm{head}}$ field and is identified in
+Section~\ref{sec:disc-limitations} as a priority follow-on study.
+
+% =================================================================
+% Consolidated table
+% =================================================================
+\begin{table*}[!htbp]
+\caption{Quantitative results for the five preventive barriers of the BowTie diagram applied to the AP 1.8 valve train at 10\,000~rpm. Values traced to the sizing of the intake valve and the valve springs.}\label{tbl:quant-results}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Barrier & Indicator & Value & Status \\
+\midrule
+Dynamic follower contact (intake, direct mass) & $R_{d,-,\mathrm{adm}}$ & 1.864 & active ($\geq 1.20$) \\
+Dynamic follower contact (intake, with rocker) & $R_{\mathrm{eq},-,\mathrm{adm}}$ & 1.634 & active ($\geq 1.20$) \\
+Dynamic follower contact (exhaust, direct mass) & $R_{d,-,\mathrm{esc}}$ & 1.494 & active ($\geq 1.20$) \\
+Dynamic follower contact (exhaust, with rocker) & $R_{\mathrm{eq},-,\mathrm{esc}}$ & 1.343 & active ($\geq 1.20$) \\
+Natural frequency (outer spring) & $f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}$ & 3.81 & at limit ($<4$) \\
+Natural frequency (inner spring) & $f_{n,\mathrm{in}}/f_{\mathrm{cam,max}}$ & 6.85 & active ($\geq 4$) \\
+Coil-bind margin (outer spring) & $M_{\mathrm{out}}$ & 0.78~mm & \textbf{at risk} ($<1.5$~mm) \\
+Coil-bind margin (inner spring) & $M_{\mathrm{in}}$ & 2.38~mm & active ($\geq 1.5$~mm) \\
+Fatigue Goodman FoS (outer spring) & $n_{f,\mathrm{out}}$ & 1.27 & active ($\geq 1$) \\
+Fatigue Goodman FoS (inner spring) & $n_{f,\mathrm{in}}$ & 0.68 & \textbf{at risk} ($<1$) \\
+Hot clearance (differential, exhaust) & $c_{\mathrm{cold,req}}$ & 1.25~mm (bracket [1.13, 1.60]) & active ($c_{\mathrm{cold}}\geq c_{\mathrm{cold,req}}$) \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+% =================================================================
+\subsection{Critical-barrier identification}\label{sec:res-critical}
+
+A tornado plot of the sensitivity of each indicator to its dominant
+input is shown in Fig.~\ref{fig:tornado}. For each barrier, the input
+perturbed by $\pm$10\,\% is the dominant parameter governing the
+indicator: the spring stiffness $k$ for the natural-frequency margin,
+the maximum cam lift $L_{\mathrm{cam}}^{\max}$ for the coil-bind
+margin, the moving mass $m$ for the dynamic-ratio margin, and the
+shear-stress amplitude $\tau_{a}$ for the Goodman fatigue margin. The
+$\pm$10\,\% perturbation is adopted as a uniform stress test rather
+than a tolerance estimate, providing an upper-bound sensitivity
+envelope for the worst-case parameter drift. The actual ASTM~A877/A877M
+specification tolerances are tighter and unequal by parameter
+(typically $\pm$1.5\,\% on free length, $\pm$0.5\,\% on wire diameter,
+and $\pm$3\,\% on shear modulus); a refined sensitivity analysis based
+on those non-uniform tolerances is identified as future work. The bar length
+corresponds to the absolute change in the residual margin under that
+perturbation. The analysis identifies \textbf{three} barriers as
+exposed to parametric drift: the \emph{outer-spring coil-bind margin}
+($M_{\mathrm{out}}=0.78$~mm, violating its pass criterion already in
+the baseline configuration), the \emph{inner-spring fatigue Goodman
+factor of safety}
+($n_{f,\mathrm{in}}=0.68$, below unity in the baseline configuration),
+and the \emph{outer-spring natural-frequency margin}
+($f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}=3.81$, just below the
+conventional 4$\times$ rule of thumb).
+
+The findings indicate that the AP 1.8 dual-spring assembly has
+\emph{two} concurrent at-risk barriers in the baseline configuration:
+the outer-spring coil-bind margin and the inner-spring fatigue
+factor of safety. They are not redundant: they affect different
+springs (outer vs inner) and act through different physical
+mechanisms (geometric clearance vs cyclic shear loading). The
+outer-spring natural-frequency margin sits just below the
+conventional threshold and is treated as a residual concern. The
+sizing note for the springs already prescribes the geometric
+correction for the outer-spring coil-bind, raising the installed
+height to $H_{\mathrm{inst,ideal}}=47.72$~mm and the free length to
+$L_{0,\mathrm{ideal}}=55.56$~mm to recover an $M\approx 2.0$~mm
+margin. The inner-spring fatigue concern is not addressed by that
+geometric change and would require a different intervention:
+increasing the wire diameter $d_{\mathrm{in}}$, reducing the spring
+index $C_{\mathrm{in}}=D_{m,\mathrm{in}}/d_{\mathrm{in}}$, or
+adopting a higher-grade chrome--silicon--vanadium steel with a
+larger shear endurance limit. The two findings together reinforce
+the value of the quantitative-coupled BowTie approach: a single-point
+comparison of $\tau_{\max}$ with an upper-bound allowable, in the
+spirit of conventional FMEA, would have classified the inner-spring
+fatigue as nominally acceptable, whereas the Goodman criterion
+exposes the deficit unambiguously.
+
+\begin{figure}[!htbp]
+ \centering
+ \resizebox{\linewidth}{!}{\input{figs/fig4_tornado.tex}}
+ \caption{Tornado plot of the sensitivity of each preventive-barrier indicator to its dominant input under a $\pm$10\,\% perturbation. Two indicators (in red) violate their pass criteria already in the baseline configuration and are identified as critical preventive barriers of the AP 1.8 valve train at 10\,000~rpm: the outer-spring coil-bind margin $M_{\mathrm{out}}$ ($-48.0\%$) and the inner-spring fatigue Goodman factor of safety $n_{f,\mathrm{in}}$ ($-32.0\%$). The outer-spring natural-frequency margin $f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}$ ($-4.8\%$) sits just below the conventional 4$\times$ rule-of-thumb threshold and is treated separately as a residual concern. The uniform $\pm$10\,\% perturbation is conservative relative to the ASTM~A877/A877M tolerance set used in the probabilistic refinement of Section~\ref{sec:res-mc}.}\label{fig:tornado}
+\end{figure}
+
+% =================================================================
+\subsection{Probabilistic refinement under ASTM A877/A877M tolerances}
+\label{sec:res-mc}
+
+The $\pm$10\,\% sensitivity of Section~\ref{sec:res-critical} is a
+uniform stress test rather than a tolerance estimate. To convert it
+into a manufacturing-realistic probability of barrier compliance, the
+deterministic indicators were re-evaluated under the catalogued
+ASTM~A877/A877M spring-wire tolerances and the standard strength
+dispersion of \citet[\S~10-30]{shigley2020}. The propagation was
+performed by a Monte Carlo simulation \citep{umaras2021tolerance} with
+$N=2\times 10^{5}$ truncated-Gaussian draws of each input, with the three-sigma band set
+equal to the catalogued tolerance for each parameter:
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.05}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+Parameter & 3$\sigma$ band & Source \\
+\midrule
+Free length $L_{0}$ & $\pm$1.5\,\% & ASTM A877/A877M \\
+Wire diameter $d$ & $\pm$0.5\,\% & ASTM A877/A877M \\
+Mean coil diameter $D_{m}$ & $\pm$1.0\,\% & ASTM A877/A877M \\
+Active coils $N_{a}$ & $\pm$0.5 turn & ASTM A877/A877M \\
+Shear modulus $G$ & $\pm$3.0\,\% & \citet[Table 10-4]{shigley2020} \\
+Shear endurance $S_{se}$ & $\pm$8.0\,\% & \citet[\S~10-30]{shigley2020} \\
+Ultimate shear $S_{su}$ & $\pm$4.0\,\% & idem \\
+Seat preload $F_{\mathrm{seat}}$ & $\pm$3.0\,\% & assembly measurement \\
+Open height $H_{\mathrm{open}}$ & $\pm$0.5\,\% & cam-train assembly \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\noindent The sensitivity coefficients are derived analytically from the
+Wahl stress formula
+$\tau=K_{w}\,8FD_{m}/(\pi d^{3})$, Shigley's spring stiffness
+$k=Gd^{4}/(8D_{m}^{3}N_{a})$, and Shigley's surge frequency
+$f_{n}=(d/(2\pi N_{a} D_{m}^{2}))\sqrt{G/(2\rho)}$. The script that
+reproduces the simulation (random seed 20260519, NumPy 2.2.6) is
+available as supplementary material. The nine inputs are drawn
+independently, no cross-parameter correlation being imposed, a
+deliberately conservative assumption for near-independent manufacturing
+tolerances, and with $N=2\times 10^{5}$ draws the binomial sampling
+error on the reported probabilities is below $0.12$ percentage point
+($\sqrt{p(1-p)/N}$ evaluated at $p=0.5$). The propagation covers
+manufacturing tolerance and the catalogued strength dispersion only;
+model-form uncertainty (the fidelity of the closed-form sizing itself)
+and operational variability beyond ambient temperature are \emph{not}
+propagated, and this boundary of the probabilistic layer is stated
+explicitly in Section~\ref{sec:disc-limitations}.
+
+The resulting per-trial distributions of the three indicators are
+summarised in Table~\ref{tbl:mc-results}. Three findings emerge:
+
+\begin{enumerate}
+\item \emph{Inner-spring Goodman deficit is robust.} The Goodman
+factor of safety of the inner spring is below unity in
+\textbf{100\,\%} of the simulated tolerance bracket
+($n_{f,\mathrm{in}}\in[0.637,\,0.716]$ between the 5\,\% and 95\,\%
+quantiles). The baseline finding is not an artefact of nominal-point
+evaluation: under the catalogued ASTM~A877 manufacturing band, the
+inner spring fails the Goodman criterion with certainty. This
+strengthens, rather than challenges, the deterministic conclusion of
+Section~\ref{sec:res-critical}.
+\item \emph{Outer-spring coil-bind margin is statistically critical.}
+Within the catalogued ASTM~A877 tolerance band, the outer-spring
+coil-bind margin falls below the project criterion of
+$M\geq 1.5$~mm in \textbf{77.9\,\%} of the trials, and the 5\,\%
+quantile is $M_{\mathrm{out}}=-0.76$~mm, i.e.\ \emph{actual contact}
+with the bind condition occurs in approximately 5\,\% of the
+distribution. The barrier is therefore not merely under-margined: a
+non-trivial fraction of the manufactured assemblies under nominal
+tolerances would experience hard coil bind at maximum lift before
+geometric correction.
+\item \emph{New finding: marginal inner-spring coil-bind.} The
+nominal $M_{\mathrm{in}}=2.38$~mm appears to satisfy the criterion
+comfortably; under tolerance propagation, however,
+$P[M_{\mathrm{in}}<1.5~\mathrm{mm}]=16.2\,\%$. The barrier is
+therefore not as safe as the deterministic value suggests, and an
+analogous geometric verification of the installed height is
+recommended for the inner spring as well. This is a finding that the
+deterministic analysis of Section~\ref{sec:res-quant} does not
+surface and is a direct value-added contribution of the probabilistic
+refinement.
+\end{enumerate}
+
+\begin{table*}[!htbp]
+\caption{Monte Carlo refinement of the preventive-barrier indicators under ASTM~A877/A877M tolerances and the catalogued strength dispersion of \citet[\S~10-30]{shigley2020}. The 5\,\% and 95\,\% quantiles span the central 90\,\% of the manufactured population. The probability of barrier compliance failure is reported with respect to the project pass criteria of Table~\ref{tbl:quant-criteria}.}\label{tbl:mc-results}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Indicator & Median & 5\,\% quantile & 95\,\% quantile & $P[\mathrm{barrier\;fail}]$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Outer spring}} \\
+Coil-bind margin $M_{\mathrm{out}}$ (mm) & 0.779 & $-0.760$ & 2.329 & 77.9\,\% \\
+Goodman FoS $n_{f,\mathrm{out}}$ & 1.270 & 1.197 & 1.346 & $<0.01$\,\% \\
+Surge ratio $f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}$ & 3.816 & 3.642 & 4.007 & 94.4\,\% \\
+\multicolumn{5}{l}{\emph{Inner spring}} \\
+Coil-bind margin $M_{\mathrm{in}}$ (mm) & 2.379 & 0.911 & 3.840 & 16.2\,\% \\
+Goodman FoS $n_{f,\mathrm{in}}$ & 0.675 & 0.637 & 0.716 & 100.0\,\% \\
+Surge ratio $f_{n,\mathrm{in}}/f_{\mathrm{cam,max}}$ & 6.853 & 6.538 & 7.195 & $<0.01$\,\% \\
+\bottomrule
+\end{tabular}}
+\end{table*}
+
+The Monte Carlo refinement converts the qualitative ``at-risk''
+status of the two critical barriers identified by the deterministic
+analysis into quantitative probabilities of compliance failure under
+manufacturing-realistic dispersion, and surfaces a third barrier
+($M_{\mathrm{in}}$) that the nominal-point analysis classifies as
+safe but the probabilistic refinement re-classifies as marginal.
+These probabilities map naturally onto the BowTie barrier-status
+language: $P[\mathrm{fail}]>50\,\%$ is reported as
+\emph{at risk}, $10\,\%<P[\mathrm{fail}]\leq 50\,\%$ as
+\emph{marginal}, and $P[\mathrm{fail}]\leq 10\,\%$ as
+\emph{active}. With this convention, the AP 1.8 baseline
+configuration shows two at-risk barriers, one marginal barrier, and
+the surge-ratio outer-spring barrier on the boundary of the at-risk
+classification.
+
+% =================================================================
+\subsection{Lift profile and natural-frequency map}
+\label{sec:res-curves}
+
+For completeness, Fig.~\ref{fig:lift} shows the position of the two
+critical points of the cam profile (positive-acceleration peak and
+deceleration peak) on the lift--versus--crank-angle plane;
+Fig.~\ref{fig:fn} compares the spring natural frequencies with the
+first cam harmonics across the rotational-speed range up to
+10\,000~rpm engine speed.
+
+\begin{figure}[!htbp]
+ \centering
+ \resizebox{\linewidth}{!}{\input{figs/fig2_lift.tex}}
+ \caption{Schematic position of the two critical points of the cam profile of the AP 1.8 high-performance head: positive-acceleration peak ($a_{\max,+}=14\,544$~m\,s$^{-2}$ at $L_{+}=6.04$~mm) and deceleration peak ($a_{\max,-}=20\,362$~m\,s$^{-2}$ at $L_{-}=8.747$~mm). The full lift profile is generated from the cam sizing of the intake valve.}\label{fig:lift}
+\end{figure}
+
+\begin{figure}[!htbp]
+ \centering
+ \resizebox{\linewidth}{!}{\input{figs/fig3_fn.tex}}
+ \caption{Spring natural frequencies $f_{n,\mathrm{out}}$ and $f_{n,\mathrm{in}}$ compared with the first six cam harmonics ($n=1,\dots,6$) across the engine-speed range up to 10\,000~rpm. The shaded region marks the operating regime; the dashed horizontal lines mark $f_{n,\mathrm{out}}\approx 318$~Hz and $f_{n,\mathrm{in}}\approx 571$~Hz.}\label{fig:fn}
+\end{figure}
+
+% =================================================================
+\subsection{Parametric envelope across engine speed}
+\label{sec:res-envelope}
+
+A single-design-instance analysis ($n=1$) does not by itself
+demonstrate that the procedure adds value across the operational
+range; to address this, the dynamic-ratio indicator $R$ and the
+surge-ratio indicator $f_{n}/f_{\mathrm{cam}}$ were swept across the
+engine-speed range 6\,000--12\,000~rpm at fixed AP 1.8 head
+geometry. The dynamic-ratio indicator scales analytically as
+$R(\omega)=R(\omega_{0})\,(\omega_{0}/\omega)^{2}$ (cam acceleration
+$\propto \omega^{2}$ while spring force at the critical lift is
+$\omega$-independent), and the surge-ratio scales as
+$f_{n}/f_{\mathrm{cam}}\propto 1/\omega$. Table~\ref{tbl:rpm-sweep}
+reports the worst-case exhaust-side equivalent dynamic ratio
+$R_{\mathrm{eq},-,\mathrm{esc}}$ and the outer-spring surge ratio
+across the sweep.
+
+\begin{table}[!htbp]
+\caption{Parametric sweep of the two speed-sensitive indicators across the engine-speed range 6\,000--12\,000~rpm for the AP 1.8 head at fixed geometry. The dynamic-ratio criterion is $R\geq 1.20$ and the surge-ratio rule-of-thumb is $f_{n}/f_{\mathrm{cam}}\geq 4$. The intersection of the two pass criteria defines an analytical safe-operation envelope of approximately 6\,000--10\,500~rpm for the baseline configuration; barriers transition to at-risk above this band and the loss-of-contact boundary ($R\to 1$) is crossed near 11\,500~rpm.}\label{tbl:rpm-sweep}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Engine speed (rpm) & $R_{\mathrm{eq},-,\mathrm{esc}}$ & $f_{n,\mathrm{out}}/f_{\mathrm{cam}}$ & Envelope status \\
+\midrule
+6\,000 & 3.73 & 6.36 & comfortably active \\
+7\,000 & 2.74 & 5.45 & active \\
+8\,000 & 2.10 & 4.77 & active \\
+9\,000 & 1.66 & 4.24 & active \\
+10\,000 & 1.34 & 3.82 & at limit (surge) \\
+10\,500 & 1.22 & 3.63 & at limit (dynamic) \\
+11\,000 & 1.11 & 3.47 & at risk \\
+11\,500 & 1.02 & 3.32 & loss-of-contact boundary \\
+12\,000 & 0.93 & 3.18 & beyond envelope \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[!htbp]
+ \centering
+ \resizebox{\linewidth}{!}{\input{figs/fig5_envelope.tex}}
+ \caption{Operating envelope of the AP 1.8 valve train: the dynamic ratio $R_{\mathrm{eq},-,\mathrm{esc}}$ and the outer-spring surge ratio $f_{n,\mathrm{out}}/f_{\mathrm{cam}}$ versus engine speed, from the closed-form scaling of Table~\ref{tbl:rpm-sweep}. The surge rule of thumb is crossed near 9\,800~rpm, the dynamic-ratio project target near 10\,500~rpm, and the loss-of-contact boundary ($R=1$) near 11\,500~rpm; the 10\,000~rpm design point sits in the most demanding region of the safe envelope.}\label{fig:envelope}
+\end{figure}
+
+\noindent The parametric sweep produces three operational
+boundaries that the deterministic framework predicts in closed form
+(Fig.~\ref{fig:envelope}):
+the surge-ratio rule-of-thumb is crossed at approximately
+9\,800~rpm; the dynamic-ratio project criterion
+($R\geq 1.20$) is crossed at approximately 10\,500~rpm; and the
+loss-of-contact boundary ($R=1$) is crossed at approximately
+11\,500~rpm. The AP 1.8 design point of 10\,000~rpm therefore sits
+in the most demanding region of the safe envelope, with negligible
+margin to the dynamic-ratio criterion and only $\approx 5\,\%$
+geometric margin on the cam-profile critical-deceleration point. The
+sweep extends the single-point analysis of
+Section~\ref{sec:res-quant} into an operating-envelope view without
+re-running the analytical sizing, illustrating that the procedure is
+not bound to a single rpm and can be transposed to other operating
+points or other high-rpm cylinder heads by the same closed-form
+scaling rules.
+
+% =================================================================
+\subsection{Benchmark against documented failure cases}
+\label{sec:res-litvalidation}
+
+The deterministic indicators of
+Table~\ref{tbl:quant-results} establish whether the AP 1.8 head
+satisfies its design margins; they do not by themselves demonstrate
+that the BowTie procedure would correctly flag the failure modes
+encountered in service by other engines. To address that gap without
+introducing experimental data that is not available for the AP 1.8
+configuration, the four valve-train and engine-component failure
+case studies catalogued in Table~\ref{tbl:related-cases} are now
+re-examined as a benchmark set: each reported root cause is matched
+with the BowTie barrier that, on the bow diagram of
+Section~\ref{sec:res-bowtie}, would have been the controlling
+element, and the deterministic indicator (if any) that would have
+exposed the deficit at the design stage is identified.
+
+\noindent\textbf{Construct-validity disclosure.} The four published
+case studies surveyed below were inputs to the formulation of the
+preventive barrier set $P_{1}$--$P_{5}$ of
+Section~\ref{sec:method-bowtie-qual}: they were read before the bow
+diagram was finalised, and the threat list was constructed to cover
+their physical mechanisms. The exercise that follows is therefore a
+\emph{construct-validity check} (does the framework, as designed,
+account for known failure mechanisms?) rather than a
+\emph{predictive-validity} test (would the framework predict
+unseen failures?). Predictive validity in the strict sense requires
+either application to an unrelated future failure or a test-rig
+campaign on the AP 1.8 head itself; both are identified as priority
+follow-on work in Section~\ref{sec:roadmap}. Acknowledged
+construct-validity testing is nevertheless an established step in
+the development of risk-assessment procedures, and the outcome of
+the present check is informative even under that more limited claim.
+
+Four outcomes are possible: \emph{caught on the deterministic side}
+(a preventive-barrier indicator flags the deficit numerically),
+\emph{caught on the mitigative side} (the failure mechanism is an
+operational signature addressed by a mitigative barrier and outside
+the preventive deterministic layer by construction),
+\emph{flagged qualitatively only} (the threat is in the bow but no
+quantitative indicator exists in the present formulation), or
+\emph{outside the present scope} (the failure mechanism falls
+outside the barrier set adopted here and would require an extension
+of the procedure). The four cases populate all four outcomes, and
+this distribution itself is informative: the BowTie procedure as
+formulated maps three of the four root causes onto its own
+preventive or mitigative layer (Xing on the deterministic side;
+V\'elez Godi\~no on the mitigative side; Soffritti at the qualitative
+level), while the fourth case (Zhao) defines the boundary of the
+current barrier set and motivates a documented extension.
+
+\paragraph{\citet{xing2021valvespringEAC}, caught on the
+deterministic side.}
+The premature fatigue of high-strength valve springs reported by
+Xing is attributed to environment-assisted cracking, which depresses
+the effective shear endurance limit $S_{se}$ below the catalogued
+allowable for shot-peened wire. The preventive barrier P4
+(\emph{high-fatigue-resistance spring material}) maps directly to
+the Goodman factor of safety
+$n_{f}$ of Eq.~\eqref{eq:goodman}, evaluated with a $S_{se}$
+discounted for surface condition and lubricant chemistry as
+recommended by the case study itself. In the present analysis the
+discounted $S_{se}\approx 465$~MPa for shot-peened ASTM~A877/A877M
+(see Section~\ref{sec:res-quant}, ``Fatigue stress'') is precisely
+the value advocated by Xing. The fact that the same indicator,
+applied to the AP 1.8 inner spring, returns
+$n_{f,\mathrm{in}}\approx 0.68 < 1$ is the strongest demonstration
+of the procedure: the indicator that diagnosed Xing's premature
+failure at a generic level exposes the inner-spring deficit of the
+AP 1.8 head before the prototype is built.
+
+\paragraph{\citet{velezgodino2019overheadvalvetrain}, caught on
+the mitigative side.}
+The recurrent in-service failure of the overhead valve train of
+urban buses is attributed by V\'elez Godi\~no et al.\ to a
+combination of operational misuse and inadequate inspection
+intervals, a maintenance and operational signature, not a
+design-margin signature. By construction, this class of failure
+falls on the mitigative side of the bow rather than on the
+preventive side: barriers M3 (\emph{operating envelope defined at
+design stage}) and M5 (\emph{predictive maintenance via vibration
+signals}) are the controlling elements. The deterministic
+indicators of Table~\ref{tbl:quant-criteria} would not have
+flagged this case at the design stage, and this is the correct
+behaviour: the case is, by its own description, an operational
+problem expressed at the maintenance interface. The BowTie diagram
+visualises this distinction explicitly, whereas a single-score RPN
+ranking blends preventive and mitigative dimensions into one number.
+
+\paragraph{\citet{soffritti2018wornvalvetrain}, flagged
+qualitatively only.}
+The premature wear at the rocker-arm/pushrod and rocker-arm/valve
+interfaces in a four-cylinder diesel engine is attributed by
+Soffritti et al.\ to valve misalignment with respect to the seat
+insert. The threat ``out-of-tolerance assembly geometry'' is not
+explicitly listed among $T_{1}$--$T_{6}$ in the bow of
+Section~\ref{sec:method-bowtie-qual}, but it is a direct extension
+of the existing threat structure: it sits next to $T_{2}$
+(\emph{excessive moving mass}) and $T_{3}$
+(\emph{aggressive cam profile}) as a geometric departure from the
+sizing assumption. No deterministic indicator in
+Table~\ref{tbl:quant-criteria} maps to it: the case is therefore
+\emph{flagged qualitatively only} by the present procedure. This
+outcome motivates a candidate extension of the preventive barrier
+set, an assembly/tolerance barrier $P_{6}$ with a dimensionless
+stem-to-seat runout indicator $\rho_{\mathrm{run}}$ (specified in
+Section~\ref{sec:roadmap-barriers}), which is identified as a
+direction for future work.
+
+\paragraph{\citet{zhao2023camshaftV6}, outside the present
+scope.}
+The lubrication failure of the camshaft bearings of a V6 diesel
+engine is attributed by Zhao et al.\ to an asperity-contact regime
+that violates the design assumption of full hydrodynamic
+lubrication. The present BowTie is centred on the spring--cam
+dynamic interaction and does not include a lubrication-regime
+preventive barrier; the case therefore lies outside the scope of
+the procedure as formulated here. The honest outcome of the
+comparison is that the procedure would have \emph{missed} this
+failure mode, and that explicit recognition is itself the
+useful finding: an extension of the procedure with an additional
+preventive barrier on the lubrication regime, specified as the
+Stribeck-curve minimum film-thickness ratio $\Lambda_{\min}$ of
+Section~\ref{sec:roadmap-barriers} with pass criterion
+$\Lambda_{\min}\geq 1.5$, closes the gap before the framework can
+claim coverage of the full set of valve-train-related failure
+mechanisms.
+
+\paragraph{Summary of the construct-validity check.}
+Of the four documented case studies surveyed in
+Table~\ref{tbl:related-cases}, one is caught quantitatively by the
+deterministic indicator set (Xing, via the Goodman factor of
+safety), one is caught on the mitigative side as designed
+(V\'elez Godi\~no), one is flagged qualitatively but lies outside
+the deterministic indicator set (Soffritti, motivating a candidate
+$P_{6}$), and one is outside the present scope altogether (Zhao,
+motivating a lubrication-regime extension). The pattern is
+consistent: the procedure correctly distinguishes between
+design-margin failures (where the deterministic indicators are
+diagnostic), operational/maintenance failures (where the mitigative
+side is diagnostic), and failure mechanisms outside the present
+barrier set (where the comparison flags the limitation). This
+construct-validity check supports the use of the procedure as a
+design-stage screening tool while confirming that an empirical campaign
+on a dedicated test rig, specified in Section~\ref{sec:roadmap}, remains necessary for the quantitative, predictive validation of
+the indicator margins reported here.

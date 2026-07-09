@@ -1,0 +1,22 @@
+% Method-flow figure for the QC-BowTie pipeline.
+\begin{tikzpicture}[
+    node distance=7mm and 8mm,
+    box/.style={draw, rounded corners, align=center, font=\footnotesize,
+                inner sep=3.5pt, text width=26mm, minimum height=12mm},
+    arr/.style={-{Latex[length=2.2mm]}, thick},
+]
+\node[box, fill=blue!6] (b1) {Qualitative BowTie\\ (top event, threats,\\ preventive barriers)};
+\node[box, fill=blue!6, right=of b1] (b2) {Couple each barrier to a\\ deterministic indicator\\ $+$ pass criterion};
+\node[box, fill=green!8, right=of b2] (b3) {Deterministic\\ evaluation:\\ active / at-risk};
+\node[box, fill=orange!10, below=of b3] (b4) {Monte Carlo\\ (ASTM A877\\ tolerances)};
+\node[box, fill=orange!10, left=of b4] (b5) {Barrier status as\\ $P[\mathrm{fail}]$: active /\\ marginal / at-risk};
+\node[box, fill=gray!10, left=of b5] (b6) {Contrast with\\ FMEA / RPN};
+\draw[arr] (b1) -- (b2);
+\draw[arr] (b2) -- (b3);
+\draw[arr] (b3) -- (b4);
+\draw[arr] (b4) -- (b5);
+\draw[arr] (b5) -- (b6);
+\node[box, fill=red!6, above=of b2, text width=40mm] (cv)
+    {Construct-validity check vs.\ four published failure cases};
+\draw[arr, dashed] (cv) -- (b2);
+\end{tikzpicture}

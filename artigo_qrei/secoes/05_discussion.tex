@@ -1,0 +1,305 @@
+% =====================================================================
+% Section 5 — Discussion
+% =====================================================================
+
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Implications for cylinder-head design}
+\label{sec:disc-design}
+
+The quantitative-coupled BowTie of Section~\ref{sec:results} provides a
+single artefact that links each design decision in the high-performance
+cylinder head to the risk it controls. The analysis identified two
+concurrent at-risk barriers under the baseline configuration of the
+AP 1.8 head: (i) the \emph{outer-spring coil-bind margin}
+($M_{\mathrm{out}}=0.78$~mm against a project criterion of
+$M\geq 1.5$~mm), and (ii) the \emph{inner-spring fatigue Goodman
+factor of safety} ($n_{f,\mathrm{in}}\approx 0.68$ against
+$n_{f}\geq 1$). The outer-spring natural-frequency margin
+($f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}\approx 3.81$) sits just
+below the conventional rule-of-thumb threshold of 4 and is treated
+as a residual concern. The remaining barriers, dynamic follower
+contact ($R\geq 1.343$ in the worst case, against the project
+criterion of $R\geq 1.20$), inner-spring coil-bind margin
+($M_{\mathrm{in}}=2.38$~mm), and outer-spring fatigue
+($n_{f,\mathrm{out}}\approx 1.27$), satisfy their pass criteria
+with non-uniform margins.
+
+The fact that the two at-risk barriers affect \emph{different}
+springs (outer for coil-bind, inner for fatigue) and act through
+\emph{different} physical mechanisms (geometric clearance vs cyclic
+shear loading) is significant: a design iteration that addresses
+only one of the two findings will leave the other unresolved. The
+sizing note for the AP 1.8 springs already prescribes the geometric
+correction for the outer-spring coil-bind (raising the installed
+height to $H_{\mathrm{inst,ideal}}=47.72$~mm and the free length to
+$L_{0,\mathrm{ideal}}=55.56$~mm to achieve $M\approx 2.0$~mm). The
+inner-spring Goodman deficit, by contrast, calls for a metallurgical
+or geometric change of a different nature: either increasing the
+wire diameter $d_{\mathrm{in}}$ to lower the shear stress at a given
+load, reducing the spring index
+$C_{\mathrm{in}}=D_{m,\mathrm{in}}/d_{\mathrm{in}}$, or specifying
+a higher-grade steel (e.g.\ chrome--silicon--vanadium ASTM~A878)
+with a larger corrected shear endurance limit $S_{se}$. Concerning
+the residual outer-spring natural-frequency concern, a parallel
+correction would adjust either the active coil count
+$N_{a,\mathrm{out}}$ or the spring index $C_{\mathrm{out}}$ to push
+$f_{n,\mathrm{out}}$ further from the dominant cam harmonics. The
+BowTie diagram makes the three trade-offs simultaneously visible to
+the design team.
+
+The remaining barriers retain non-zero margins and therefore satisfy
+the literature-anchored pass criteria, but Table~\ref{tbl:quant-results}
+shows that the margins are not uniform. This non-uniformity is a useful
+input for design iteration: barriers with comfortable margins (e.g.\
+the inner-spring coil-bind margin or the outer-spring fatigue stress)
+are candidates for relaxation if doing so frees mass or simplifies
+manufacturing; barriers close to the pass threshold should be the focus
+of dynamometer validation as soon as a physical prototype is available.
+
+% =================================================================
+\subsection{Comparison with traditional FMEA/RPN}
+\label{sec:disc-fmea-comparison}
+
+Table~\ref{tbl:bowtie-vs-fmea} contrasts the present BowTie analysis
+with a conventional FMEA of the same six threats. Three observations
+follow.
+
+\begin{enumerate}
+\item \emph{Granularity of the causal chain}: the BowTie diagram makes
+the linkage between threat, preventive barrier, top event, and
+consequence visible in a single artefact, whereas FMEA collapses the
+causal chain into the multiplicative RPN. For a high-rpm valve train,
+this granularity is necessary because several threats share the same
+preventive barriers (for example, both \emph{insufficient stiffness}
+and \emph{spring heating} are addressed by the spring-natural-frequency
+barrier).
+\item \emph{Quantitative anchoring}: in FMEA, severity, occurrence, and
+detectability are typically assigned on integer scales~(1--10) by
+expert judgement. The quantitative-coupled BowTie replaces these
+ordinal scores with deterministic indicators that can be reproduced by
+any reader who has access to the sizing calculations.
+\item \emph{Communication}: the BowTie diagram is accessible to
+designers, operators, and reliability engineers without prior
+familiarity with the RPN convention. This is a practical advantage in
+the academic context of a master's research that aims to articulate
+mechanical design and reliability analysis.
+\end{enumerate}
+
+\begin{table}[!htbp]
+\caption{Comparison between the BowTie analysis presented in this work and a conventional FMEA of the same threats.}\label{tbl:bowtie-vs-fmea}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Aspect & FMEA / RPN & Quantitative BowTie \\
+\midrule
+Causal chain & Implicit & Explicit \\
+Severity assessment & Ordinal (1--10) & Continuous (deterministic) \\
+Pass criterion & RPN threshold & Indicator-by-indicator \\
+Reproducibility & Limited & Direct from sizing \\
+Visualisation & Tabular & Diagrammatic \\
+Identifies critical barrier & No & Yes (via tornado plot) \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+A concrete numerical illustration of why the conventional RPN
+collapses information that the BowTie preserves is given in
+Table~\ref{tbl:rpn-comparison}. The six threats $T_{1}$--$T_{6}$ of
+the BowTie diagram were scored on the conventional 1--10 ordinal
+scales of severity ($S$), occurrence ($O$), and detectability ($D$)
+following the rating guidelines of the AIAG--VDA 2019 FMEA harmonised
+handbook \citep{aiagvda2019fmea}: severity is uniformly high
+because all six threats converge on the same catastrophic top event
+(valve--piston collision, $S\in[8,10]$); occurrence is mapped from
+the ASTM~A877/A877M tolerance band and the catalogued operational
+variability of the spring (so that occurrence is calibrated to
+manufacturing rather than to subjective judgement); detectability is
+uniformly low ($D\in[3,4]$) because the failure modes are mechanical
+and predominantly silent before the event of failure. Each score is
+the median of three independent assignments by the authors using the
+AIAG--VDA rubric. The resulting RPNs fall in a narrow band
+(96--240) and place the inner-spring fatigue threat ($T_{4}$,
+RPN~=~150) and the outer-spring coil-bind threat ($T_{1}$,
+RPN~=~144) within ten points of each other, even though the
+quantitative-coupled BowTie identifies both as concurrently at risk
+through entirely different physical mechanisms. A triaging team
+using a conventional 100--125 RPN threshold would not be able to
+distinguish reliably between these two threats. The RPN ranking, in
+other words, masks the very finding that the BowTie analysis
+surfaces. The observation is structural rather than specific to the
+illustrative scores adopted here: because all six threats converge
+on the same catastrophic top event (valve--piston collision), the
+severity dimension is saturated and the multiplicative
+$S\times O\times D$ score loses its discriminating power. The
+well-documented weaknesses of the multiplicative RPN, non-uniqueness of identical scores, sensitivity to the ordinal scale,
+and compression of independent risk dimensions into a single
+number, have been the subject of an extensive critique
+\citep{pillay2003modifiedfmea,liu2013fuzzyfmea,mahmoudvand2025probability},
+and the present case study reproduces them in concentrated form. Recent
+extensions of FMEA, the action-priority logic introduced in the
+AIAG--VDA 2019 handbook itself, fuzzy-set formulations
+\citep{liu2013fuzzyfmea,wang2009fuzzyAHP}, and AHP-weighted
+scoring, improve the resolution of the prioritisation but do not
+address the underlying compression of the causal chain into a
+single ordinal score, which is the structural objection addressed by
+the present BowTie formulation.
+
+\begin{table}[!htbp]
+\caption{Illustrative AIAG--VDA 2019 scoring of the six threats $T_{1}$--$T_{6}$ of the BowTie diagram. Severity, occurrence, and detectability follow the harmonised severity-occurrence-detection rubric of \citet{aiagvda2019fmea}; each score is the median of three independent assignments by the present authors and \emph{not} the output of a formal expert panel. Occurrence is calibrated to the ASTM~A877/A877M tolerance band rather than to subjective frequency judgement. The scores are intended to support a structural comparison between BowTie and RPN, not to constitute a stand-alone risk ranking.}\label{tbl:rpn-comparison}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Threat & $S$ & $O$ & $D$ & RPN \\
+\midrule
+$T_{1}$ Insufficient spring stiffness & 9 & 4 & 4 & 144 \\
+$T_{2}$ Excessive moving mass & 9 & 3 & 4 & 108 \\
+$T_{3}$ Aggressive cam profile & 10 & 3 & 4 & 120 \\
+$T_{4}$ Spring heating in operation & 10 & 5 & 3 & 150 \\
+$T_{5}$ Out-of-tolerance thermal clearance & 8 & 4 & 3 & 96 \\
+$T_{6}$ Cam-harmonic / spring resonance & 10 & 6 & 4 & 240 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+The two methods are not exclusive: FMEA remains useful for triaging a
+large number of failure modes when probabilistic data is unavailable,
+and BowTie is most valuable when a small number of high-severity events
+deserves a detailed barrier analysis. For the high-performance cylinder
+head studied here, the BowTie approach is preferred because the failure
+modes converge on a single top event whose consequences are catastrophic.
+
+A parallel branch of the literature has extended the conventional FMEA
+through fuzzy-set formulations and AHP-based weighting to address the
+loss of resolution of the multiplicative RPN. Compared with these
+approaches, the proposed quantitative-coupled BowTie does not refine
+the FMEA score; it \emph{replaces} the single-score logic with a
+barrier-by-barrier deterministic check that is reproducible from the
+sizing calculations. The two routes are therefore complementary:
+fuzzy/AHP-FMEA improves the prioritisation among many failure modes,
+while the present BowTie improves the auditability of the design
+margins around a single critical event.
+
+% =================================================================
+\subsection{Limitations}\label{sec:disc-limitations}
+
+The present analysis has the following limitations, which should be
+considered when interpreting the results. They are listed in order
+of priority for follow-on work.
+
+\begin{itemize}
+\item \emph{No experimental validation, primary limitation.} The
+quantitative indicators of Table~\ref{tbl:quant-results} are
+computed from the analytical sizing of the valve and the spring;
+no dynamometer, motored-engine, or spring-rig test of the
+high-performance cylinder head has been conducted. The construct-validity
+check against four published failure cases reported in
+Section~\ref{sec:res-litvalidation} supports the diagnostic
+behaviour of the procedure but does \emph{not} confirm the absolute
+magnitude of the indicator margins for the AP 1.8 head. An
+empirical campaign is required, and its scope is now stated
+quantitatively for transparency. The minimum experimental
+verification programme that would close this limitation comprises:
+(i) a dedicated spring rig to measure the surge response of both
+springs across the 50--600~Hz band, with laser-displacement
+instrumentation on the active coils, sufficient to confirm
+$f_{n,\mathrm{out}}\approx 318$~Hz and
+$f_{n,\mathrm{in}}\approx 571$~Hz to within $\pm$5\,\% under the
+seat-preload boundary condition; (ii) a motored-engine speed sweep
+from 6\,000 to 10\,000~rpm with a non-contacting valve-position
+transducer sampled at 50\,kHz, to verify the absence of valve
+float at the deceleration peak ($a_{\max,-}=20\,362$~m\,s$^{-2}$)
+and to measure the residual coil-bind margin within $\pm$0.1~mm;
+and (iii) a fatigue campaign on a representative inner-spring
+specimen at the alternating shear stress of
+$\tau_{a,\mathrm{in}}\approx 374$~MPa superimposed on the mean
+$\tau_{m,\mathrm{in}}\approx 858$~MPa, run to either run-out at
+$10^{8}$ cycles or first-failure indication, on a sample size of
+at least $n=5$ to support a statistically meaningful estimate of
+the Goodman factor of safety against the
+$n_{f,\mathrm{in}}\approx 0.68$ analytical prediction. The total
+test-rig hours required for this minimum programme are estimated
+at the order of 600--800~h. The validation roadmap is presented in
+detail in Section~\ref{sec:roadmap}.
+\item \emph{Operating envelope partially characterised.} The
+deterministic pass criteria are evaluated at the maximum design
+speed of 10\,000~rpm, and Section~\ref{sec:res-envelope} extends
+the two speed-sensitive indicators ($R$ and
+$f_{n}/f_{\mathrm{cam}}$) across 6\,000--12\,000~rpm at fixed
+geometry. Off-design behaviour involving thermal transients
+(cold start, sustained high-coolant-temperature operation) and
+load transients (part-load, overspeed beyond 12\,000~rpm) is not
+considered, and a coupled thermal--mechanical sweep is identified
+as a follow-on analytical study.
+\item \emph{Probabilistic refinement covers manufacturing tolerance
+but not full operational variability.} The deterministic indicators
+have been complemented by a Monte Carlo simulation
+(Section~\ref{sec:res-mc}) propagating the catalogued ASTM~A877/A877M
+spring-wire tolerances and the strength dispersion of
+\citet[\S~10-30]{shigley2020} through the analytical sensitivity
+coefficients. The simulation confirms that the inner-spring Goodman
+deficit is present in 100\,\% of the manufactured population, the
+outer-spring coil-bind margin fails its criterion in 77.9\,\% of
+trials with a 5\,\% probability of actual hard bind, and the
+inner-spring coil-bind margin is re-classified from active
+(deterministic) to marginal ($P[\mathrm{fail}]=16.2\,\%$). However,
+the Monte Carlo treats only the manufacturing tolerance and the
+strength scatter; operational variability beyond ambient temperature
+(thermal soak transients, oil-condition degradation, lubricant
+contamination, valve-seat wear) and the cam-profile harmonics
+distribution are not propagated. A second-generation analysis that
+extends the simulation to those operational sources and computes
+joint barrier-failure probabilities (e.g.\ correlated coil-bind
+and Goodman events under thermally degraded conditions) is identified
+as a follow-on direction.
+\item \emph{Hot clearance treated as a 1-D differential estimate.}
+The hot-clearance indicator
+$c_{\mathrm{cold,req}}=1.25$~mm (bracket [1.13, 1.60]) of
+Section~\ref{sec:res-quant} is a closed-form differential of the
+steel-stem and aluminium-head expansion paths along the
+load-bearing line that closes the rocker--valve-tip clearance. It
+relies on a documented stem temperature
+$\Delta T_{\mathrm{stem}}\approx 600$~K
+\citep{heisler2002}, a head temperature
+$\Delta T_{\mathrm{head}}\approx 150$~K
+\citep{heywood1988}, and a generic OHC head path length
+$L_{\mathrm{Al}}\approx 100$~mm. A coupled
+thermal--structural finite-element analysis of the specific
+AP 1.8 cylinder head would refine $L_{\mathrm{Al}}$ and the
+localised $\Delta T_{\mathrm{head}}$ field and tighten the
+[1.13, 1.60]~mm bracket, but the present deterministic indicator
+is no longer a qualitative verification.
+\item \emph{Barrier set restricted to the spring--cam dynamic
+interaction.} The construct-validity check of
+Section~\ref{sec:res-litvalidation} flagged two failure mechanisms
+that are not currently covered by the preventive set:
+out-of-tolerance valve-seat alignment
+\citep{soffritti2018wornvalvetrain} and lubrication-regime
+degradation in the camshaft bearing pair
+\citep{zhao2023camshaftV6}. Candidate indicators for these two
+mechanisms, a dimensionless stem-to-seat runout ratio
+$\rho_{\mathrm{run}}$ and a Stribeck-curve minimum film-thickness
+ratio $\Lambda_{\min}$, both with literature-anchored pass
+criteria, are specified in Section~\ref{sec:roadmap-barriers}
+and identified as priority directions for future work to broaden the
+coverage of valve-train-related failure mechanisms.
+\item \emph{Single design instance.} The analysis is conducted on a
+single bespoke cylinder head ($n=1$). The methodology itself is
+transposable to other high-rpm SI heads, and
+Section~\ref{sec:res-envelope} demonstrates the procedure across the
+operating envelope 6\,000--12\,000~rpm for the same head, recovering
+in closed form the surge, dynamic, and loss-of-contact boundaries.
+The numerical findings (critical barrier identity, indicator
+margins) at the 10\,000~rpm design point are nevertheless
+case-specific and should not be generalised to other heads
+without re-evaluation of the geometric and material inputs.
+\item \emph{Out of scope by design choice.} Knock and other abnormal
+combustion phenomena, low-speed pre-ignition, IoT-based monitoring,
+artificial-intelligence-supported diagnostics, and the multi-objective
+optimisation of the cylinder-head geometry are explicitly out of scope.
+The reader is referred to the underlying dissertation
+\citep{porto2026dissertation} for the air-flow and combustion analysis
+of the same head.
+\end{itemize}

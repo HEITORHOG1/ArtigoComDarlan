@@ -1,0 +1,227 @@
+%% =====================================================================
+%% A quantitative-coupled BowTie for design-stage reliability assessment
+%% of a high-rpm valve train: the VW AP 1.8 cylinder head at 10,000 rpm
+% =================================================================
+%% Authors: Darlan Costa Porto (corresponding)
+%% Heitor Oliveira Goncalves
+%% Florian Pradelle
+%% Prof. Dr. Jose Cristiano Pereira
+%% Affiliations: Universidade Catolica de Petropolis (UCP);
+%% Pontificia Universidade Catolica do Rio de Janeiro (PUC-Rio)
+% =================================================================
+%% Target journal: Quality and Reliability Engineering International (QREI, Wiley, Q2)
+%% https://onlinelibrary.wiley.com/journal/10991638
+%% First-submission format: free format (elsarticle preprint is acceptable and
+%% robust; the Wiley NJD template is applied only if requested at
+%% revision/acceptance stage).
+%% Citation style: elsarticle-num-names (numbered references [1] with author
+%% names exposed so \citet{key} renders "Author et al. [N]"; pure elsarticle-num
+%% breaks \citet and prints "(author?)").
+% =================================================================
+%% Compilation:
+%% pdflatex main
+%% bibtex main
+%% pdflatex main
+%% pdflatex main
+%% =====================================================================
+
+\documentclass[preprint,12pt,a4paper]{elsarticle}
+
+%% Math typesetting
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%% British English hyphenation (manuscript is consistent British English)
+\usepackage[UKenglish]{babel}
+
+%% Better tables; the L/C/R column types and \tblwidth macro below
+%% replicate helpers used by the table sources in secoes/*.tex.
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}{@{\extracolsep{\fill}}l}
+\newcolumntype{R}{@{\extracolsep{\fill}}r}
+\newcolumntype{C}{@{\extracolsep{\fill}}c}
+\providecommand{\tblwidth}{\textwidth}
+
+%% Native vector figures (BowTie diagram, tornado plot, frequency map)
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,arrows.meta,patterns}
+
+%% Keep floats inside their parent section.
+\usepackage{placeins}
+\let\oldsection\section
+\renewcommand\section{\FloatBarrier\oldsection}
+
+%% Hyperref last for safety
+\usepackage{hyperref}
+
+\journal{Quality and Reliability Engineering International}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{The Quantitative-Coupled BowTie: a probabilistic barrier-screening method for design-stage reliability, demonstrated on a high-rpm valve train}
+
+%% First author (corresponding)
+\author[ucp]{Darlan Costa Porto\corref{cor1}}
+\ead{darlan.42540004@ucp.br}
+\ead[url]{https://orcid.org/0009-0004-7836-7256}
+
+%% Second author
+\author[ucp]{Heitor Oliveira Gon\c{c}alves}
+\ead{heitorhog@gmail.com}
+\ead[url]{https://orcid.org/0000-0002-5866-2213}
+
+%% Third author (external collaborator, PUC-Rio)
+\author[pucrio]{Florian Pradelle}
+\ead{pradelle@puc-rio.br}
+\ead[url]{https://orcid.org/0000-0003-4306-8083}
+
+%% Fourth author (advisor)
+\author[ucp]{Jos\'e Cristiano Pereira}
+\ead{josecristiano.pereira@ucp.br}
+\ead[url]{https://orcid.org/0000-0002-2329-0560}
+
+\cortext[cor1]{Corresponding author.}
+
+\affiliation[ucp]{organization={Centre for Engineering and Computing, Graduate Programme in Engineering Systems, Universidade Cat\'olica de Petr\'opolis},
+ addressline={Rua Bar\~ao do Amazonas, 124},
+ city={Petr\'opolis},
+ postcode={25685-100},
+ state={RJ},
+ country={Brazil}}
+
+\affiliation[pucrio]{organization={Department of Mechanical Engineering, Pontif\'icia Universidade Cat\'olica do Rio de Janeiro (PUC-Rio)},
+ addressline={Rua Marqu\^es de S\~ao Vicente, 225, G\'avea},
+ city={Rio de Janeiro},
+ postcode={22451-900},
+ state={RJ},
+ country={Brazil}}
+
+%% Abstract (QREI limit: <=230 words)
+\begin{abstract}
+Design-stage reliability screening is hardest when a failure has many
+contributing barriers and no field data yet exists. This paper introduces the
+Quantitative-Coupled BowTie (QC-BowTie): each preventive barrier of a BowTie
+diagram is bound to a deterministic engineering indicator with an explicit pass
+criterion, and manufacturing tolerances are then propagated through those
+indicators by Monte Carlo, so that every barrier is reported as an
+\emph{active}, \emph{marginal}, or \emph{at-risk} probability of compliance
+failure. The deliverable is the method; a high-rpm valve train, a VW AP 1.8
+cylinder head at 10\,000~rpm, is the demonstrator. Deterministic evaluation
+flags two at-risk barriers: the outer-spring coil-bind margin and the
+inner-spring Goodman factor of safety (about 0.68). A Monte Carlo refinement
+($N=2\times 10^{5}$, ASTM~A877/A877M tolerances) confirms the Goodman deficit
+across the whole manufactured population and exposes a
+\emph{marginal} inner-spring coil-bind barrier (16.2\,\% compliance-failure
+probability) that the deterministic layer reports as safe, a distinction a
+conventional FMEA/RPN ranking blurs. The method is checked for construct
+validity against four published valve-train failure investigations. Being
+analytical and single-case, it leaves experimental validation as declared
+future work, for which a test-rig programme is specified. The QC-BowTie
+converts a qualitative risk diagram into an auditable, probabilistic
+design-screening tool transferable to other high-load mechanical systems.
+\end{abstract}
+
+%% Keywords (QREI: up to 5)
+\begin{keyword}
+Quantitative-Coupled BowTie \sep Barrier-based reliability \sep Monte Carlo \sep Failure mode prioritisation \sep Design-stage risk assessment
+\end{keyword}
+
+\end{frontmatter}
+
+% =====================================================================
+% Nomenclature and glossary (aids the non-specialist reliability reader)
+% =====================================================================
+\section*{Nomenclature and glossary}
+\noindent\emph{Valve-train terms.}
+\begin{description}\setlength{\itemsep}{0pt}
+\item[Loss of follower contact (valve float)] separation of the cam follower from the cam profile at high speed, when spring force can no longer sustain the follower's inertial demand; the top event of the BowTie.
+\item[Coil bind] the condition in which a helical compression spring is fully compressed and adjacent coils touch, so no further travel is possible.
+\item[Surge / spring natural frequency $f_{n}$] the resonant axial standing wave of a valve spring; if a cam harmonic coincides with $f_{n}$ the spring loses effective stiffness.
+\item[Cam harmonics] the Fourier components of the periodic cam-lift excitation ($n\,f_{\mathrm{cam}}$).
+\item[Goodman criterion / factor of safety $n_{f}$] an alternating--mean fatigue safety factor for a component under combined mean and cyclic stress.
+\item[Wahl factor $K_{w}$] the curvature stress-correction factor for a helical spring.
+\end{description}
+\noindent\emph{Method indicators.}
+\begin{description}\setlength{\itemsep}{0pt}
+\item[$R$] dynamic follower-contact ratio: critical spring force divided by critical inertial force (pass if $R\geq$ target).
+\item[$M$] coil-bind margin: spring height at full lift minus solid height.
+\item[{$P[\mathrm{fail}]$}] compliance-failure probability: the Monte Carlo probability that a barrier indicator misses its pass criterion under manufacturing tolerance. Barrier status: \emph{active} ($P[\mathrm{fail}]\leq 10\,\%$), \emph{marginal} ($10\,\%<P[\mathrm{fail}]\leq 50\,\%$), \emph{at-risk} ($P[\mathrm{fail}]>50\,\%$).
+\end{description}
+
+% =====================================================================
+% Body
+% =====================================================================
+
+\input{secoes/01_introduction}
+\input{secoes/02_background}
+\input{secoes/03_methodology}
+\input{secoes/04_results}
+\input{secoes/05_discussion}
+\input{secoes/06_validation_roadmap}
+\input{secoes/07_conclusion}
+
+% =====================================================================
+% CRediT authorship contribution statement
+% =====================================================================
+
+\section*{CRediT authorship contribution statement}
+
+\noindent\textbf{Darlan Costa Porto:} Conceptualization, Methodology, Formal analysis, Investigation, Visualization, Writing -- original draft.
+
+\noindent\textbf{Heitor Oliveira Gon\c{c}alves:} Methodology, Validation, Formal analysis, Writing -- review \& editing, Supervision.
+
+\noindent\textbf{Florian Pradelle:} Methodology, Validation, Writing -- review \& editing.
+
+\noindent\textbf{Jos\'e Cristiano Pereira:} Conceptualization, Methodology, Supervision, Writing -- review \& editing, Project administration.
+
+% =====================================================================
+% Declarations
+% =====================================================================
+
+\section*{Declaration of competing interests}
+The authors declare that they have no known competing financial interests
+or personal relationships that could have appeared to influence the work
+reported in this paper.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in
+the public, commercial, or not-for-profit sectors.
+
+\section*{Data availability}
+No new experimental data were generated in this study. All analytical
+inputs of Tables~\ref{tbl:premises} and~\ref{tbl:quant-results} are
+fully traceable to the closed-form equations given in
+Section~\ref{sec:results} and to the underlying
+dissertation~\cite{porto2026dissertation} (forthcoming); no proprietary
+data are used. The Monte Carlo script that reproduces
+Table~\ref{tbl:mc-results} (random seed 20260519, 200\,000 trials,
+Python 3.12, NumPy 2.2.6) is provided as supplementary material so that
+the probabilistic refinement of Section~\ref{sec:res-mc} can be
+re-executed by any reader. Intermediate sizing data and the source
+\texttt{.tex}/\texttt{.bib} files of the manuscript are available from
+the corresponding author on reasonable request. The experimental
+validation roadmap of Section~\ref{sec:roadmap} specifies the empirical
+campaign required to confirm the deterministic indicators reported
+here.
+
+\section*{Acknowledgments}
+The authors thank the Centre for Engineering and Computing of the
+Universidade Cat\'olica de Petr\'opolis and the Graduate Programme in
+Engineering Systems for supporting the underlying Master's research
+project from which the analytical sizing of the AP 1.8 cylinder
+head was derived.
+
+% =====================================================================
+% Bibliography (elsarticle-num-names => numbered [1] references; \citet
+% renders "Author et al. [N]". Pure elsarticle-num breaks \citet -> "(author?)")
+% =====================================================================
+
+\bibliographystyle{elsarticle-num-names}
+\bibliography{refs}
+
+\end{document}

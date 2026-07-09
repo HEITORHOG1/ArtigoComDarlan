@@ -1,0 +1,83 @@
+% =====================================================================
+% Figure 4 — Tornado plot (TikZ-native, manual bars)
+% Each bar shows the residual margin of one preventive-barrier indicator
+% as a percentage above the pass criterion. Negative = barrier violated.
+% =====================================================================
+
+\begin{tikzpicture}[
+  font=\footnotesize,
+  bar/.style={fill=blue!45, draw=blue!60!black, line width=0.4pt},
+  barfail/.style={fill=red!55, draw=red!75!black, line width=0.4pt},
+  bargrey/.style={fill=gray!35, draw=gray!60, line width=0.4pt, pattern=north east lines, pattern color=gray!50},
+  axisline/.style={->,>=latex,line width=0.5pt},
+  threshold/.style={red!75!black, line width=0.6pt, dashed},
+]
+
+% Geometry: axis spans -50% to +60% horizontally
+% Each row: 0.55 cm tall, 7 rows total
+
+% --- Axis
+\def\xmin{-2.6}
+\def\xmax{6.0}
+\def\xscale{1.0}    % 1 cm = 10%
+\draw[axisline] (\xmin,0) -- (\xmax+0.4,0)
+  node[anchor=west, font=\footnotesize] {Margin (\%)};
+
+% Tick marks every 20%
+\foreach \x in {-40,-20,0,20,40,60} {
+  \pgfmathsetmacro{\xpos}{\x/10}
+  \draw (\xpos,-0.1) -- (\xpos,0.1) node[below=4pt, font=\scriptsize] {\x};
+}
+
+% --- Vertical pass-threshold line at 0
+\draw[threshold] (0,-0.3) -- (0,4.6);
+\node[red!75!black, font=\scriptsize, anchor=south] at (0, 4.6) {pass};
+
+% --- Bars (top to bottom)
+% Row positions:  4.0, 3.4, 2.8, 2.2, 1.6, 1.0, 0.4
+
+% Row 1: R_eq,-,esc = +11.9% (active)
+\fill[bar] (0,3.85) rectangle (1.19,4.15);
+\node[anchor=east, font=\footnotesize] at (\xmin,4.0)
+  {$R_{\mathrm{eq},-,\mathrm{esc}}$ (follower)};
+\node[anchor=west, font=\scriptsize] at (1.25,4.0) {$+11.9\%$};
+
+% Row 2: f_n,out/f_cam = -4.8% (at limit)
+\fill[barfail] (-0.48,3.25) rectangle (0,3.55);
+\node[anchor=east, font=\footnotesize] at (\xmin,3.4)
+  {$f_{n,\mathrm{out}}/f_{\mathrm{cam}}$ (surge)};
+\node[anchor=east, font=\scriptsize] at (-0.55,3.4) {$-4.8\%$};
+
+% Row 3: M_out = -48% (FAIL, critical barrier — value annotation includes [critical])
+\fill[barfail] (-2.6,2.65) rectangle (0,2.95);
+\node[anchor=east, font=\footnotesize] at (\xmin,2.8)
+  {$M_{\mathrm{out}}$ (coil bind, outer)};
+\node[anchor=west, font=\footnotesize, red!75!black] at (0.05,2.8)
+  {$-48.0\%$ \,---\, critical};
+
+% Row 4: M_in = +58.7% (active, comfortable)
+\fill[bar] (0,2.05) rectangle (5.87,2.35);
+\node[anchor=east, font=\footnotesize] at (\xmin,2.2)
+  {$M_{\mathrm{in}}$ (coil bind, inner)};
+\node[anchor=west, font=\scriptsize] at (5.95,2.2) {$+58.7\%$};
+
+% Row 5: tau_out = +40.5%
+\fill[bar] (0,1.45) rectangle (4.05,1.75);
+\node[anchor=east, font=\footnotesize] at (\xmin,1.6)
+  {$\tau_{\mathrm{out}}$ (fatigue, outer)};
+\node[anchor=west, font=\scriptsize] at (4.10,1.6) {$+40.5\%$};
+
+% Row 6: n_f,in (Goodman fatigue inner) = -32% (FAIL — at risk)
+\fill[barfail] (-2.6,0.85) rectangle (0,1.15);
+\node[anchor=east, font=\footnotesize] at (\xmin,1.0)
+  {$n_{f,\mathrm{in}}$ (Goodman, inner)};
+\node[anchor=west, font=\footnotesize, red!75!black] at (0.05,1.0)
+  {$-32.0\%$ \,---\, at risk};
+
+% Row 7: Hot clearance — not quantitatively assessed (gray hatched bar)
+\fill[bargrey] (0,0.25) rectangle (1.0,0.55);
+\node[anchor=east, font=\footnotesize] at (\xmin,0.4)
+  {Hot clearance};
+\node[anchor=west, font=\scriptsize] at (1.05,0.4) {n.a.};
+
+\end{tikzpicture}

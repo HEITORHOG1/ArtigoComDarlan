@@ -1,0 +1,76 @@
+[Date]
+
+To the Editors-in-Chief
+Quality and Reliability Engineering International
+(Profs. A. C. Brombacher, D. C. Montgomery, and L. C. Tang)
+[please re-confirm the current handling editor on the journal's
+editorial-board page before submission]
+
+Dear Editors,
+
+We are pleased to submit our manuscript, "A quantitative-coupled BowTie for
+design-stage reliability assessment of a high-rpm valve train: the VW AP 1.8
+cylinder head at 10,000 rpm", for consideration as a research article in
+Quality and Reliability Engineering International.
+
+CONTRIBUTION
+The paper develops a quantitative-coupled BowTie procedure for design-stage
+reliability assessment of high-rpm mechanical systems. Its methodological core
+is the binding of each preventive barrier of the BowTie to a deterministic
+engineering indicator with a literature-anchored pass/fail criterion, so that a
+qualitative risk diagram becomes an auditable, numerical design-screening tool.
+The procedure is demonstrated on a single, demanding case, the valve train of
+a high-performance VW AP 1.8 cylinder head at 10,000 rpm, refined with a Monte
+Carlo tolerance analysis (N = 2 x 10^5) under ASTM A877/A877M, and contrasted
+with the conventional FMEA/RPN prioritisation, whose loss of resolution around a
+single high-severity top event we quantify.
+
+FIT WITH THE JOURNAL
+We believe the work is well aligned with methodological contributions recently
+published in QREI, including the BOBTA bow-tie extension (Hellas & Khabtane,
+2026; doi:10.1002/qre.70069), the probabilistic uncertain-linguistic FMEA
+approach (Tang, 2025; doi:10.1002/qre.3657), and the Monte-Carlo
+structural-reliability analysis of a single load-bearing component reported by
+Qian et al. (2023; doi:10.1002/qre.3293).
+
+ON THE SCOPE OF THE EVIDENCE (stated openly)
+The study is analytical and based on a single design instance. We do not claim
+experimental validation, and we address this directly: the deterministic
+indicators are checked for face validity against four published valve-train
+failure investigations, the probabilistic robustness of the critical findings is
+established by Monte Carlo propagation of manufacturing tolerances, and the
+Monte Carlo script is provided as supplementary material for full
+reproducibility. A test-rig validation programme with statistical acceptance
+criteria is specified as declared future work. We believe the methodological
+contribution, a reproducible, indicator-driven barrier check for design-stage
+reliability screening, stands on this basis, and that its transparent
+treatment of the empirical gap is appropriate for a design-stage reliability
+method.
+
+DECLARATIONS
+This manuscript is original, has not been published previously, and is not under
+consideration by any other journal. All authors have approved the submission and
+declare no competing interests. The corresponding author is Darlan Costa Porto
+(darlan.42540004@ucp.br).
+
+SUGGESTED REVIEWERS (none affiliated with the authors' institutions;
+e-mails to be confirmed from the researchers' current institutional pages):
+
+1. Prof. Nima Khakzad, Toronto Metropolitan University, Canada.
+   Quantitative/Bayesian bow-tie and barrier-based risk analysis.
+2. Prof. Nicola Paltrinieri, Norwegian University of Science and
+   Technology (NTNU), Norway. Dynamic and barrier-based risk analysis.
+3. Prof. Hu-Chen Liu, Tongji University, China. FMEA/RPN methodology
+   and improved risk-evaluation approaches.
+4. Prof. Ali Fatemi, University of Memphis, USA. Mechanical fatigue
+   and durability of components (valve-spring / valve-train relevance).
+5. Prof. Xiaoping Du, Indiana University Indianapolis, USA.
+   Reliability-based mechanical design at the design stage.
+
+We thank you for considering our work and look forward to your response.
+
+Yours sincerely,
+
+Darlan Costa Porto, on behalf of the co-authors
+(H. O. Goncalves, F. Pradelle, J. C. Pereira)
+Universidade Catolica de Petropolis (UCP) / PUC-Rio, Brazil
