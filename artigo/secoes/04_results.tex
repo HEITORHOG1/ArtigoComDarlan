@@ -21,9 +21,9 @@ Section~\ref{sec:method-bowtie-qual}.
 % Figure 1 — BowTie diagram (TikZ-generated)
 % =====================================================================
 
-\begin{figure*}[t]
+\begin{figure*}[!htbp]
   \centering
-  \input{figs/fig1_bowtie.tex}
+  \resizebox{\textwidth}{!}{\input{figs/fig1_bowtie.tex}}
   \caption{BowTie diagram of the valve train of the AP 1.8 cylinder head operating at 10\,000~rpm. Threats (T1--T6) and preventive barriers (P1--P5) are arranged on the left side; consequences (C1--C5) and mitigative barriers (M1--M5) are arranged on the right side. The top event is the loss of follower contact between the valve and the cam, which encompasses valve float, valve bounce, and approach to coil bind.}\label{fig:bowtie}
 \end{figure*}
 
@@ -263,9 +263,11 @@ Section~\ref{sec:disc-limitations} as a priority follow-on study.
 % ----------------------------------------------------------------------
 % Consolidated table
 % ----------------------------------------------------------------------
-\begin{table*}[width=\textwidth,cols=4,pos=t]
+\begin{table*}[!htbp]
 \caption{Quantitative results for the five preventive barriers of the BowTie diagram applied to the AP 1.8 valve train at 10\,000~rpm. Values traced to the sizing of the intake valve and the valve springs.}\label{tbl:quant-results}
-\begin{tabular*}{\tblwidth}{@{}LCCC@{}}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccc@{}}
 \toprule
 Barrier & Indicator & Value & Status \\
 \midrule
@@ -281,7 +283,7 @@ Fatigue Goodman FoS (outer spring) & $n_{f,\mathrm{out}}$ & 1.27 & active ($\geq
 Fatigue Goodman FoS (inner spring) & $n_{f,\mathrm{in}}$ & 0.68 & \textbf{at risk} ($<1$) \\
 Hot clearance (differential, exhaust) & $c_{\mathrm{cold,req}}$ & 1.25~mm (bracket [1.13, 1.60]) & active ($c_{\mathrm{cold}}\geq c_{\mathrm{cold,req}}$) \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table*}
 
 % ----------------------------------------------------------------------
@@ -336,7 +338,7 @@ spirit of conventional FMEA, would have classified the inner-spring
 fatigue as nominally acceptable, whereas the Goodman criterion
 exposes the deficit unambiguously.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
   \resizebox{\linewidth}{!}{\input{figs/fig4_tornado.tex}}
   \caption{Tornado plot of the sensitivity of each preventive-barrier indicator to its dominant input under a $\pm$10\,\% perturbation. Two indicators (in red) violate their pass criteria already in the baseline configuration and are identified as critical preventive barriers of the AP 1.8 valve train at 10\,000~rpm: the outer-spring coil-bind margin $M_{\mathrm{out}}$ ($-48.0\%$) and the inner-spring fatigue Goodman factor of safety $n_{f,\mathrm{in}}$ ($-32.0\%$). The outer-spring natural-frequency margin $f_{n,\mathrm{out}}/f_{\mathrm{cam,max}}$ ($-4.8\%$) sits just below the conventional 4$\times$ rule-of-thumb threshold and is treated separately as a residual concern. The uniform $\pm$10\,\% perturbation is conservative relative to the ASTM~A877/A877M tolerance set used in the probabilistic refinement of Section~\ref{sec:res-mc}.}\label{fig:tornado}
@@ -419,9 +421,11 @@ surface and is a direct value-added contribution of the probabilistic
 refinement.
 \end{enumerate}
 
-\begin{table*}[width=\textwidth,cols=5,pos=t]
+\begin{table*}[!htbp]
 \caption{Monte Carlo refinement of the preventive-barrier indicators under ASTM~A877/A877M tolerances and the catalogued strength dispersion of \citet[\S~10-30]{shigley2020}. The 5\,\% and 95\,\% quantiles span the central 90\,\% of the manufactured population. The probability of barrier compliance failure is reported with respect to the project pass criteria of Table~\ref{tbl:quant-criteria}.}\label{tbl:mc-results}
-\begin{tabular*}{\tblwidth}{@{}LCCCC@{}}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
 \toprule
 Indicator & Median & 5\,\% quantile & 95\,\% quantile & $P[\mathrm{barrier\;fail}]$ \\
 \midrule
@@ -434,7 +438,7 @@ Coil-bind margin $M_{\mathrm{in}}$ (mm)    & 2.379 & 0.911 & 3.840 & 16.2\,\% \\
 Goodman FoS $n_{f,\mathrm{in}}$            & 0.675 & 0.637 & 0.716 & 100.0\,\% \\
 Surge ratio $f_{n,\mathrm{in}}/f_{\mathrm{cam,max}}$ & 6.853 & 6.538 & 7.195 & $<0.01$\,\% \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table*}
 
 The Monte Carlo refinement converts the qualitative ``at-risk''
@@ -463,13 +467,13 @@ Fig.~\ref{fig:fn} compares the spring natural frequencies with the
 first cam harmonics across the rotational-speed range up to
 10\,000~rpm engine speed.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \input{figs/fig2_lift.tex}
+  \resizebox{\linewidth}{!}{\input{figs/fig2_lift.tex}}
   \caption{Schematic position of the two critical points of the cam profile of the AP 1.8 high-performance head: positive-acceleration peak ($a_{\max,+}=14\,544$~m\,s$^{-2}$ at $L_{+}=6.04$~mm) and deceleration peak ($a_{\max,-}=20\,362$~m\,s$^{-2}$ at $L_{-}=8.747$~mm). The full lift profile is generated from the cam sizing of the intake valve.}\label{fig:lift}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
   \resizebox{\linewidth}{!}{\input{figs/fig3_fn.tex}}
   \caption{Spring natural frequencies $f_{n,\mathrm{out}}$ and $f_{n,\mathrm{in}}$ compared with the first six cam harmonics ($n=1,\dots,6$) across the engine-speed range up to 10\,000~rpm. The shaded region marks the operating regime; the dashed horizontal lines mark $f_{n,\mathrm{out}}\approx 318$~Hz and $f_{n,\mathrm{in}}\approx 571$~Hz.}\label{fig:fn}
@@ -493,9 +497,11 @@ reports the worst-case exhaust-side equivalent dynamic ratio
 $R_{\mathrm{eq},-,\mathrm{esc}}$ and the outer-spring surge ratio
 across the sweep.
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{Parametric sweep of the two speed-sensitive indicators across the engine-speed range 6\,000--12\,000~rpm for the AP 1.8 head at fixed geometry. The dynamic-ratio criterion is $R\geq 1.20$ and the surge-ratio rule-of-thumb is $f_{n}/f_{\mathrm{cam}}\geq 4$. The intersection of the two pass criteria defines an analytical safe-operation envelope of approximately 6\,000--10\,500~rpm for the baseline configuration; barriers transition to at-risk above this band and the loss-of-contact boundary ($R\to 1$) is crossed near 11\,500~rpm.}\label{tbl:rpm-sweep}
-\begin{tabular*}{\tblwidth}{@{}LCCC@{}}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lccc@{}}
 \toprule
 Engine speed (rpm) & $R_{\mathrm{eq},-,\mathrm{esc}}$ & $f_{n,\mathrm{out}}/f_{\mathrm{cam}}$ & Envelope status \\
 \midrule
@@ -509,7 +515,7 @@ Engine speed (rpm) & $R_{\mathrm{eq},-,\mathrm{esc}}$ & $f_{n,\mathrm{out}}/f_{\
 11\,500 & 1.02 & 3.32 & loss-of-contact boundary \\
 12\,000 & 0.93 & 3.18 & beyond envelope \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table}
 
 \noindent The parametric sweep produces three operational
@@ -559,7 +565,7 @@ account for known failure mechanisms?) rather than a
 unseen failures?). Predictive validity in the strict sense requires
 either application to an unrelated future failure or a test-rig
 campaign on the AP 1.8 head itself; both are identified as priority
-follow-on work in Section~\ref{sec:conclusion}. Acknowledged
+follow-on work in Section~\ref{sec:roadmap}. Acknowledged
 construct-validity testing is nevertheless an established step in
 the development of risk-assessment procedures, and the outcome of
 the present check is informative even under that more limited claim.
@@ -634,9 +640,10 @@ sizing assumption. No deterministic indicator in
 Table~\ref{tbl:quant-criteria} maps to it: the case is therefore
 \emph{flagged qualitatively only} by the present procedure. This
 outcome motivates a candidate extension of the preventive barrier
-set --- an assembly/tolerance barrier $P_{6}$ with an indicator
-based on the as-built valve-seat alignment --- which is identified
-as a direction for future work in Section~\ref{sec:disc-limitations}.
+set --- an assembly/tolerance barrier $P_{6}$ with a dimensionless
+stem-to-seat runout indicator $\rho_{\mathrm{run}}$ (specified in
+Section~\ref{sec:roadmap-barriers}) --- which is identified as a
+direction for future work.
 
 \paragraph{\citet{zhao2023camshaftV6} --- outside the present
 scope.}
@@ -650,10 +657,12 @@ the procedure as formulated here. The honest outcome of the
 comparison is that the procedure would have \emph{missed} this
 failure mode --- and that explicit recognition is itself the
 useful finding: an extension of the procedure with an additional
-preventive barrier on the lubrication regime (e.g.\ a
-Stribeck-curve-based indicator on the camshaft bearing pair) is
-needed before the framework can claim coverage of the full set of
-valve-train-related failure mechanisms.
+preventive barrier on the lubrication regime, specified as the
+Stribeck-curve minimum film-thickness ratio $\Lambda_{\min}$ of
+Section~\ref{sec:roadmap-barriers} with pass criterion
+$\Lambda_{\min}\geq 1.5$, closes the gap before the framework can
+claim coverage of the full set of valve-train-related failure
+mechanisms.
 
 \paragraph{Summary of the qualitative validation.}
 Of the four documented case studies surveyed in
@@ -671,6 +680,6 @@ side is diagnostic), and failure mechanisms outside the present
 barrier set (where the comparison flags the limitation). This
 qualitative validation supports the use of the procedure as a
 design-stage check while confirming that an empirical campaign on
-a dedicated test rig --- specified in Section~\ref{sec:conclusion}
+a dedicated test rig --- specified in Section~\ref{sec:roadmap}
 --- remains necessary for quantitative validation of the indicator
 margins reported here.

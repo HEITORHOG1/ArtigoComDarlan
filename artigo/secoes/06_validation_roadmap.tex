@@ -1,0 +1,166 @@
+% =====================================================================
+% Section 6 — Validation roadmap and future work
+% =====================================================================
+% Moved from Section 6 (Conclusion) on professor's recommendation:
+% RESS reviewers expect a separate "Validation roadmap / Future work"
+% section; the Conclusion should restate only the main findings in
+% three to four sentences.
+% =====================================================================
+
+\section{Validation roadmap and future work}\label{sec:roadmap}
+
+The deterministic indicators of Table~\ref{tbl:quant-results} and the
+Monte Carlo probabilities of Table~\ref{tbl:mc-results} establish a
+design-stage diagnosis but do not by themselves substitute for the
+empirical confirmation of the predicted margins. This section
+specifies (i)~the minimum test-rig programme that would close the
+empirical gap on the AP 1.8 head, (ii)~the candidate barrier
+extensions motivated by the construct-validity benchmark of
+Section~\ref{sec:res-litvalidation}, and (iii)~the analytical and
+optimisation directions that follow.
+
+\subsection{Test-rig programme with statistical acceptance criteria}
+\label{sec:roadmap-rig}
+
+The minimum experimental verification programme that would close the
+empirical gap on the analytical findings for the AP 1.8 head
+comprises three coordinated stages. Each stage is specified with an
+explicit sample size, instrumentation envelope, and statistical
+acceptance rule keyed to the analytical predictions of
+Section~\ref{sec:res-quant} and the probabilistic envelope of
+Section~\ref{sec:res-mc}.
+
+\begin{enumerate}
+\item \textbf{Spring rig --- modal verification ($n\geq 3$
+specimens per spring).} A single-spring test fixture
+instrumented with a non-contacting laser-displacement sensor
+($\geq$ 1~kHz sampling) on the active coils identifies the surge
+response across the 50--600~Hz band, under the catalogued
+seat-preload boundary condition.
+\emph{Acceptance criterion}: the sample-mean first surge frequency
+$\bar{f}_{n}$ from $n\geq 3$ specimens shall fall within the 90\,\%
+confidence interval of the analytical prediction (calibrated to the
+MC distribution of Section~\ref{sec:res-mc}, i.e.\
+$f_{n,\mathrm{out}}\in [304,\,334]$~Hz and
+$f_{n,\mathrm{in}}\in [545,\,600]$~Hz at 90\,\% confidence). A
+failure of containment is reported as a falsification of the
+analytical model and triggers re-evaluation of the active-mass
+hypothesis (total versus Rayleigh-effective).
+
+\item \textbf{Motored-engine speed sweep --- coil-bind and
+follower-contact verification.} A motored-engine campaign from
+6\,000 to 12\,000~rpm engine speed (the dynamic-loss-of-contact
+boundary identified in Section~\ref{sec:res-envelope}) is
+conducted with a non-contacting valve-position transducer sampled
+at $\geq$~50~kHz to resolve the deceleration peak of the cam
+profile. Two acceptance criteria are applied:
+\emph{(2a)} absence of valve float at the deceleration peak
+($a_{\max,-}=20\,362$~m\,s$^{-2}$, Section~\ref{sec:res-quant})
+verified by zero-crossing analysis of the
+(measured$-$predicted) lift residual at each rpm point, with a
+detection threshold of $\geq$~0.05~mm departure for $\geq$~3
+consecutive cam events;
+\emph{(2b)} the residual coil-bind margin measured at full lift
+($n\geq 5$ measurements at 10\,000~rpm) shall lie within
+$\pm$0.1~mm of the MC 50\,\% credible interval
+$M_{\mathrm{out}}\in [0.51,\,1.10]$~mm for the baseline outer
+spring (or $M_{\mathrm{out}}\approx 2.0$~mm post-correction). A
+single instance of $M_{\mathrm{out}}<0$~mm (hard contact) at any
+rpm within the safe envelope falsifies the corrected design.
+
+\item \textbf{Inner-spring fatigue campaign --- Goodman criterion
+verification ($n\geq 5$ specimens).} A representative sample of
+inner springs is cycled under shear-stress amplitudes reproducing
+the analytical
+$\tau_{m,\mathrm{in}}=858$~MPa and
+$\tau_{a,\mathrm{in}}=374$~MPa, with each specimen run to either
+run-out at $10^{8}$ cycles or first-failure indication.
+\emph{Acceptance criterion}: with $n=5$ specimens and assuming a
+Weibull failure model, the upper one-sided 90\,\% confidence
+bound on the empirical Goodman factor of safety
+$\hat{n}_{f,\mathrm{in}}$ shall remain below unity ($\leq 0.78$
+upper bound for 0 of 5 specimens reaching run-out), thereby
+confirming the analytical prediction
+$n_{f,\mathrm{in}}\approx 0.68$ and the MC 5\,\% quantile
+$n_{f,\mathrm{in,5\%}}=0.637$. A pass condition
+($\hat{n}_{f}\geq 1$ upper bound) on 5 of 5 specimens reaching
+run-out would falsify the predicted Goodman deficit and require
+re-evaluation of the shear endurance limit calibration.
+\end{enumerate}
+
+The total test-rig hours for this minimum programme are estimated at
+the order of 600--800~h.
+
+\subsection{Candidate barrier extensions}\label{sec:roadmap-barriers}
+
+The construct-validity benchmark of
+Section~\ref{sec:res-litvalidation} flagged two failure mechanisms
+that are not currently covered by the preventive set
+$P_{1}$--$P_{5}$. For each, a candidate indicator with a
+literature-anchored pass criterion is proposed below so that the
+framework can be expanded without re-architecting the bow diagram.
+
+\paragraph{Soffritti --- assembly/tolerance barrier (candidate
+$P_{6}$).} The case of \citet{soffritti2018wornvalvetrain} attributes
+premature wear at the rocker-arm/pushrod and rocker-arm/valve
+interfaces to valve misalignment with respect to the seat insert.
+A candidate indicator is the dimensionless \emph{stem-to-seat runout
+ratio}
+\begin{equation}
+\rho_{\mathrm{run}}=\frac{e_{\mathrm{stem}}}{d_{\mathrm{stem}}},
+\label{eq:runout}
+\end{equation}
+where $e_{\mathrm{stem}}$ is the measured lateral offset of the
+valve-stem axis from the seat-insert axis at the assembled state
+and $d_{\mathrm{stem}}$ is the valve-stem diameter. A
+literature-anchored pass criterion of
+$\rho_{\mathrm{run}}\leq 5\times 10^{-3}$ is proposed, consistent
+with the typical $25~\mu\mathrm{m}$ alignment tolerance reported for
+production valve trains \citep{heisler2002} normalised by a
+nominal $d_{\mathrm{stem}}=5$--$7$~mm. The indicator is computable
+from a coordinate-measuring-machine inspection of the assembled
+head and can be added to Table~\ref{tbl:quant-criteria} once the
+inspection protocol is documented. The barrier is not evaluated for
+the AP 1.8 head in the present work but the indicator form
+demonstrates that the framework is extensible to assembly-driven
+threats.
+
+\paragraph{Zhao --- lubrication-regime barrier (candidate $P_{7}$).}
+The case of \citet{zhao2023camshaftV6} attributes the camshaft
+bearing failure to an asperity-contact regime that violates the
+design assumption of full hydrodynamic lubrication. A candidate
+indicator is the Stribeck-curve minimum film-thickness ratio
+\begin{equation}
+\Lambda_{\min}=\frac{h_{\min}}{\sqrt{R_{q,1}^{2}+R_{q,2}^{2}}},
+\label{eq:stribeck}
+\end{equation}
+where $h_{\min}$ is the predicted minimum oil-film thickness from
+the elastohydrodynamic-lubrication (EHL) calculation of the
+cam--follower contact and $R_{q,1}$, $R_{q,2}$ are the root-mean-square
+surface roughnesses of the two contacting surfaces. The
+literature-anchored pass criterion is $\Lambda_{\min}\geq 1.5$ for
+predominantly hydrodynamic operation, with the asperity-contact
+regime conventionally identified as $\Lambda_{\min}<1$
+\citep[\S~12-13]{shigley2020}. As with the assembly-tolerance
+barrier, the indicator is not evaluated for the AP 1.8 head here
+but its specification closes the gap identified by the
+construct-validity benchmark and broadens the coverage of the
+procedure beyond the spring--cam dynamic interaction.
+
+\subsection{Subsequent analytical extensions}\label{sec:roadmap-extensions}
+
+Subsequent extensions of the work will address (i)~a
+second-generation Monte Carlo propagation that adds correlated
+operational sources (thermal-soak transients, oil condition,
+valve-seat wear) and joint barrier-failure probabilities; (ii)~a
+coupled thermal--structural finite-element analysis of the cylinder
+head to refine the differential hot-clearance estimate of
+Section~\ref{sec:res-quant} and tighten the
+$c_{\mathrm{cold,req}}\in [1.13,\,1.60]$~mm bracket; and (iii)~the
+integration of the resulting indicator set as a constraint in the
+multi-objective optimisation of the cylinder-head geometry. These
+extensions are sequenced behind the test-rig programme of
+Section~\ref{sec:roadmap-rig}: until the indicator magnitudes for
+the AP 1.8 head are confirmed experimentally, the analytical
+refinements rest on assumptions that the rig data alone can
+substantiate.

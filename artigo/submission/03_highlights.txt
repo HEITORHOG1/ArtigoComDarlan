@@ -1,0 +1,5 @@
+Quantitative-coupled BowTie for high-rpm valve-train risk
+Top event: loss of valve-cam follower contact
+Outer-spring coil-bind margin 0.78 mm vs project 1.5 mm
+Inner-spring Goodman FoS 0.68 fails in 100% of MC trials
+Monte Carlo refinement under ASTM A877/A877M tolerances

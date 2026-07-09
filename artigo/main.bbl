@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -11,161 +11,207 @@
 \providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Book
+\bibitem[{Heywood(1988)}]{heywood1988}
+\bibinfo{author}{J.~B. Heywood}, \bibinfo{title}{Internal Combustion Engine
+  Fundamentals}, \bibinfo{publisher}{McGraw-Hill}, \bibinfo{address}{New York},
+  \bibinfo{year}{1988}.
+%Type = Book
+\bibitem[{Stone(2012)}]{stone2012}
+\bibinfo{author}{R.~Stone}, \bibinfo{title}{Introduction to Internal Combustion
+  Engines}, \bibinfo{edition}{4} ed., \bibinfo{publisher}{Palgrave Macmillan},
+  \bibinfo{address}{Basingstoke}, \bibinfo{year}{2012}.
+%Type = Phdthesis
+\bibitem[{Porto(2026)}]{porto2026dissertation}
+\bibinfo{author}{D.~C. Porto}, \bibinfo{title}{Otimiza\c{c}\~ao do cabe\c{c}ote
+  do motor {AP} 1.8: uma an\'alise termodin\^amica da combust\~ao e de fluxo de
+  escoamento de ar}, \bibinfo{type}{Master's dissertation}, Universidade
+  Cat\'olica de Petr\'opolis, Programa de Mestrado em Sistemas de Engenharia,
+  \bibinfo{address}{Petr\'opolis, RJ, Brazil}, \bibinfo{year}{2026}.
+  \bibinfo{note}{Forthcoming}.
+%Type = Article
+\bibitem[{V\'elez Godi\~no et~al.(2019)V\'elez Godi\~no, Torres~Garc\'ia,
+  Jim\'enez-Espadafor~Aguilar, and
+  Palomo~Guerrero}]{velezgodino2019overheadvalvetrain}
+\bibinfo{author}{J.~A. V\'elez Godi\~no}, \bibinfo{author}{M.~Torres~Garc\'ia},
+  \bibinfo{author}{F.~J. Jim\'enez-Espadafor~Aguilar},
+  \bibinfo{author}{D.~Palomo~Guerrero},
+\newblock \bibinfo{title}{Failure analysis of an overhead valve train system in
+  urban buses},
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{96}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{455--467}.
+  \DOIprefix\doi{10.1016/j.engfailanal.2018.11.003}.
+%Type = Article
+\bibitem[{Soffritti et~al.(2018)Soffritti, Merlin, Vazquez, Fortini, and
+  Garagnani}]{soffritti2018wornvalvetrain}
+\bibinfo{author}{C.~Soffritti}, \bibinfo{author}{M.~Merlin},
+  \bibinfo{author}{R.~Vazquez}, \bibinfo{author}{A.~Fortini},
+  \bibinfo{author}{G.~L. Garagnani},
+\newblock \bibinfo{title}{Failure analysis of worn valve train components of a
+  four-cylinder diesel engine},
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{92}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{528--538}.
+  \DOIprefix\doi{10.1016/j.engfailanal.2018.06.022}.
+%Type = Article
+\bibitem[{Xing et~al.(2021)Xing, Lu, Jian, Li, and
+  Luo}]{xing2021valvespringEAC}
+\bibinfo{author}{X.~Q. Xing}, \bibinfo{author}{J.~N. Lu},
+  \bibinfo{author}{J.~W. Jian}, \bibinfo{author}{L.~J. Li},
+  \bibinfo{author}{Z.~C. Luo},
+\newblock \bibinfo{title}{Effect of environment-assisted cracking on the
+  premature fatigue failure of high-strength valve springs},
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{126}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{105466}.
+  \DOIprefix\doi{10.1016/j.engfailanal.2021.105466}.
+%Type = Article
+\bibitem[{Zhao et~al.(2023)Zhao, Li, Xie, and Liu}]{zhao2023camshaftV6}
+\bibinfo{author}{J.~Zhao}, \bibinfo{author}{Y.~Li}, \bibinfo{author}{L.~Xie},
+  \bibinfo{author}{J.~Liu},
+\newblock \bibinfo{title}{Lubrication failure analysis of camshaft bearings in
+  {V6} diesel engine},
+\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{150}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{107329}.
+  \DOIprefix\doi{10.1016/j.engfailanal.2023.107329}.
+%Type = Article
+\bibitem[{Khakzad et~al.(2013)Khakzad, Khan, and
+  Amyotte}]{khakzad2013bowtiebayesian}
+\bibinfo{author}{N.~Khakzad}, \bibinfo{author}{F.~Khan},
+  \bibinfo{author}{P.~Amyotte},
+\newblock \bibinfo{title}{Dynamic safety analysis of process systems by mapping
+  bow-tie into {Bayesian} network},
+\newblock \bibinfo{journal}{Process Safety and Environmental Protection}
+  \bibinfo{volume}{91} (\bibinfo{year}{2013}) \bibinfo{pages}{46--53}.
+  \DOIprefix\doi{10.1016/j.psep.2012.01.005}.
+%Type = Book
+\bibitem[{Taylor(1985)}]{taylor1985}
+\bibinfo{author}{C.~F. Taylor}, \bibinfo{title}{The Internal-Combustion Engine
+  in Theory and Practice, Vol. 2: Combustion, Fuels, Materials, Design},
+  \bibinfo{edition}{revised} ed., \bibinfo{publisher}{MIT Press},
+  \bibinfo{address}{Cambridge, MA}, \bibinfo{year}{1985}.
+%Type = Book
+\bibitem[{Budynas and Nisbett(2020)}]{shigley2020}
+\bibinfo{author}{R.~G. Budynas}, \bibinfo{author}{J.~K. Nisbett},
+  \bibinfo{title}{Shigley's Mechanical Engineering Design},
+  \bibinfo{edition}{11} ed., \bibinfo{publisher}{McGraw-Hill Education},
+  \bibinfo{address}{New York}, \bibinfo{year}{2020}.
+%Type = Article
+\bibitem[{de~Ruijter and Guldenmund(2016)}]{deruijter2016bowtiereview}
+\bibinfo{author}{A.~de~Ruijter}, \bibinfo{author}{F.~Guldenmund},
+\newblock \bibinfo{title}{The bowtie method: A review},
+\newblock \bibinfo{journal}{Safety Science} \bibinfo{volume}{88}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{211--218}.
+  \DOIprefix\doi{10.1016/j.ssci.2016.03.001}.
+%Type = Article
+\bibitem[{Khakzad et~al.(2012)Khakzad, Khan, and Amyotte}]{khakzad2012ress}
+\bibinfo{author}{N.~Khakzad}, \bibinfo{author}{F.~Khan},
+  \bibinfo{author}{P.~Amyotte},
+\newblock \bibinfo{title}{Dynamic risk analysis using bow-tie approach},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{104} (\bibinfo{year}{2012}) \bibinfo{pages}{36--44}.
+  \DOIprefix\doi{10.1016/j.ress.2012.04.003}.
+%Type = Article
+\bibitem[{Vileiniskis and Remenyte-Prescott(2017)}]{vileiniskis2017ressbowtie}
+\bibinfo{author}{M.~Vileiniskis}, \bibinfo{author}{R.~Remenyte-Prescott},
+\newblock \bibinfo{title}{Quantitative risk prognostics framework based on
+  {Petri} {Net} and {Bow-Tie} models},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{165} (\bibinfo{year}{2017}) \bibinfo{pages}{62--73}.
+  \DOIprefix\doi{10.1016/j.ress.2017.03.026}.
+%Type = Article
+\bibitem[{Taleb-Berrouane et~al.(2021)Taleb-Berrouane, Khan, and
+  Hawboldt}]{talebberrouane2021ressabt}
+\bibinfo{author}{M.~Taleb-Berrouane}, \bibinfo{author}{F.~Khan},
+  \bibinfo{author}{K.~Hawboldt},
+\newblock \bibinfo{title}{Corrosion risk assessment using adaptive bow-tie
+  ({ABT}) analysis},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{214} (\bibinfo{year}{2021}) \bibinfo{pages}{107731}.
+  \DOIprefix\doi{10.1016/j.ress.2021.107731}.
+%Type = Article
+\bibitem[{Xie et~al.(2021)Xie, Dong, Chen, Peng, and Li}]{xie2021ressbowtie}
+\bibinfo{author}{S.~Xie}, \bibinfo{author}{S.~Dong}, \bibinfo{author}{Y.~Chen},
+  \bibinfo{author}{Y.~Peng}, \bibinfo{author}{X.~Li},
+\newblock \bibinfo{title}{A novel risk evaluation method for fire and explosion
+  accidents in oil depots using bow-tie analysis and risk matrix analysis
+  method based on cloud model theory},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{215} (\bibinfo{year}{2021}) \bibinfo{pages}{107791}.
+  \DOIprefix\doi{10.1016/j.ress.2021.107791}.
+%Type = Article
+\bibitem[{Sezer et~al.(2023)Sezer, Camliyurt, Aydin, Akyuz, and
+  Gardoni}]{sezer2023ressbowtie}
+\bibinfo{author}{S.~I. Sezer}, \bibinfo{author}{G.~Camliyurt},
+  \bibinfo{author}{M.~Aydin}, \bibinfo{author}{E.~Akyuz},
+  \bibinfo{author}{P.~Gardoni},
+\newblock \bibinfo{title}{A bow-tie extended {D-S} evidence-{HEART} modelling
+  for risk analysis of cargo tank cracks on oil/chemical tanker},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{237} (\bibinfo{year}{2023}) \bibinfo{pages}{109346}.
+  \DOIprefix\doi{10.1016/j.ress.2023.109346}.
+%Type = Article
+\bibitem[{Ko et~al.(2022)Ko, Ahn, and Lee}]{ko2022springfatigueflaws}
+\bibinfo{author}{D.-C. Ko}, \bibinfo{author}{N.-S. Ahn}, \bibinfo{author}{K.-H.
+  Lee},
+\newblock \bibinfo{title}{Influence of the surface flaws in oil-tempered wires
+  on the fatigue life of automotive engine valve springs},
+\newblock \bibinfo{journal}{Scientific Reports} \bibinfo{volume}{12}
+  (\bibinfo{year}{2022}) \bibinfo{pages}{21131}.
+  \DOIprefix\doi{10.1038/s41598-022-25597-1}.
 %Type = Article
 \bibitem[{Aust and Pons(2019)}]{aust2019bowtieaircraft}
-\bibinfo{author}{Aust, J.}, \bibinfo{author}{Pons, D.}, \bibinfo{year}{2019}.
+\bibinfo{author}{J.~Aust}, \bibinfo{author}{D.~Pons},
 \newblock \bibinfo{title}{Bowtie methodology for risk analysis of visual
-  borescope inspection during aircraft engine maintenance}.
-\newblock \bibinfo{journal}{Aerospace} \bibinfo{volume}{6},
-  \bibinfo{pages}{110}.
-\newblock \DOIprefix\doi{10.3390/aerospace6100110}.
+  borescope inspection during aircraft engine maintenance},
+\newblock \bibinfo{journal}{Aerospace} \bibinfo{volume}{6}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{110}.
+  \DOIprefix\doi{10.3390/aerospace6100110}.
+%Type = Book
+\bibitem[{Heisler(2002)}]{heisler2002}
+\bibinfo{author}{H.~Heisler}, \bibinfo{title}{Advanced Engine Technology},
+  \bibinfo{publisher}{Butterworth-Heinemann}, \bibinfo{address}{Oxford},
+  \bibinfo{year}{2002}.
+%Type = Techreport
+\bibitem[{{Special Metals Corporation}(2008)}]{specialmetals2008inconel751}
+\bibinfo{author}{{Special Metals Corporation}}, \bibinfo{title}{{INCONEL alloy
+  751}}, \bibinfo{type}{Technical Bulletin} \bibinfo{number}{SMC-067}, Special
+  Metals Corporation, \bibinfo{year}{2008}. \bibinfo{note}{Mechanical and
+  thermal property datasheet for INCONEL 751 (UNS N07751), including mean
+  linear thermal expansion coefficient}.
 %Type = Manual
 \bibitem[{{Automotive Industry Action Group (AIAG) and Verband der
   Automobilindustrie (VDA)}(2019)}]{aiagvda2019fmea}
 \bibinfo{author}{{Automotive Industry Action Group (AIAG) and Verband der
-  Automobilindustrie (VDA)}}, \bibinfo{year}{2019}.
-\newblock \bibinfo{title}{{AIAG \& VDA FMEA Handbook}}. \bibinfo{edition}{1st}
-  ed.
-\newblock \bibinfo{organization}{AIAG and VDA}. \bibinfo{address}{Southfield,
-  MI, USA}.
-\newblock \bibinfo{note}{Harmonised handbook for Failure Mode and Effects
-  Analysis (Design FMEA and Process FMEA), establishing the seven-step approach
-  and severity/occurrence/detection rating tables}.
-%Type = Book
-\bibitem[{Budynas and Nisbett(2020)}]{shigley2020}
-\bibinfo{author}{Budynas, R.G.}, \bibinfo{author}{Nisbett, J.K.},
-  \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Shigley's Mechanical Engineering Design}.
-\newblock \bibinfo{edition}{11} ed., \bibinfo{publisher}{McGraw-Hill
-  Education}, \bibinfo{address}{New York}.
-%Type = Book
-\bibitem[{Heisler(2002)}]{heisler2002}
-\bibinfo{author}{Heisler, H.}, \bibinfo{year}{2002}.
-\newblock \bibinfo{title}{Advanced Engine Technology}.
-\newblock \bibinfo{publisher}{Butterworth-Heinemann},
-  \bibinfo{address}{Oxford}.
-%Type = Book
-\bibitem[{Heywood(1988)}]{heywood1988}
-\bibinfo{author}{Heywood, J.B.}, \bibinfo{year}{1988}.
-\newblock \bibinfo{title}{Internal Combustion Engine Fundamentals}.
-\newblock \bibinfo{publisher}{McGraw-Hill}, \bibinfo{address}{New York}.
+  Automobilindustrie (VDA)}}, \bibinfo{title}{{AIAG \& VDA FMEA Handbook}},
+  \bibinfo{edition}{1st} ed., \bibinfo{organization}{AIAG and VDA},
+  \bibinfo{address}{Southfield, MI, USA}, \bibinfo{year}{2019}.
+  \bibinfo{note}{Harmonised handbook for Failure Mode and Effects Analysis
+  (Design FMEA and Process FMEA), establishing the seven-step approach and
+  severity/occurrence/detection rating tables}.
 %Type = Article
-\bibitem[{Khakzad et~al.(2013)Khakzad, Khan and
-  Amyotte}]{khakzad2013bowtiebayesian}
-\bibinfo{author}{Khakzad, N.}, \bibinfo{author}{Khan, F.},
-  \bibinfo{author}{Amyotte, P.}, \bibinfo{year}{2013}.
-\newblock \bibinfo{title}{Dynamic safety analysis of process systems by mapping
-  bow-tie into {Bayesian} network}.
-\newblock \bibinfo{journal}{Process Safety and Environmental Protection}
-  \bibinfo{volume}{91}, \bibinfo{pages}{46--53}.
-\newblock \DOIprefix\doi{10.1016/j.psep.2012.01.005}.
+\bibitem[{Pillay and Wang(2003)}]{pillay2003modifiedfmea}
+\bibinfo{author}{A.~Pillay}, \bibinfo{author}{J.~Wang},
+\newblock \bibinfo{title}{Modified failure mode and effects analysis using
+  approximate reasoning},
+\newblock \bibinfo{journal}{Reliability Engineering \& System Safety}
+  \bibinfo{volume}{79} (\bibinfo{year}{2003}) \bibinfo{pages}{69--85}.
+  \DOIprefix\doi{10.1016/S0951-8320(02)00179-5}.
 %Type = Article
-\bibitem[{Ko et~al.(2022)Ko, Ahn and Lee}]{ko2022springfatigueflaws}
-\bibinfo{author}{Ko, D.C.}, \bibinfo{author}{Ahn, N.S.}, \bibinfo{author}{Lee,
-  K.H.}, \bibinfo{year}{2022}.
-\newblock \bibinfo{title}{Influence of the surface flaws in oil-tempered wires
-  on the fatigue life of automotive engine valve springs}.
-\newblock \bibinfo{journal}{Scientific Reports} \bibinfo{volume}{12},
-  \bibinfo{pages}{21131}.
-\newblock \DOIprefix\doi{10.1038/s41598-022-25597-1}.
-%Type = Article
-\bibitem[{Liu et~al.(2013)Liu, Liu and Liu}]{liu2013fuzzyfmea}
-\bibinfo{author}{Liu, H.C.}, \bibinfo{author}{Liu, L.}, \bibinfo{author}{Liu,
-  N.}, \bibinfo{year}{2013}.
+\bibitem[{Liu et~al.(2013)Liu, Liu, and Liu}]{liu2013fuzzyfmea}
+\bibinfo{author}{H.-C. Liu}, \bibinfo{author}{L.~Liu},
+  \bibinfo{author}{N.~Liu},
 \newblock \bibinfo{title}{Risk evaluation approaches in failure mode and
-  effects analysis: A literature review}.
+  effects analysis: A literature review},
 \newblock \bibinfo{journal}{Expert Systems with Applications}
-  \bibinfo{volume}{40}, \bibinfo{pages}{828--838}.
-\newblock \DOIprefix\doi{10.1016/j.eswa.2012.08.010}.
-%Type = Phdthesis
-\bibitem[{Porto(2026)}]{porto2026dissertation}
-\bibinfo{author}{Porto, D.C.}, \bibinfo{year}{2026}.
-\newblock \bibinfo{title}{Otimiza\c{c}\~ao do cabe\c{c}ote do motor {AP} 1.8:
-  uma an\'alise termodin\^amica da combust\~ao e de fluxo de escoamento de ar}.
-\newblock \bibinfo{type}{Master's dissertation}. Universidade Cat\'olica de
-  Petr\'opolis, Programa de Mestrado em Sistemas de Engenharia.
-  \bibinfo{address}{Petr\'opolis, RJ, Brazil}.
-\newblock \bibinfo{note}{Forthcoming}.
+  \bibinfo{volume}{40} (\bibinfo{year}{2013}) \bibinfo{pages}{828--838}.
+  \DOIprefix\doi{10.1016/j.eswa.2012.08.010}.
 %Type = Article
-\bibitem[{de~Ruijter and Guldenmund(2016)}]{deruijter2016bowtiereview}
-\bibinfo{author}{de~Ruijter, A.}, \bibinfo{author}{Guldenmund, F.},
-  \bibinfo{year}{2016}.
-\newblock \bibinfo{title}{The bowtie method: A review}.
-\newblock \bibinfo{journal}{Safety Science} \bibinfo{volume}{88},
-  \bibinfo{pages}{211--218}.
-\newblock \DOIprefix\doi{10.1016/j.ssci.2016.03.001}.
-%Type = Article
-\bibitem[{Soffritti et~al.(2018)Soffritti, Merlin, Vazquez, Fortini and
-  Garagnani}]{soffritti2018wornvalvetrain}
-\bibinfo{author}{Soffritti, C.}, \bibinfo{author}{Merlin, M.},
-  \bibinfo{author}{Vazquez, R.}, \bibinfo{author}{Fortini, A.},
-  \bibinfo{author}{Garagnani, G.L.}, \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{Failure analysis of worn valve train components of a
-  four-cylinder diesel engine}.
-\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{92},
-  \bibinfo{pages}{528--538}.
-\newblock \DOIprefix\doi{10.1016/j.engfailanal.2018.06.022}.
-%Type = Techreport
-\bibitem[{{Special Metals Corporation}(2008)}]{specialmetals2008inconel751}
-\bibinfo{author}{{Special Metals Corporation}}, \bibinfo{year}{2008}.
-\newblock \bibinfo{title}{{INCONEL alloy 751}}.
-\newblock \bibinfo{type}{Technical Bulletin} \bibinfo{number}{SMC-067}. Special
-  Metals Corporation.
-\newblock \bibinfo{note}{Mechanical and thermal property datasheet for INCONEL
-  751 (UNS N07751), including mean linear thermal expansion coefficient}.
-%Type = Book
-\bibitem[{Stone(2012)}]{stone2012}
-\bibinfo{author}{Stone, R.}, \bibinfo{year}{2012}.
-\newblock \bibinfo{title}{Introduction to Internal Combustion Engines}.
-\newblock \bibinfo{edition}{4} ed., \bibinfo{publisher}{Palgrave Macmillan},
-  \bibinfo{address}{Basingstoke}.
-%Type = Book
-\bibitem[{Taylor(1985)}]{taylor1985}
-\bibinfo{author}{Taylor, C.F.}, \bibinfo{year}{1985}.
-\newblock \bibinfo{title}{The Internal-Combustion Engine in Theory and
-  Practice, Vol. 2: Combustion, Fuels, Materials, Design}.
-\newblock \bibinfo{edition}{Revised} ed., \bibinfo{publisher}{MIT Press},
-  \bibinfo{address}{Cambridge, MA}.
-%Type = Article
-\bibitem[{V\'elez Godi\~no et~al.(2019)V\'elez Godi\~no, Torres~Garc\'ia,
-  Jim\'enez-Espadafor~Aguilar and
-  Palomo~Guerrero}]{velezgodino2019overheadvalvetrain}
-\bibinfo{author}{V\'elez Godi\~no, J.A.}, \bibinfo{author}{Torres~Garc\'ia,
-  M.}, \bibinfo{author}{Jim\'enez-Espadafor~Aguilar, F.J.},
-  \bibinfo{author}{Palomo~Guerrero, D.}, \bibinfo{year}{2019}.
-\newblock \bibinfo{title}{Failure analysis of an overhead valve train system in
-  urban buses}.
-\newblock \bibinfo{journal}{Engineering Failure Analysis} \bibinfo{volume}{96},
-  \bibinfo{pages}{455--467}.
-\newblock \DOIprefix\doi{10.1016/j.engfailanal.2018.11.003}.
-%Type = Article
-\bibitem[{Wang et~al.(2009)Wang, Chin, Poon and Yang}]{wang2009fuzzyAHP}
-\bibinfo{author}{Wang, Y.M.}, \bibinfo{author}{Chin, K.S.},
-  \bibinfo{author}{Poon, G.K.K.}, \bibinfo{author}{Yang, J.B.},
-  \bibinfo{year}{2009}.
+\bibitem[{Wang et~al.(2009)Wang, Chin, Poon, and Yang}]{wang2009fuzzyAHP}
+\bibinfo{author}{Y.-M. Wang}, \bibinfo{author}{K.-S. Chin},
+  \bibinfo{author}{G.~K.~K. Poon}, \bibinfo{author}{J.-B. Yang},
 \newblock \bibinfo{title}{Risk evaluation in failure mode and effects analysis
-  using fuzzy weighted geometric mean}.
+  using fuzzy weighted geometric mean},
 \newblock \bibinfo{journal}{Expert Systems with Applications}
-  \bibinfo{volume}{36}, \bibinfo{pages}{1195--1207}.
-\newblock \DOIprefix\doi{10.1016/j.eswa.2007.11.028}.
-%Type = Article
-\bibitem[{Xing et~al.(2021)Xing, Lu, Jian, Li and Luo}]{xing2021valvespringEAC}
-\bibinfo{author}{Xing, X.Q.}, \bibinfo{author}{Lu, J.N.},
-  \bibinfo{author}{Jian, J.W.}, \bibinfo{author}{Li, L.J.},
-  \bibinfo{author}{Luo, Z.C.}, \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{Effect of environment-assisted cracking on the
-  premature fatigue failure of high-strength valve springs}.
-\newblock \bibinfo{journal}{Engineering Failure Analysis}
-  \bibinfo{volume}{126}, \bibinfo{pages}{105466}.
-\newblock \DOIprefix\doi{10.1016/j.engfailanal.2021.105466}.
-%Type = Article
-\bibitem[{Zhao et~al.(2023)Zhao, Li, Xie and Liu}]{zhao2023camshaftV6}
-\bibinfo{author}{Zhao, J.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Xie,
-  L.}, \bibinfo{author}{Liu, J.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Lubrication failure analysis of camshaft bearings in
-  {V6} diesel engine}.
-\newblock \bibinfo{journal}{Engineering Failure Analysis}
-  \bibinfo{volume}{150}, \bibinfo{pages}{107329}.
-\newblock \DOIprefix\doi{10.1016/j.engfailanal.2023.107329}.
+  \bibinfo{volume}{36} (\bibinfo{year}{2009}) \bibinfo{pages}{1195--1207}.
+  \DOIprefix\doi{10.1016/j.eswa.2007.11.028}.
 
 \end{thebibliography}

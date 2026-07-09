@@ -26,9 +26,11 @@ Table~\ref{tbl:premises} and follow the design choices of the
 dissertation~\citep{porto2026dissertation} and the associated sizing
 notes for the intake valve and the valve springs.
 
-\begin{table*}[width=\textwidth,cols=5,pos=t]
+\begin{table*}[!htbp]
 \caption{Mechanical and operational premises adopted for the risk analysis of the AP 1.8 valve train. Values taken from the dissertation~\citep{porto2026dissertation} and the associated sizing notes for the intake valve and the valve springs.}\label{tbl:premises}
-\begin{tabular*}{\tblwidth}{@{}LLLLL@{}}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllll@{}}
 \toprule
 \multicolumn{2}{l}{\emph{Engine and operating regime}} & & \multicolumn{2}{l}{\emph{Dual valve-spring assembly (Cr--Si steel, ASTM A877/A877M)}} \\
 \midrule
@@ -55,7 +57,7 @@ Cam decel.\ peak (critical) & 20\,362~m\,s$^{-2}$ & & With reflected rocker & 49
 & & & Valve + retainer + keeper & 54.25~g \\
 & & & With reflected rocker & 60.36~g \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table*}
 
 \subsection{Construction of the qualitative BowTie}
@@ -102,9 +104,11 @@ which is reported in the underlying dissertation
 \citep{porto2026dissertation} and in two associated sizing notes
 on the intake valve and the spring.
 
-\begin{table*}[width=\textwidth,cols=3,pos=t]
+\begin{table*}[!htbp]
 \caption{Quantitative indicators associated with the preventive barriers of the BowTie diagram. The pass criteria follow conventional design rules in the internal-combustion-engine literature and the project specification of the AP 1.8 sizing.}\label{tbl:quant-criteria}
-\begin{tabular*}{\tblwidth}{@{}LLL@{}}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
 \toprule
 Barrier & Indicator & Pass criterion \\
 \midrule
@@ -114,7 +118,7 @@ Coil-bind margin (outer) & $M = H_{\mathrm{open}}-H_{\mathrm{cb}}$ & $M \geq 1.5
 Fatigue (Goodman) & $1/n_{f}=\tau_{a}/S_{se}+\tau_{m}/S_{su}$ & $n_{f}\geq 1$~\citep{shigley2020} \\
 Hot clearance$^{\dagger}$ & $c(T_{\max})$ & $c(T_{\max})\geq 0$ over the full map \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}\\
 {\footnotesize $^{\dagger}$Hot clearance is treated in this paper as a \emph{qualitatively verified} barrier outside the deterministic layer; only a first-order order-of-magnitude estimate is provided in Section~\ref{sec:res-quant}. A complete differential thermal model is identified as a priority direction for future work in Section~\ref{sec:disc-limitations}.}
 \end{table*}
 

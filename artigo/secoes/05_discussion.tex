@@ -86,10 +86,11 @@ the academic context of a master's research that aims to articulate
 mechanical design and reliability analysis.
 \end{enumerate}
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{Comparison between the BowTie analysis presented in this work and a conventional FMEA of the same threats.}\label{tbl:bowtie-vs-fmea}
-\footnotesize
-\begin{tabular*}{\tblwidth}{@{}LCC@{}}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcc@{}}
 \toprule
 Aspect & FMEA / RPN & Quantitative BowTie \\
 \midrule
@@ -100,7 +101,7 @@ Reproducibility & Limited & Direct from sizing \\
 Visualisation & Tabular & Diagrammatic \\
 Identifies critical barrier & No & Yes (via tornado plot) \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table}
 
 A concrete numerical illustration of why the conventional RPN
@@ -127,17 +128,30 @@ through entirely different physical mechanisms. A triaging team
 using a conventional 100--125 RPN threshold would not be able to
 distinguish reliably between these two threats. The RPN ranking, in
 other words, masks the very finding that the BowTie analysis
-surfaces. Recent extensions of FMEA --- the action-priority logic
-introduced in the AIAG--VDA 2019 handbook itself, fuzzy-set
-formulations \citep{liu2013fuzzyfmea,wang2009fuzzyAHP}, and
-AHP-weighted scoring --- improve the resolution of the prioritisation
-but do not address the underlying compression of the causal chain
-into a single ordinal score, which is the structural objection
-addressed by the present BowTie formulation.
+surfaces. The observation is structural rather than specific to the
+illustrative scores adopted here: because all six threats converge
+on the same catastrophic top event (valve--piston collision), the
+severity dimension is saturated and the multiplicative
+$S\times O\times D$ score loses its discriminating power. The
+well-documented weaknesses of the multiplicative RPN ---
+non-uniqueness of identical scores, sensitivity to the ordinal scale,
+and compression of independent risk dimensions into a single
+number --- have been the subject of an extensive critique
+\citep{pillay2003modifiedfmea,liu2013fuzzyfmea}, and the
+present case study reproduces them in concentrated form. Recent
+extensions of FMEA --- the action-priority logic introduced in the
+AIAG--VDA 2019 handbook itself, fuzzy-set formulations
+\citep{liu2013fuzzyfmea,wang2009fuzzyAHP}, and AHP-weighted
+scoring --- improve the resolution of the prioritisation but do not
+address the underlying compression of the causal chain into a
+single ordinal score, which is the structural objection addressed by
+the present BowTie formulation.
 
-\begin{table}[t]
-\caption{AIAG--VDA 2019 scoring of the six threats $T_{1}$--$T_{6}$ of the BowTie diagram. Severity, occurrence, and detectability follow the harmonised severity-occurrence-detection rubric of \citet{aiagvda2019fmea}; each score is the median of three independent assignments by the authors. Occurrence is calibrated to the ASTM~A877/A877M tolerance band rather than to subjective frequency judgement.}\label{tbl:rpn-comparison}
-\begin{tabular*}{\tblwidth}{@{}LCCCC@{}}
+\begin{table}[!htbp]
+\caption{Illustrative AIAG--VDA 2019 scoring of the six threats $T_{1}$--$T_{6}$ of the BowTie diagram. Severity, occurrence, and detectability follow the harmonised severity-occurrence-detection rubric of \citet{aiagvda2019fmea}; each score is the median of three independent assignments by the present authors and \emph{not} the output of a formal expert panel. Occurrence is calibrated to the ASTM~A877/A877M tolerance band rather than to subjective frequency judgement. The scores are intended to support a structural comparison between BowTie and RPN, not to constitute a stand-alone risk ranking.}\label{tbl:rpn-comparison}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
 \toprule
 Threat & $S$ & $O$ & $D$ & RPN \\
 \midrule
@@ -148,7 +162,7 @@ $T_{4}$ Spring heating in operation & 10 & 5 & 3 & 150 \\
 $T_{5}$ Out-of-tolerance thermal clearance & 8 & 4 & 3 & 96 \\
 $T_{6}$ Cam-harmonic / spring resonance & 10 & 6 & 4 & 240 \\
 \bottomrule
-\end{tabular*}
+\end{tabular}}
 \end{table}
 
 The two methods are not exclusive: FMEA remains useful for triaging a
@@ -209,7 +223,7 @@ the Goodman factor of safety against the
 $n_{f,\mathrm{in}}\approx 0.68$ analytical prediction. The total
 test-rig hours required for this minimum programme are estimated
 at the order of 600--800~h. The validation roadmap is presented in
-detail in Section~\ref{sec:conclusion}.
+detail in Section~\ref{sec:roadmap}.
 \item \emph{Operating envelope partially characterised.} The
 deterministic pass criteria are evaluated at the maximum design
 speed of 10\,000~rpm, and Section~\ref{sec:res-envelope} extends
@@ -265,10 +279,13 @@ that are not currently covered by the preventive set:
 out-of-tolerance valve-seat alignment
 \citep{soffritti2018wornvalvetrain} and lubrication-regime
 degradation in the camshaft bearing pair
-\citep{zhao2023camshaftV6}. Extensions of the procedure with
-candidate barriers on assembly tolerance and on the lubrication
-regime are identified as priority directions for future work to
-broaden the coverage of valve-train-related failure mechanisms.
+\citep{zhao2023camshaftV6}. Candidate indicators for these two
+mechanisms --- a dimensionless stem-to-seat runout ratio
+$\rho_{\mathrm{run}}$ and a Stribeck-curve minimum film-thickness
+ratio $\Lambda_{\min}$, both with literature-anchored pass
+criteria --- are specified in Section~\ref{sec:roadmap-barriers}
+and identified as priority directions for future work to broaden the
+coverage of valve-train-related failure mechanisms.
 \item \emph{Single design instance.} The analysis is conducted on a
 single bespoke cylinder head ($n=1$). The methodology itself is
 transposable to other high-rpm SI heads, and
